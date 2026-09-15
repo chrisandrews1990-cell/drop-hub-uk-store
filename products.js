@@ -86,7 +86,7 @@ const PRODUCTS = [
     description:"Reusable washable roller for lifting pet hair, lint and dust from clothes, sofas and car seats.",
     supplier:"CJdropshipping",
     supplierUrl:"https://cjdropshipping.com/product/portable-washable-hair-remover-with-adhesive-roller-p-1653949161269637120.html",
-    supplierSku:"CJJT174982701AZ"
+    supplierSku:"CJJT174982701AZ",\n    fulfillmentReady:true
   },
   {
     id:9,
