@@ -4,7 +4,7 @@ export const CATALOG = {
   3: { name: "Portable Travel Jewellery Box", sku: "CJYD228090802BY", price: 19.99, supplier: "CJ", cjPid: "2501290753441625000", cjProductSku: null, cjVariantSku: null, fulfillmentReady: false },
   4: { name: "Rechargeable Fabric Lint Remover", sku: "CJYD192666301AZ", price: 14.99, supplier: "CJ", cjPid: "1737785083941105664", cjProductSku: null, cjVariantSku: null, fulfillmentReady: false },
   5: { name: "Travel Cable Organiser Bag", sku: "CJJT107047201AZ", price: 14.99, supplier: "CJ", cjPid: "1380028552015122432", cjProductSku: null, cjVariantSku: null, fulfillmentReady: false },
-  6: { name: "Rechargeable Pet Nail Grinder", sku: "CJJJCWGY03580-Black set-USB", price: 17.99, supplier: "CJ", cjPid: null, cjProductSku: "CJJJCWGY03580", cjVariantSku: "CJJJCWGY03580-Black set-USB", fulfillmentReady: false },
+  6: { name: "Rechargeable Pet Nail Grinder", sku: "CJJJCWGY03580-Black set-USB", price: 17.99, supplier: "CJ", cjPid: null, cjProductSku: "CJJJCWGY03580", cjVariantSku: "CJJJCWGY03580-Black set-USB", fulfillmentReady: true },
   7: { name: "Foldable Clothes Storage Bag", sku: "CJYD237778201AZ", price: 16.99, supplier: "CJ", cjPid: "2505160457141629100", cjProductSku: null, cjVariantSku: null, fulfillmentReady: false },
   8: { name: "Washable Pet Hair Remover", sku: "CJJT174982701AZ", price: 12.99, supplier: "CJ", cjPid: "1653949161269637120", cjProductSku: null, cjVariantSku: null, fulfillmentReady: false },
   9: { name: "USB Motion Sensor Night Light", sku: "Spocket-Lilac-Milo", price: 34.99, supplier: "SPOCKET", fulfillmentReady: false },
