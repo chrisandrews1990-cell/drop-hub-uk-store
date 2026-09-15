@@ -6,52 +6,65 @@
   <title>CJ Fulfilment Setup | DropHub UK</title>
   <style>
     body{font-family:system-ui,-apple-system,sans-serif;background:#f6f7fb;color:#111827;margin:0;padding:30px}
-    main{max-width:1100px;margin:auto}
-    h1{margin-top:0}
+    main{max-width:760px;margin:auto}
+    h1{margin-top:0}.note{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin:18px 0}
     button{background:#111827;color:#fff;border:0;border-radius:12px;padding:14px 18px;font-weight:800;cursor:pointer}
-    .note{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin:18px 0}
-    .item{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;margin:12px 0}
-    .ok{border-left:6px solid #16a34a}.bad{border-left:6px solid #dc2626}.working{border-left:6px solid #f59e0b}
-    pre{white-space:pre-wrap;word-break:break-word;background:#0f172a;color:#e5e7eb;padding:14px;border-radius:12px;overflow:auto}
+    .item{display:flex;justify-content:space-between;gap:20px;align-items:center;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:15px 18px;margin:10px 0}
+    .state{font-weight:900}.ok .state{color:#15803d}.bad .state{color:#b91c1c}.working .state{color:#b45309}
+    small{display:block;color:#667085;margin-top:4px}.done{font-weight:800;margin-top:20px}
   </style>
 </head>
 <body>
 <main>
-  <h1>CJ Product Mapping Check</h1>
-  <p class="note">Internal setup page. It checks one product at a time and waits between requests so CJ's 1-request-per-second limit is respected.</p>
-  <button id="run">Run CJ checks</button>
+  <h1>CJ fulfilment check</h1>
+  <p class="note">This checks the exact CJ variant used for each product. It pauses between products to respect CJ's API rate limit.</p>
+  <button id="run">Run checks</button>
   <div id="status"></div>
+  <p id="done" class="done"></p>
 </main>
 <script>
-const ids=[1,2,3,4,5,6,7,8];
+const products=[
+  [1,'Magnetic Vacuum Phone Holder'],
+  [2,'Portable Rechargeable Blender'],
+  [3,'Portable Travel Jewellery Box'],
+  [4,'Rechargeable Fabric Lint Remover'],
+  [5,'Travel Cable Organiser Bag'],
+  [6,'Rechargeable Pet Nail Grinder'],
+  [7,'Foldable Clothes Storage Bag'],
+  [8,'Washable Pet Hair Remover']
+];
 const status=document.getElementById('status');
+const done=document.getElementById('done');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
-function render(id,data,state){
+function row(id,name,state,text,detail=''){
   let el=document.getElementById('p'+id);
-  if(!el){
-    el=document.createElement('section');
-    el.id='p'+id;
-    status.appendChild(el);
-  }
+  if(!el){el=document.createElement('div');el.id='p'+id;status.appendChild(el)}
   el.className='item '+state;
-  el.innerHTML='<strong>Product '+id+(data?.name?' — '+data.name:'')+'</strong><pre>'+escapeHtml(JSON.stringify(data,null,2))+'</pre>';
+  el.innerHTML='<div><strong>'+id+'. '+name+'</strong>'+(detail?'<small>'+detail+'</small>':'')+'</div><div class="state">'+text+'</div>';
 }
-function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 
 document.getElementById('run').onclick=async()=>{
   document.getElementById('run').disabled=true;
-  for(const id of ids){
-    render(id,{message:'Checking CJ…'},'working');
+  status.innerHTML='';done.textContent='';
+  let green=0;
+  for(const [id,name] of products){
+    row(id,name,'working','Checking…');
     try{
       const r=await fetch('/api/cj-catalog-check?id='+id,{cache:'no-store'});
       const data=await r.json();
-      render(id,data,r.ok&&!data.error?'ok':'bad');
+      if(r.ok&&data.ok){
+        green++;
+        row(id,name,'ok','GREEN',data.variantKey+' • $'+data.variantSellPrice);
+      }else{
+        row(id,name,'bad','RED',data.error||'Variant not found');
+      }
     }catch(e){
-      render(id,{error:e.message},'bad');
+      row(id,name,'bad','RED',e.message);
     }
-    await sleep(6500);
+    await sleep(3500);
   }
+  done.textContent=green===8?'All 8 products are GREEN.':'Finished: '+green+' of 8 products are GREEN.';
   document.getElementById('run').disabled=false;
 };
 </script>
