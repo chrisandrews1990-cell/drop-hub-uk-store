@@ -1,5 +1,5 @@
 import { CATALOG } from "./catalog.mjs";
-import { getCJVariantBySku } from "./cj.mjs";
+import { resolveCJVariant } from "./cj.mjs";
 
 export default async (request) => {
   if (request.method !== "GET") return new Response("Method not allowed", { status: 405 });
@@ -14,21 +14,30 @@ export default async (request) => {
   }
 
   try {
-    const variant = await getCJVariantBySku(product.cjVariantSku);
-    if (!variant?.vid) throw new Error("Variant not found.");
+    const resolved = await resolveCJVariant(product.cjVariantSku);
+    const v = resolved.variant;
 
     return Response.json({
       configured:true,
       ok:true,
       id,
       name:product.name,
-      variantSku:product.cjVariantSku,
-      variantNameEn:variant.variantNameEn,
-      variantKey:variant.variantKey,
-      variantSellPrice:variant.variantSellPrice,
-      vid:variant.vid
+      pid:resolved.pid,
+      productSku:resolved.productSku,
+      variantSku:v.variantSku,
+      variantNameEn:v.variantNameEn,
+      variantKey:v.variantKey,
+      variantSellPrice:v.variantSellPrice,
+      vid:v.vid
     });
   } catch(error) {
-    return Response.json({configured:true,ok:false,id,name:product.name,variantSku:product.cjVariantSku,error:error.message},{status:404});
+    return Response.json({
+      configured:true,
+      ok:false,
+      id,
+      name:product.name,
+      variantSku:product.cjVariantSku,
+      error:error.message
+    },{status:404});
   }
 };
