@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CJ Fulfilment Setup | DropHub UK</title>
+  <style>
+    body{font-family:system-ui,-apple-system,sans-serif;background:#f6f7fb;color:#111827;margin:0;padding:30px}
+    main{max-width:1100px;margin:auto}
+    h1{margin-top:0}
+    button{background:#111827;color:#fff;border:0;border-radius:12px;padding:14px 18px;font-weight:800;cursor:pointer}
+    .note{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin:18px 0}
+    .item{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;margin:12px 0}
+    .ok{border-left:6px solid #16a34a}.bad{border-left:6px solid #dc2626}.working{border-left:6px solid #f59e0b}
+    pre{white-space:pre-wrap;word-break:break-word;background:#0f172a;color:#e5e7eb;padding:14px;border-radius:12px;overflow:auto}
+  </style>
+</head>
+<body>
+<main>
+  <h1>CJ Product Mapping Check</h1>
+  <p class="note">Internal setup page. It checks one product at a time and waits between requests so CJ's 1-request-per-second limit is respected.</p>
+  <button id="run">Run CJ checks</button>
+  <div id="status"></div>
+</main>
+<script>
+const ids=[1,2,3,4,5,6,7,8];
+const status=document.getElementById('status');
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+function render(id,data,state){
+  let el=document.getElementById('p'+id);
+  if(!el){
+    el=document.createElement('section');
+    el.id='p'+id;
+    status.appendChild(el);
+  }
+  el.className='item '+state;
+  el.innerHTML='<strong>Product '+id+(data?.name?' — '+data.name:'')+'</strong><pre>'+escapeHtml(JSON.stringify(data,null,2))+'</pre>';
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+
+document.getElementById('run').onclick=async()=>{
+  document.getElementById('run').disabled=true;
+  for(const id of ids){
+    render(id,{message:'Checking CJ…'},'working');
+    try{
+      const r=await fetch('/api/cj-catalog-check?id='+id,{cache:'no-store'});
+      const data=await r.json();
+      render(id,data,r.ok&&!data.error?'ok':'bad');
+    }catch(e){
+      render(id,{error:e.message},'bad');
+    }
+    await sleep(6500);
+  }
+  document.getElementById('run').disabled=false;
+};
+</script>
+</body>
+</html>
