@@ -1,8 +1,16 @@
 import { CATALOG, isFulfillmentReady } from "./catalog.mjs";
 import { paypalRequest } from "./paypal.mjs";
 
+const STORE_LIVE = false;
+
 export default async (request) => {
   if (request.method !== "POST") return new Response("Method not allowed", { status: 405 });
+
+  if (!STORE_LIVE) {
+    return Response.json({
+      error: "Checkout is temporarily paused while final delivery checks are completed."
+    }, { status: 503 });
+  }
 
   try {
     const { items = [] } = await request.json();
@@ -23,9 +31,7 @@ export default async (request) => {
       if (!product) return Response.json({ error: "Unknown product in cart." }, { status: 400 });
 
       if (!isFulfillmentReady(product)) {
-        return Response.json({
-          error: `${product.name} is not available for automatic fulfilment yet.`
-        }, { status: 409 });
+        return Response.json({ error: `${product.name} is not available for automatic fulfilment yet.` }, { status: 409 });
       }
 
       total += product.price * qty;
