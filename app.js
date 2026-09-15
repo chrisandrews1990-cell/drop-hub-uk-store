@@ -8,7 +8,7 @@ const overlay=document.getElementById('overlay');
 const cartItems=document.getElementById('cartItems');
 const cartCount=document.getElementById('cartCount');
 const cartTotal=document.getElementById('cartTotal');
-const checkoutBtn=document.getElementById('checkoutBtn');
+const checkoutMessage=document.getElementById('checkoutMessage');
 
 let cart=JSON.parse(localStorage.getItem('drophub_cart')||'[]');
 
@@ -42,18 +42,10 @@ function renderProducts(){
       <p>${p.description}</p>
       <div class="price-row">
         <span class="price">${money(p.price)}</span>
-        ${p.paypalId
-          ? `<paypal-add-to-cart-button data-id="${p.paypalId}"></paypal-add-to-cart-button>`
-          : `<button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>`}
+        <button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>
       </div>
     </div>
   </article>`).join('')||'<p>No products found.</p>';
-
-  if(window.cartPaypal){
-    items.filter(p=>p.paypalId).forEach(p=>{
-      try{ cartPaypal.AddToCart({id:p.paypalId}); }catch(e){}
-    });
-  }
 }
 
 function initCategories(){
@@ -99,14 +91,81 @@ function shutCart(){
   drawer.setAttribute('aria-hidden','true');
 }
 
+function cartForServer(){
+  return cart.map(item=>({id:item.id,qty:item.qty}));
+}
+
+function showCheckoutMessage(message,isError=false){
+  checkoutMessage.textContent=message;
+  checkoutMessage.className='checkout-message '+(isError?'error':'success');
+}
+
 cartBtn.onclick=openCart;
 closeCart.onclick=shutCart;
 overlay.onclick=shutCart;
 search.oninput=renderProducts;
 filter.onchange=renderProducts;
-checkoutBtn.onclick=()=>alert('Some products are already connected to PayPal. The remaining product buttons are still being added.');
 document.getElementById('year').textContent=new Date().getFullYear();
 
 initCategories();
 renderProducts();
 renderCart();
+
+if(window.paypal){
+  paypal.Buttons({
+    style:{
+      layout:'vertical',
+      shape:'rect',
+      label:'paypal'
+    },
+    async createOrder(){
+      if(!cart.length){
+        showCheckoutMessage('Your cart is empty.',true);
+        throw new Error('Cart is empty');
+      }
+
+      const response=await fetch('/api/create-order',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({items:cartForServer()})
+      });
+
+      const data=await response.json();
+      if(!response.ok||!data.id){
+        showCheckoutMessage(data.error||'Unable to start checkout.',true);
+        throw new Error(data.error||'Unable to create PayPal order');
+      }
+
+      return data.id;
+    },
+    async onApprove(data){
+      showCheckoutMessage('Completing your payment…');
+      const response=await fetch('/api/capture-order',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({orderID:data.orderID})
+      });
+
+      const result=await response.json();
+      if(!response.ok||result.status!=='COMPLETED'){
+        showCheckoutMessage(result.error||'Payment could not be completed.',true);
+        return;
+      }
+
+      cart=[];
+      save();
+      showCheckoutMessage('Payment completed. Thank you for your order.');
+    },
+    onCancel(){
+      showCheckoutMessage('Checkout was cancelled.');
+    },
+    onError(err){
+      console.error(err);
+      if(location.hostname.endsWith('github.io')){
+        showCheckoutMessage('Secure checkout is being moved to the live payment host. Please try again when the new shop address is active.',true);
+      }else{
+        showCheckoutMessage('PayPal checkout could not be started. Please try again.',true);
+      }
+    }
+  }).render('#paypal-button-container');
+}
