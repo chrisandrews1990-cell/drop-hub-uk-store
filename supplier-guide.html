@@ -1,1 +1,39 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Supplier Setup | DropHub UK</title><link rel="stylesheet" href="styles.css"></head><body><header class="topbar"><div class="brand"><span class="brand-mark">D</span><div><strong>DropHub UK</strong><small>Everyday finds, delivered</small></div></div><nav><a href="index.html">Back to shop</a></nav></header><main class="legal"><h1>Supplier setup</h1><p>This free starter store keeps supplier connections separate so you can avoid paying for automation until you need it.</p><h2>Suggested workflow</h2><ol><li>Choose a supplier and product.</li><li>Copy the product title, images, cost, variants and supplier URL.</li><li>Add your selling price and delivery estimate.</li><li>Edit <code>products.js</code> to add the product to the store.</li><li>When an order arrives, place the supplier order using the customer's delivery details.</li></ol><h2>Automation later</h2><p>If you later use Shopify or another paid ecommerce platform, supplier apps can automate product imports, stock syncing and fulfilment. This free static version is designed to keep your monthly website cost at £0.</p></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Supplier Operations | DropHub UK</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="legal">
+    <h1>DropHub UK supplier operations</h1>
+    <p>This page is an internal reference for sourcing and fulfilment. The public shop does not link to it.</p>
+
+    <h2>Approved live sources</h2>
+    <p><strong>CJdropshipping:</strong> current core catalogue source. Product pages, SKUs and supplier links are stored in products.js for fulfilment reference.</p>
+    <p><strong>Spocket:</strong> additional verified dropshipping marketplace source. Public product pages are used only where product details and supplier listings can be verified.</p>
+
+    <h2>Approved expansion sources</h2>
+    <p><strong>Avasam:</strong> UK-focused dropshipping marketplace with verified suppliers and automated order/payment workflows. Requires an Avasam account before catalogue and order automation can be connected.</p>
+    <p><strong>Syncee:</strong> dropshipping marketplace with verified supplier network, product importing, order sync and supplier payment workflows. Requires account connection for wholesale pricing and fulfilment.</p>
+    <p><strong>Zendrop:</strong> dropshipping platform with product sourcing and direct-to-customer fulfilment. Requires a connected Zendrop account for live catalogue/order sync.</p>
+    <p><strong>AutoDS:</strong> dropshipping automation and marketplace platform. Requires a supported store/account connection before automated imports and fulfilment can be used.</p>
+
+    <h2>Rules for adding products</h2>
+    <ol>
+      <li>Only source from a platform or supplier that explicitly supports dropshipping/resale.</li>
+      <li>Verify the supplier product page, description, variants and images before publishing.</li>
+      <li>Confirm current shipping cost and delivery time before enabling live checkout for that product.</li>
+      <li>Keep the supplier URL and supplier SKU in the product record for fulfilment.</li>
+      <li>Do not list restricted, unsafe or regulated products.</li>
+    </ol>
+
+    <h2>Payment and fulfilment</h2>
+    <p>Customer checkout is intended to use PayPal Business. Supplier payment/fulfilment automation is separate and depends on the connected supplier platform. A customer payment should be confirmed before a supplier order is released.</p>
+
+    <p><a href="index.html">Return to shop</a></p>
+  </main>
+</body>
+</html>
