@@ -64,7 +64,7 @@ const PRODUCTS = [
     description:"USB rechargeable nail grinder designed for gentle pet nail care across different pet sizes.",
     supplier:"CJdropshipping",
     supplierUrl:"https://www.cjdropshipping.com/product/rechargeable-usb-pet-automatic-dog-nail-grinder-animal-clipper-p-C0175213-1A1D-4688-BC1D-179F5D5B1702.html",
-    supplierSku:"CJJJCWGY03580-Black set-USB"
+    supplierSku:"CJJJCWGY03580-Black set-USB",\n    fulfillmentReady:true
   },
   {
     id:7,
