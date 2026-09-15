@@ -42,10 +42,18 @@ function renderProducts(){
       <p>${p.description}</p>
       <div class="price-row">
         <span class="price">${money(p.price)}</span>
-        <button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>
+        ${p.paypalId
+          ? `<paypal-add-to-cart-button data-id="${p.paypalId}"></paypal-add-to-cart-button>`
+          : `<button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>`}
       </div>
     </div>
   </article>`).join('')||'<p>No products found.</p>';
+
+  if(window.cartPaypal){
+    items.filter(p=>p.paypalId).forEach(p=>{
+      try{ cartPaypal.AddToCart({id:p.paypalId}); }catch(e){}
+    });
+  }
 }
 
 function initCategories(){
@@ -96,7 +104,7 @@ closeCart.onclick=shutCart;
 overlay.onclick=shutCart;
 search.oninput=renderProducts;
 filter.onchange=renderProducts;
-checkoutBtn.onclick=()=>alert('Checkout is almost ready. PayPal Business needs to be connected before live customer payments can be accepted.');
+checkoutBtn.onclick=()=>alert('Some products are already connected to PayPal. The remaining product buttons are still being added.');
 document.getElementById('year').textContent=new Date().getFullYear();
 
 initCategories();
