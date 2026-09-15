@@ -1,5 +1,5 @@
 const CJ_BASE = "https://developers.cjdropshipping.com/api2.0/v1";
-const MIN_INTERVAL_MS = 1150;
+const MIN_INTERVAL_MS = 1800;
 
 let cachedAccessToken = null;
 let tokenFetchedAt = 0;
@@ -21,9 +21,7 @@ async function rawCJFetch(path, options = {}) {
 }
 
 export async function getCJAccessToken() {
-  if (cachedAccessToken && Date.now() - tokenFetchedAt < 23 * 60 * 60 * 1000) {
-    return cachedAccessToken;
-  }
+  if (cachedAccessToken && Date.now() - tokenFetchedAt < 23 * 60 * 60 * 1000) return cachedAccessToken;
 
   const apiKey = process.env.CJ_API_KEY;
   if (!apiKey) throw new Error("CJ_API_KEY is not configured.");
@@ -46,7 +44,6 @@ export async function getCJAccessToken() {
 
 export async function cjRequest(path, options = {}) {
   const token = await getCJAccessToken();
-
   const response = await rawCJFetch(path, {
     ...options,
     headers: {
@@ -63,10 +60,14 @@ export async function cjRequest(path, options = {}) {
   return data;
 }
 
-export async function findCJProducts(keyword) {
-  const data = await cjRequest(`/product/listV2?page=1&size=10&keyWord=${encodeURIComponent(keyword)}`);
-  const raw = data?.data;
-  return raw?.content || raw?.list || [];
+export async function getCJProductByPid(pid) {
+  const data = await cjRequest(`/product/query?pid=${encodeURIComponent(pid)}`);
+  return data?.data || null;
+}
+
+export async function getCJProductBySku(productSku) {
+  const data = await cjRequest(`/product/query?productSku=${encodeURIComponent(productSku)}`);
+  return data?.data || null;
 }
 
 export async function getCJVariantsByProductSku(productSku) {
