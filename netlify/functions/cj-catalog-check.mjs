@@ -1,5 +1,5 @@
 import { CATALOG } from "./catalog.mjs";
-import { getCJProductBySku } from "./cj.mjs";
+import { getCJVariantsByProductSku } from "./cj.mjs";
 
 export default async (request) => {
   if (request.method !== "GET") {
@@ -15,14 +15,13 @@ export default async (request) => {
     for (const [id, product] of Object.entries(CATALOG)) {
       if (product.supplier !== "CJ") continue;
       try {
-        const result = await getCJProductBySku(product.cjProductSku);
-        const data = result?.data || {};
+        const variants = await getCJVariantsByProductSku(product.cjProductSku);
         output.push({
           id: Number(id),
           name: product.name,
           productSku: product.cjProductSku,
           currentVariantSku: product.cjVariantSku,
-          variants: (data.variants || []).map(v => ({
+          variants: variants.map(v => ({
             variantSku: v.variantSku,
             variantNameEn: v.variantNameEn,
             variantKey: v.variantKey,
