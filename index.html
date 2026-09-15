@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">\n  <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="6Y3N7SGRMF9SU"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=BAAGFd5h0BOuejB548fie-nhnUmevcjGuWhscVUWOBYikGhlZm-A7iN-qPb3cgz2iWAEJ4sQ9jg--7jcHI&currency=GBP&components=buttons"></script>
 </head>
 <body>
   <div class="announcement-bar">New products added regularly • Smart everyday finds • UK online store</div>
@@ -21,7 +22,7 @@
       <a href="#shop">Shop</a>
       <a href="#why">Why us</a>
       <a href="#delivery">Delivery</a>
-      <button id="cartBtn" class="cart-btn">Cart <span id="cartCount">0</span></button>\n      <div class="paypal-view-cart"><paypal-cart-button data-id="pp-view-cart"></paypal-cart-button><script>cartPaypal.Cart({ id: "pp-view-cart" })</script></div>
+      <button id="cartBtn" class="cart-btn">Cart <span id="cartCount">0</span></button>
     </nav>
   </header>
 
@@ -35,7 +36,7 @@
           <a class="primary" href="#shop">Shop best sellers</a>
           <a class="secondary" href="#why">Why DropHub?</a>
         </div>
-        <div class="hero-trust"><span>✓ Easy shopping</span><span>✓ Secure checkout ready</span><span>✓ Direct delivery</span></div>
+        <div class="hero-trust"><span>✓ Easy shopping</span><span>✓ Secure PayPal checkout</span><span>✓ Direct delivery</span></div>
       </div>
       <div class="hero-card">
         <span class="mini-badge">TRENDING NOW</span>
@@ -47,7 +48,7 @@
 
     <section class="trust-strip" id="why">
       <div><strong>Curated products</strong><span>Useful products selected from dropshipping catalogues.</span></div>
-      <div><strong>Direct fulfilment</strong><span>Orders are fulfilled by the product supplier.</span></div>
+      <div><strong>Direct fulfilment</strong><span>Orders are fulfilled by the relevant product supplier.</span></div>
       <div><strong>Growing catalogue</strong><span>New products and categories can be added regularly.</span></div>
     </section>
 
@@ -64,11 +65,11 @@
 
     <section class="info-band">
       <div><span class="eyebrow">SIMPLE SHOPPING</span><h2>Choose it. Order it. We handle the rest.</h2></div>
-      <p>Once checkout is live, you place your order through DropHub UK and the fulfilment process sends the order through to the relevant supplier for delivery.</p>
+      <p>Add any products you like to your basket and pay once through PayPal. Your basket is priced securely on the server before PayPal creates the order.</p>
     </section>
 
     <section id="delivery" class="cards-section">
-      <article><div class="icon">🚚</div><h3>Delivery</h3><p>Delivery times vary by product and supplier. Final delivery information is shown or confirmed as the store moves into live checkout.</p></article>
+      <article><div class="icon">🚚</div><h3>Delivery</h3><p>Delivery times vary by product and supplier. Final delivery information will be shown before the store accepts live orders.</p></article>
       <article><div class="icon">↩️</div><h3>Returns</h3><p>Our returns process will be clearly available before live payments are enabled, including how to request help with an order.</p></article>
       <article><div class="icon">💬</div><h3>Support</h3><p>Customer support details will be added alongside live payments so you always know how to reach us.</p></article>
     </section>
@@ -82,7 +83,12 @@
   <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
     <div class="cart-header"><h2>Your cart</h2><button id="closeCart" aria-label="Close cart">×</button></div>
     <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer"><div class="total-row"><span>Total</span><strong id="cartTotal">£0.00</strong></div><button id="checkoutBtn" class="checkout-btn">Continue to checkout</button><small>Checkout will activate after PayPal Business is connected.</small></div>
+    <div class="cart-footer">
+      <div class="total-row"><span>Total</span><strong id="cartTotal">£0.00</strong></div>
+      <div id="paypal-button-container"></div>
+      <div id="checkoutMessage" class="checkout-message"></div>
+      <small>Payments are processed securely by PayPal.</small>
+    </div>
   </aside>
   <div id="overlay" class="overlay"></div>
 
