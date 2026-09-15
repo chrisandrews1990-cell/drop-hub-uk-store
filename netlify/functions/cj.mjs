@@ -33,8 +33,9 @@ export async function cjRequest(path, options = {}) {
   return data;
 }
 
-export async function getCJProductBySku(productSku) {
-  return cjRequest(`/product/query?productSku=${encodeURIComponent(productSku)}`);
+export async function getCJVariantsByProductSku(productSku) {
+  const data = await cjRequest(`/product/variant/query?productSku=${encodeURIComponent(productSku)}`);
+  return Array.isArray(data.data) ? data.data : [];
 }
 
 export async function getCJVariantBySku(variantSku) {
