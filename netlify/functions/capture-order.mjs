@@ -1,6 +1,6 @@
 import { CATALOG } from "./catalog.mjs";
 import { paypalRequest } from "./paypal.mjs";
-import { getCJVariantBySku, getCheapestLogistics, createAndPayCJOrder } from "./cj.mjs";
+import { resolveCJVariant, getCheapestLogistics, createAndPayCJOrder } from "./cj.mjs";
 
 function countryName(code) {
   const names = new Intl.DisplayNames(["en"], { type: "region" });
@@ -50,14 +50,12 @@ export default async (request) => {
     const cjLines = [];
     for (const item of items) {
       const product = Object.values(CATALOG).find(p => p.sku === item.sku);
-      if (!product || product.supplier !== "CJ" || !product.cjVariantSku) {
+      if (!product || product.supplier !== "CJ" || !product.cjVariantSku || !product.fulfillmentReady) {
         throw new Error(`Item is not ready for CJ fulfilment: ${item.sku}`);
       }
 
-      const variant = await getCJVariantBySku(product.cjVariantSku);
-      if (!variant?.vid) throw new Error(`CJ variant not found for ${product.cjVariantSku}`);
-
-      cjLines.push({ vid: variant.vid, quantity: Number(item.quantity) || 1 });
+      const resolved = await resolveCJVariant(product.cjVariantSku);
+      cjLines.push({ vid: resolved.variant.vid, quantity: Number(item.quantity) || 1 });
     }
 
     const logistics = await getCheapestLogistics({
