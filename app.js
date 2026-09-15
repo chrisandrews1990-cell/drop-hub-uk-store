@@ -16,12 +16,13 @@ function save(){localStorage.setItem('drophub_cart',JSON.stringify(cart));render
 function renderProducts(){
   const q=search.value.toLowerCase().trim();
   const c=filter.value;
-  const items=PRODUCTS.filter(p=>(c==='all'||p.category===c)&&p.name.toLowerCase().includes(q));
+  const items=PRODUCTS.filter(p=>(c==='all'||p.category===c)&&(p.name.toLowerCase().includes(q)||p.description.toLowerCase().includes(q)));
   grid.innerHTML=items.map(p=>`<article class="product-card">
     <div class="product-image">${p.emoji}</div>
     <div class="product-body">
       <span class="category">${p.category}</span>
       <h3>${p.name}</h3>
+      <p>${p.description}</p>
       <div class="price-row"><span class="price">${money(p.price)}</span><button class="add-btn" onclick="addToCart(${p.id})">Add</button></div>
     </div>
   </article>`).join('')||'<p>No products found.</p>';
@@ -42,6 +43,6 @@ function openCart(){drawer.classList.add('open');overlay.classList.add('show');d
 function shutCart(){drawer.classList.remove('open');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true')}
 cartBtn.onclick=openCart;closeCart.onclick=shutCart;overlay.onclick=shutCart;
 search.oninput=renderProducts;filter.onchange=renderProducts;
-checkoutBtn.onclick=()=>alert('Checkout is ready to be connected. Add your PayPal, Stripe Payment Link, or another payment provider before taking live orders.');
+checkoutBtn.onclick=()=>alert('Online payment is being connected. Checkout will be activated once the store payment account has been authorised.');
 document.getElementById('year').textContent=new Date().getFullYear();
 initCategories();renderProducts();renderCart();
