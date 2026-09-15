@@ -10,7 +10,8 @@ const cartCount=document.getElementById('cartCount');
 const cartTotal=document.getElementById('cartTotal');
 const checkoutMessage=document.getElementById('checkoutMessage');
 
-let cart=JSON.parse(localStorage.getItem('drophub_cart')||'[]');
+let cart=JSON.parse(localStorage.getItem('drophub_cart')||'[]')
+  .filter(item=>PRODUCTS.find(p=>p.id===item.id)?.fulfillmentReady===true);
 
 function money(v){
   return new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(v);
@@ -36,13 +37,15 @@ function renderProducts(){
     <div class="product-body">
       <div class="product-top">
         <span class="category">${p.category}</span>
-        <span class="source-badge">Direct fulfilment</span>
+        <span class="source-badge">${p.fulfillmentReady ? 'Ready to order' : 'Coming soon'}</span>
       </div>
       <h3>${p.name}</h3>
       <p>${p.description}</p>
       <div class="price-row">
         <span class="price">${money(p.price)}</span>
-        <button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>
+        ${p.fulfillmentReady
+          ? `<button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>`
+          : `<button class="add-btn" disabled style="opacity:.45;cursor:not-allowed">Coming soon</button>`}
       </div>
     </div>
   </article>`).join('')||'<p>No products found.</p>';
@@ -59,6 +62,7 @@ function initCategories(){
 
 function addToCart(id){
   const p=PRODUCTS.find(x=>x.id===id);
+  if(!p?.fulfillmentReady) return;
   const found=cart.find(x=>x.id===id);
   if(found) found.qty++;
   else cart.push({...p,qty:1});
@@ -107,17 +111,13 @@ search.oninput=renderProducts;
 filter.onchange=renderProducts;
 document.getElementById('year').textContent=new Date().getFullYear();
 
+save();
 initCategories();
 renderProducts();
-renderCart();
 
 if(window.paypal){
   paypal.Buttons({
-    style:{
-      layout:'vertical',
-      shape:'rect',
-      label:'paypal'
-    },
+    style:{layout:'vertical',shape:'rect',label:'paypal'},
     async createOrder(){
       if(!cart.length){
         showCheckoutMessage('Your cart is empty.',true);
@@ -135,11 +135,10 @@ if(window.paypal){
         showCheckoutMessage(data.error||'Unable to start checkout.',true);
         throw new Error(data.error||'Unable to create PayPal order');
       }
-
       return data.id;
     },
     async onApprove(data){
-      showCheckoutMessage('Completing your payment…');
+      showCheckoutMessage('Payment approved. Sending your order for fulfilment…');
       const response=await fetch('/api/capture-order',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
@@ -154,18 +153,16 @@ if(window.paypal){
 
       cart=[];
       save();
-      showCheckoutMessage('Payment completed. Thank you for your order.');
+      if(result.fulfillment==='CJ_SUBMITTED'){
+        showCheckoutMessage('Payment completed and your order has been sent for fulfilment.');
+      }else{
+        showCheckoutMessage('Payment completed successfully. Your order is being reviewed for fulfilment.');
+      }
     },
-    onCancel(){
-      showCheckoutMessage('Checkout was cancelled.');
-    },
+    onCancel(){showCheckoutMessage('Checkout was cancelled.');},
     onError(err){
       console.error(err);
-      if(location.hostname.endsWith('github.io')){
-        showCheckoutMessage('Secure checkout is being moved to the live payment host. Please try again when the new shop address is active.',true);
-      }else{
-        showCheckoutMessage('PayPal checkout could not be started. Please try again.',true);
-      }
+      showCheckoutMessage('PayPal checkout could not be started. Please try again.',true);
     }
   }).render('#paypal-button-container');
 }
