@@ -8,7 +8,8 @@ const PRODUCTS = [
     description:"Adjustable magnetic car phone holder with a stable suction base and foldable design.",
     supplier:"CJdropshipping",
     supplierUrl:"https://cjdropshipping.com/product/magnetic-phone-holder-with-vacuum-suction-foldable-adjustable-car-mount-magnetic-bracket-suction-nonslip-for-busy-commuters-p-2501140539421621100.html",
-    supplierSku:"CJYD227014202BY"
+    supplierSku:"CJYD227014202BY",
+    paypalId:"E9ZC96EN69VW8"
   },
   {
     id:2,
