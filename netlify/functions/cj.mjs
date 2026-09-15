@@ -1,24 +1,53 @@
 const CJ_BASE = "https://developers.cjdropshipping.com/api2.0/v1";
+const MIN_INTERVAL_MS = 1150;
+
+let cachedAccessToken = null;
+let tokenFetchedAt = 0;
+let lastCJRequestAt = 0;
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function throttle() {
+  const elapsed = Date.now() - lastCJRequestAt;
+  if (elapsed < MIN_INTERVAL_MS) {
+    await sleep(MIN_INTERVAL_MS - elapsed);
+  }
+  lastCJRequestAt = Date.now();
+}
+
+async function rawCJFetch(path, options = {}) {
+  await throttle();
+  return fetch(`${CJ_BASE}${path}`, options);
+}
 
 export async function getCJAccessToken() {
+  if (cachedAccessToken && Date.now() - tokenFetchedAt < 23 * 60 * 60 * 1000) {
+    return cachedAccessToken;
+  }
+
   const apiKey = process.env.CJ_API_KEY;
   if (!apiKey) throw new Error("CJ_API_KEY is not configured.");
 
-  const response = await fetch(`${CJ_BASE}/authentication/getAccessToken`, {
+  const response = await rawCJFetch("/authentication/getAccessToken", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ apiKey })
   });
+
   const data = await response.json();
   if (!response.ok || !data?.result || !data?.data?.accessToken) {
     throw new Error(`CJ authentication failed: ${data?.message || response.status}`);
   }
-  return data.data.accessToken;
+
+  cachedAccessToken = data.data.accessToken;
+  tokenFetchedAt = Date.now();
+  return cachedAccessToken;
 }
 
 export async function cjRequest(path, options = {}) {
   const token = await getCJAccessToken();
-  const response = await fetch(`${CJ_BASE}${path}`, {
+
+  const response = await rawCJFetch(path, {
     ...options,
     headers: {
       "CJ-Access-Token": token,
@@ -26,11 +55,18 @@ export async function cjRequest(path, options = {}) {
       ...(options.headers || {})
     }
   });
+
   const data = await response.json();
   if (!response.ok || data?.result === false) {
     throw new Error(`CJ request failed: ${data?.message || response.status}`);
   }
   return data;
+}
+
+export async function findCJProducts(keyword) {
+  const data = await cjRequest(`/product/listV2?page=1&size=10&keyWord=${encodeURIComponent(keyword)}`);
+  const raw = data?.data;
+  return raw?.content || raw?.list || [];
 }
 
 export async function getCJVariantsByProductSku(productSku) {
