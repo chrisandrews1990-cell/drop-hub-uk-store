@@ -9,9 +9,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function throttle() {
   const elapsed = Date.now() - lastCJRequestAt;
-  if (elapsed < MIN_INTERVAL_MS) {
-    await sleep(MIN_INTERVAL_MS - elapsed);
-  }
+  if (elapsed < MIN_INTERVAL_MS) await sleep(MIN_INTERVAL_MS - elapsed);
   lastCJRequestAt = Date.now();
 }
 
@@ -60,13 +58,8 @@ export async function cjRequest(path, options = {}) {
   return data;
 }
 
-export async function getCJProductByPid(pid) {
-  const data = await cjRequest(`/product/query?pid=${encodeURIComponent(pid)}`);
-  return data?.data || null;
-}
-
-export async function getCJProductBySku(productSku) {
-  const data = await cjRequest(`/product/query?productSku=${encodeURIComponent(productSku)}`);
+export async function getCJProductByVariantSku(variantSku) {
+  const data = await cjRequest(`/product/query?variantSku=${encodeURIComponent(variantSku)}`);
   return data?.data || null;
 }
 
@@ -75,9 +68,24 @@ export async function getCJVariantsByProductSku(productSku) {
   return Array.isArray(data.data) ? data.data : [];
 }
 
-export async function getCJVariantBySku(variantSku) {
-  const data = await cjRequest(`/product/variant/query?variantSku=${encodeURIComponent(variantSku)}`);
-  return Array.isArray(data.data) ? data.data[0] : data.data;
+export async function resolveCJVariant(variantSku) {
+  const product = await getCJProductByVariantSku(variantSku);
+  if (!product?.productSku) {
+    throw new Error(`CJ product not found for variant SKU ${variantSku}`);
+  }
+
+  const variants = await getCJVariantsByProductSku(product.productSku);
+  const variant = variants.find(v => v.variantSku === variantSku);
+  if (!variant?.vid) {
+    throw new Error(`CJ variant not found for SKU ${variantSku}`);
+  }
+
+  return {
+    productSku: product.productSku,
+    pid: product.pid,
+    productNameEn: product.productNameEn,
+    variant
+  };
 }
 
 export async function getCheapestLogistics({ fromCountryCode = "CN", toCountryCode, zip, products }) {
