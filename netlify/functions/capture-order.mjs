@@ -3,8 +3,12 @@ import { paypalRequest } from "./paypal.mjs";
 import { resolveCJVariant, getCheapestLogistics, createAndPayCJOrder } from "./cj.mjs";
 
 function countryName(code) {
-  const names = new Intl.DisplayNames(["en"], { type: "region" });
-  return names.of(code) || code;
+  try {
+    const names = new Intl.DisplayNames(["en"], { type: "region" });
+    return names.of(code) || code;
+  } catch {
+    return code;
+  }
 }
 
 export default async (request) => {
@@ -15,12 +19,32 @@ export default async (request) => {
     return Response.json({ error: "Missing order ID." }, { status: 400 });
   }
 
-  let payment;
+  let approvedOrder;
+  try {
+    const checkResponse = await paypalRequest(`/v2/checkout/orders/${encodeURIComponent(orderID)}`);
+    approvedOrder = await checkResponse.json();
 
+    if (!checkResponse.ok) {
+      console.error("PayPal order lookup error", approvedOrder);
+      return Response.json({ error: "Unable to verify PayPal order." }, { status: 502 });
+    }
+
+    const country = approvedOrder.purchase_units?.[0]?.shipping?.address?.country_code;
+    if (country !== "GB") {
+      return Response.json({
+        error: "DropHub UK currently delivers to UK addresses only. No payment has been captured."
+      }, { status: 400 });
+    }
+  } catch (error) {
+    console.error("PayPal pre-capture verification exception", error);
+    return Response.json({ error: "Unable to verify delivery address." }, { status: 502 });
+  }
+
+  let payment;
   try {
     const response = await paypalRequest(`/v2/checkout/orders/${encodeURIComponent(orderID)}/capture`, {
       method: "POST",
-      headers: { "PayPal-Request-Id": crypto.randomUUID() }
+      headers: { "PayPal-Request-Id": `drophub-capture-${orderID}` }
     });
 
     payment = await response.json();
@@ -38,12 +62,15 @@ export default async (request) => {
   }
 
   try {
-    const unit = payment.purchase_units?.[0];
-    const shipping = unit?.shipping;
+    const unit = payment.purchase_units?.[0] || approvedOrder.purchase_units?.[0];
+    const shipping = unit?.shipping || approvedOrder.purchase_units?.[0]?.shipping;
     const address = shipping?.address;
-    const items = unit?.items || [];
+    const items = unit?.items || approvedOrder.purchase_units?.[0]?.items || [];
 
-    if (!shipping?.name?.full_name || !address?.country_code || !address?.address_line_1 || !address?.admin_area_2 || !address?.admin_area_1) {
+    const city = address?.admin_area_2 || address?.admin_area_1;
+    const province = address?.admin_area_1 || address?.admin_area_2;
+
+    if (!shipping?.name?.full_name || !address?.country_code || !address?.address_line_1 || !city || !province) {
       throw new Error("Shipping address was incomplete.");
     }
 
@@ -60,7 +87,7 @@ export default async (request) => {
 
     const logistics = await getCheapestLogistics({
       fromCountryCode: "CN",
-      toCountryCode: address.country_code,
+      toCountryCode: "GB",
       zip: address.postal_code,
       products: cjLines
     });
@@ -68,16 +95,16 @@ export default async (request) => {
     const cjOrder = await createAndPayCJOrder({
       orderNumber: `PP-${payment.id}`,
       shippingZip: address.postal_code || "",
-      shippingCountryCode: address.country_code,
-      shippingCountry: countryName(address.country_code),
-      shippingProvince: address.admin_area_1,
-      shippingCity: address.admin_area_2,
+      shippingCountryCode: "GB",
+      shippingCountry: countryName("GB"),
+      shippingProvince: province,
+      shippingCity: city,
       shippingCounty: "",
       shippingPhone: "",
       shippingCustomerName: shipping.name.full_name,
       shippingAddress: address.address_line_1,
       shippingAddress2: address.address_line_2 || "",
-      email: payment.payer?.email_address || "",
+      email: payment.payer?.email_address || approvedOrder.payer?.email_address || "",
       remark: `PayPal order ${payment.id}`,
       logisticName: logistics.logisticName,
       fromCountryCode: "CN",
