@@ -3,6 +3,8 @@ import { CATALOG, isFulfillmentReady } from "./catalog.mjs";
 import { resolveCJVariant, getCheapestLogistics, getCJBalance } from "./cj.mjs";
 
 const BUFFERED_USD_TO_GBP = 0.80;
+const MIN_PRODUCT_PROFIT_GBP = 6;
+const MIN_PRODUCT_MARGIN_RATE = 0.50;
 const QUOTE_TTL_MS = 10 * 60 * 1000;
 
 function ceilMoney(value) {
@@ -72,6 +74,15 @@ export default async (request) => {
       const supplierUnit=Number(resolved.variant.variantSellPrice||0);
       if(!resolved.variant.vid||!Number.isFinite(supplierUnit)||supplierUnit<=0){
         throw new Error("CJ returned invalid product data.");
+      }
+
+      const supplierUnitGbp=supplierUnit*BUFFERED_USD_TO_GBP;
+      const unitProfitGbp=product.price-supplierUnitGbp;
+      const unitMargin=unitProfitGbp/product.price;
+      if(unitProfitGbp<MIN_PRODUCT_PROFIT_GBP||unitMargin<MIN_PRODUCT_MARGIN_RATE){
+        return Response.json({
+          error:`${product.name} is temporarily unavailable while its supplier cost is reviewed.`
+        },{status:409});
       }
 
       cjLines.push({vid:resolved.variant.vid,quantity:line.qty});
