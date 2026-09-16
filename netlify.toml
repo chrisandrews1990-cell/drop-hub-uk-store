@@ -3,6 +3,11 @@
   functions = "netlify/functions"
 
 [[redirects]]
+  from = "/api/checkout-quote"
+  to = "/.netlify/functions/checkout-quote"
+  status = 200
+
+[[redirects]]
   from = "/api/create-order"
   to = "/.netlify/functions/create-order"
   status = 200
