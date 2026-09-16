@@ -70,15 +70,11 @@ export async function getCJVariantsByProductSku(productSku) {
 
 export async function resolveCJVariant(variantSku) {
   const product = await getCJProductByVariantSku(variantSku);
-  if (!product?.productSku) {
-    throw new Error(`CJ product not found for variant SKU ${variantSku}`);
-  }
+  if (!product?.productSku) throw new Error(`CJ product not found for variant SKU ${variantSku}`);
 
   const variants = await getCJVariantsByProductSku(product.productSku);
   const variant = variants.find(v => v.variantSku === variantSku);
-  if (!variant?.vid) {
-    throw new Error(`CJ variant not found for SKU ${variantSku}`);
-  }
+  if (!variant?.vid) throw new Error(`CJ variant not found for SKU ${variantSku}`);
 
   return {
     productSku: product.productSku,
@@ -86,6 +82,11 @@ export async function resolveCJVariant(variantSku) {
     productNameEn: product.productNameEn,
     variant
   };
+}
+
+export async function getCJBalance() {
+  const data = await cjRequest("/shopping/pay/getBalance");
+  return Number(data?.data?.amount || 0);
 }
 
 export async function getCheapestLogistics({ fromCountryCode = "CN", toCountryCode, zip, products }) {
@@ -104,7 +105,11 @@ export async function getCheapestLogistics({ fromCountryCode = "CN", toCountryCo
 
   return options
     .filter(x => x?.logisticName && Number.isFinite(Number(x?.logisticPrice)))
-    .sort((a,b) => Number(a.logisticPrice) - Number(b.logisticPrice))[0];
+    .sort((a,b) => {
+      const aTotal = Number(a.totalPostageFee ?? a.logisticPrice);
+      const bTotal = Number(b.totalPostageFee ?? b.logisticPrice);
+      return aTotal - bTotal;
+    })[0];
 }
 
 export async function createAndPayCJOrder(payload) {
