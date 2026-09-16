@@ -138,7 +138,7 @@ if(window.paypal){
       return data.id;
     },
     async onApprove(data){
-      showCheckoutMessage('Payment approved. Sending your order for fulfilment…');
+      showCheckoutMessage('Payment approved. Verifying UK delivery and sending your order for fulfilment…');
       const response=await fetch('/api/capture-order',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
@@ -162,7 +162,7 @@ if(window.paypal){
     onCancel(){showCheckoutMessage('Checkout was cancelled.');},
     onError(err){
       console.error(err);
-      showCheckoutMessage('PayPal checkout could not be started. Please try again.',true);
+      showCheckoutMessage('Checkout could not be started. Check the message above or try again shortly.',true);
     }
   }).render('#paypal-button-container');
 }
