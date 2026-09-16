@@ -1,6 +1,8 @@
 const grid=document.getElementById('productGrid');
 const search=document.getElementById('searchBox');
 const filter=document.getElementById('categoryFilter');
+const availabilityFilter=document.getElementById('availabilityFilter');
+const catalogueSummary=document.getElementById('catalogueSummary');
 const cartBtn=document.getElementById('cartBtn');
 const closeCart=document.getElementById('closeCart');
 const drawer=document.getElementById('cartDrawer');
@@ -131,17 +133,22 @@ function save(){
 function renderProducts(){
   const q=search.value.toLowerCase().trim();
   const c=filter.value;
+  const availability=availabilityFilter?.value||'all';
   const items=PRODUCTS.filter(p=>{
     const haystack=(p.name+' '+p.description+' '+p.category).toLowerCase();
-    return (c==='all'||p.category===c)&&haystack.includes(q);
+    const categoryMatch=(c==='all'||p.category===c);
+    const availabilityMatch=availability==='all'||(availability==='ready'&&p.fulfillmentReady)||(availability==='coming'&&!p.fulfillmentReady);
+    return categoryMatch&&availabilityMatch&&haystack.includes(q);
   });
 
   grid.innerHTML=items.map(p=>{
+    const fallback='<div class="image-fallback"><span>Product image updating</span><strong>'+p.name+'</strong></div>';
     const visual=p.image
-      ? '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy" onerror="this.style.display=\'none\';this.parentElement.innerHTML=\'<div style=&quot;display:grid;place-items:center;height:100%;font-size:54px;background:linear-gradient(135deg,#f8fafc,#eef2ff)&quot;>'+ (p.emoji||'🛍️') +'</div>\';">'
-      : '<div style="display:grid;place-items:center;height:100%;font-size:54px;background:linear-gradient(135deg,#f8fafc,#eef2ff)">'+(p.emoji||'🛍️')+'</div>';
+      ? '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentElement.innerHTML=\''+fallback.replace(/'/g,"\\'")+'\';">'
+      : fallback;
 
     const badge=p.fulfillmentReady?'Ready to order':'Coming soon';
+    const priceLabel=p.fulfillmentReady?'':'<span class="planned-price-label">Planned price</span>';
     const button=p.fulfillmentReady
       ? '<button class="add-btn" onclick="addToCart('+p.id+')">Add to cart</button>'
       : '<button class="add-btn" disabled style="opacity:.55;cursor:not-allowed">Coming soon</button>';
@@ -156,7 +163,7 @@ function renderProducts(){
         '<h3>'+p.name+'</h3>'+
         '<p>'+p.description+'</p>'+
         '<div class="price-row">'+
-          '<span class="price">'+money(p.price)+'</span>'+
+          '<div class="price-wrap">'+priceLabel+'<span class="price">'+money(p.price)+'</span></div>'+
           button+
         '</div>'+
       '</div>'+
@@ -210,6 +217,7 @@ closeCart.onclick=shutCart;
 overlay.onclick=shutCart;
 search.oninput=renderProducts;
 filter.onchange=renderProducts;
+if(availabilityFilter)availabilityFilter.onchange=renderProducts;
 document.getElementById('year').textContent=new Date().getFullYear();
 
 const urlParams=new URLSearchParams(window.location.search);
@@ -223,5 +231,9 @@ if(urlParams.get('checkout')==='cancelled'){
 
 renderCart();
 initCategories();
+if(catalogueSummary){
+  const ready=PRODUCTS.filter(p=>p.fulfillmentReady).length;
+  catalogueSummary.textContent=`${PRODUCTS.length} products in the catalogue • ${ready} ready to order • ${PRODUCTS.length-ready} coming soon`;
+}
 renderProducts();
 prepareCheckout();
