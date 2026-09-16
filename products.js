@@ -251,7 +251,9 @@ const PRODUCTS = [
     "image": "https://i5.walmartimages.com/asr/8df36d1a-fe31-4394-a5f4-d07b7149546f.2f634778be2c797cf25738f5aa01af3f.jpeg?odnBg=FFFFFF&odnHeight=2000&odnWidth=2000",
     "emoji": "🧷",
     "description": "Reusable ties for organising charging cables and desk wires.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "No clean CJ listing found for reusable hook-and-loop cable ties."
   },
   {
     "id": 19,
@@ -261,7 +263,15 @@ const PRODUCTS = [
     "image": "https://img.joomcdn.net/6c89682b8c8e9b6bc4089013d73b8dcafa48a008_original.jpeg",
     "emoji": "🍟",
     "description": "Reusable silicone liner designed to make air fryer cleanup easier.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/air-fryer-silicone-pot-replacement-of-parchment-paper-liners-no-more-cleaning-basket-after-using-the-air-fryer-food-safe-air-fryers-oven-accessories-p-1435061247828692992.html",
+    "supplierSku": "CJJT127784001AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      3.93,
+      5.43
+    ]
   },
   {
     "id": 20,
@@ -271,7 +281,15 @@ const PRODUCTS = [
     "image": "https://image.cdn.shpy.in/371084/SKU-8108_0-1755611834756.jpg?format=webp&width=600",
     "emoji": "🫙",
     "description": "Refillable fine-mist oil bottle for cooking and salads.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/2-in-1-oil-sprayer-bottle-bbq-cooking-oil-dispenser-olive-oil-pourers-sprayer-kitchen-baking-oil-mister-vinegar-bottle-p-1715574082122551296.html",
+    "supplierSku": "CJYD187611401AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      3.01,
+      5.66
+    ]
   },
   {
     "id": 21,
@@ -281,7 +299,9 @@ const PRODUCTS = [
     "image": "https://images-cdn.ubuy.co.in/65281e3112071603d93f7f41-homgen-12pcs-stainless-steel-magnetic.jpg",
     "emoji": "🧂",
     "description": "Space-saving spice containers with magnetic backing.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ has magnetic seasoning racks and spice jars, but no clean match for the current Magnetic Spice Jars listing."
   },
   {
     "id": 22,
@@ -291,7 +311,15 @@ const PRODUCTS = [
     "image": "https://i5.walmartimages.com/asr/6d2592c9-8a1e-45a9-9004-146a35a2eba0.fc4f126d074eb5f7cf53b79d044bf6af.jpeg?odnBg=FFFFFF&odnHeight=768&odnWidth=768",
     "emoji": "🚰",
     "description": "Flexible sink strainer for catching food scraps and debris.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/sink-drain-strainer-hair-catchers-rubber-shower-bathtub-floor-filter-water-stopper-silicone-bathroom-kitchen-deodorant-plug-p-1382324639715430400.html",
+    "supplierSku": "CJYS108057501AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      0.52,
+      2.72
+    ]
   },
   {
     "id": 23,
@@ -301,7 +329,15 @@ const PRODUCTS = [
     "image": "https://tm-prd-cdn.themarket.co.nz/resizer/view?b=productimages&h=1080&key=740783a859ab1e263eac67d7c6fb8ca6&w=1080",
     "emoji": "🥪",
     "description": "Reusable storage bags for snacks, lunches and food prep.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/silicone-fresh-keeping-bag-vacuum-sealed-bag-food--storage-bag-refrigerator-food-fruit-storage-bag-p-3F459E7B-ECA7-4DE5-86BB-B76413905F0C.html",
+    "supplierSku": "CJJJJTCF00348-Blue-500ml",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      1.3,
+      8.35
+    ]
   },
   {
     "id": 24,
@@ -311,7 +347,12 @@ const PRODUCTS = [
     "image": "https://www.bigw.com.au/medias/sys_master/images/images/h69/hca/120105267691550.jpg",
     "emoji": "☕",
     "description": "Compact handheld frother for coffee, hot chocolate and shakes.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/modern-minimalist-handheld-electric-milk-powder-stirrer-p-2408020406281627600.html",
+    "supplierSku": "CJYD209951701AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 1.24
   },
   {
     "id": 25,
@@ -321,7 +362,12 @@ const PRODUCTS = [
     "image": "https://i5.walmartimages.com/asr/24f7bd1c-2686-4db8-b38b-e27ac6ef7327.9540be5c952c8a8601cfed3cbc5ab769.jpeg?odnBg=FFFFFF&odnHeight=580&odnWidth=580",
     "emoji": "🥕",
     "description": "Compact kitchen chopper for quick everyday food preparation.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/kitchen-hand-operated-multi-functional-vegetable-cutter-rust-resistant-practical-manual-vegetable-slicer-for-home-p-1630393947791044608.html",
+    "supplierSku": "CJJT169443501AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 6.09
   },
   {
     "id": 26,
@@ -331,7 +377,15 @@ const PRODUCTS = [
     "image": "https://st.bigc-cs.com/cdn-cgi/image/format%3Dwebp%2Cquality%3D90/public/media/catalog/product/50/20/2000006206350/2000006206350_3-20240528152152-.jpg",
     "emoji": "🧊",
     "description": "Flexible ice tray designed for quick, easy cube release.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/pp-material-ice-mould-quick-demould-ice-cube-tray-creative-party-bar-kitchen-freezer-cooling-drink-ice-box-silicone-molds-kitchen-gadgets-p-1798951781255487488.html",
+    "supplierSku": "CJYD205527401AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      0.5,
+      1.65
+    ]
   },
   {
     "id": 27,
@@ -341,7 +395,11 @@ const PRODUCTS = [
     "image": "https://image-cdn.ubuy.com/ram-pro-microwave-cover-for-food/400_400_100/697a66d7bca0ac0b940f1646.jpg",
     "emoji": "🍲",
     "description": "Ventilated food cover to help keep microwaves cleaner.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierSku": "CJYD2589002",
+    "supplierMatchStatus": "candidate-needs-exact-variant-sku",
+    "sourcingNote": "CJ identifies a multifunctional microwave splatter cover under this product code, but the public page did not expose a checkout-safe variant SKU."
   },
   {
     "id": 28,
@@ -351,7 +409,9 @@ const PRODUCTS = [
     "image": "https://image.made-in-china.com/318f0j00cERGtTuyFVrk/HK-2066-mp4.webp",
     "emoji": "🍝",
     "description": "Compact clip-on strainer for pasta, vegetables and cooked foods.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "No clean CJ listing found for the current clip-on pot strainer style."
   },
   {
     "id": 29,
@@ -361,7 +421,9 @@ const PRODUCTS = [
     "image": "https://cdn.manomano.com/sofa-organizer-armrest-holder-couch-tray-storage-bag-hanging-storage-armrest-pockets-sofa-organizer-armchair-caddy-for-books-magazine-glasses-tv-remote-control-ipad-dvd-P-41674973-161002332_1.jpg",
     "emoji": "🛋️",
     "description": "Multi-pocket organiser for remotes, phones, magazines and accessories.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ trend results show couch-arm trays, but not a clean match for the current soft sofa armrest organiser."
   },
   {
     "id": 30,
@@ -371,7 +433,16 @@ const PRODUCTS = [
     "image": "https://img.vevorstatic.com/us/CDCWFBWFBWL309XD1001V0/original_img-v1/under-bed-storage-m100-10.jpg?format=webp&timestamp=1751100891000",
     "emoji": "📦",
     "description": "Low-profile storage organiser for bedding, clothes and seasonal items.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/foldable-clothes-storage-bag-large-capacity-organizer-with-handle-and-double-zipper-for-bedding-moving-travel-under-bed-storage-p-2505160457141629100.html",
+    "supplierSku": "CJYD237778201AZ",
+    "supplierMatchStatus": "candidate-duplicate-review",
+    "supplierCostUSDRange": [
+      0.98,
+      5.65
+    ],
+    "sourcingNote": "Good product match, but this is the same CJ family already used by product 7. Decide whether to keep both listings."
   },
   {
     "id": 31,
@@ -381,7 +452,9 @@ const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0761/5771/4658/files/61g3wVQvECL._AC_SX679_PIbundle-5_TopRight_0_0_SH20.jpg?v=1756561222",
     "emoji": "🗄️",
     "description": "Expandable dividers for keeping drawers neat and organised.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ confirms adjustable drawer dividers as a product type, but no checkout-safe variant SKU was found."
   },
   {
     "id": 32,
@@ -391,7 +464,13 @@ const PRODUCTS = [
     "image": "https://www.thursdayliving.com.au/cdn/shop/files/100725-3_07f2c409-a683-4abc-9c1b-a891e6e8be72.jpg?v=1754364230&width=1000",
     "emoji": "🚿",
     "description": "Compact shower organiser for toiletries and bathroom essentials.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/1pc-wall-mounted-bathroom-shelf-shower-caddy-rack-no-punching-triangle-storage-rack-for-bathroom-kitchen-bathroom-accessories-p-1880165726661005314.html",
+    "supplierSku": "CJYS227337901AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 5.8,
+    "sourcingNote": "CJ page also shows an $8.80 free-shipping price; live UK checkout must decide the real landed cost."
   },
   {
     "id": 33,
@@ -401,7 +480,9 @@ const PRODUCTS = [
     "image": "https://ribbi.nl/cdn/shop/files/1200x818_b169770c-a79b-40e6-8a0f-0818f840a464_800x.jpg?v=1720930831",
     "emoji": "👟",
     "description": "Lightweight travel bags for keeping shoes separate inside luggage.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "No clean standalone travel shoe-storage-bag match found without duplicating the packing-cube set."
   },
   {
     "id": 34,
@@ -411,7 +492,13 @@ const PRODUCTS = [
     "image": "https://dreamsleepaustralia.com.au/cdn/shop/files/2_9bd47ec8-9693-4714-a674-6bbfbb436d37_1000x.png?v=1746125237",
     "emoji": "🛏️",
     "description": "Hanging bedside organiser for books, remotes, phones and accessories.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/non-woven-storage-hanging-bag-multi-layer-hanging-type-p-1377611667902435328.html",
+    "supplierSku": "CJGJ106277501AZ",
+    "supplierMatchStatus": "candidate-title-use-review",
+    "supplierCostUSD": 2.79,
+    "sourcingNote": "Hanging storage bag is close to a bedside pocket organiser, but the supplier describes it as a wall/door hanging organiser."
   },
   {
     "id": 35,
@@ -421,7 +508,9 @@ const PRODUCTS = [
     "image": "https://image.made-in-china.com/2f0j00iMBVUDkogTGZ/Houseware-Cleaning-Microfiber-Chenille-Dusting-Slippers.webp",
     "emoji": "🥿",
     "description": "Soft microfibre slippers designed for light floor dusting while walking.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ trend content confirms microfiber cleaning slippers, but no checkout-safe product SKU was found."
   },
   {
     "id": 36,
@@ -431,7 +520,15 @@ const PRODUCTS = [
     "image": "https://f.fcdn.app/imgs/a0a352/www.atrixuy.com/atriuy/de3f/original/catalogo/TBANI300_BLANCO_1/600x600/bebedero-portatil-mascotas-boton-dispensador-agua-viaje-color-variante-blanco.jpg",
     "emoji": "🐕",
     "description": "Portable water bottle for dogs during walks and travel.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/2-in-1-portable-dog-water-bottle-for-small-big-dogs-cat-outdoor-leak-proof-puppy-drinking-bowl-with-food-container-pets-feeder-pet-products-p-2504100230321610200.html",
+    "supplierSku": "CJYD235019202BY",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      2.21,
+      2.77
+    ]
   },
   {
     "id": 37,
@@ -441,7 +538,15 @@ const PRODUCTS = [
     "image": "https://tassukauppa.fi/WebRoot/elisa03/Shops/tassukauppa/63F6/711B/93E2/101E/A583/0A28/1012/16D3/Duvo_Slow_Feeder_ahmimisenestokuppi_koiralle_petrooli_S_LG14292.jpg",
     "emoji": "🥣",
     "description": "Patterned feeding bowl designed to encourage slower eating.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/pet-dog-cat-slow-feeder-bowls-anti-choking-slow-feeder-dish-bowl-home-dog-eating-plate-anti-gulping-bowl-supplies-p-1653041912300969984.html",
+    "supplierSku": "CJGY174846501AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      1.29,
+      2.11
+    ]
   },
   {
     "id": 38,
@@ -451,7 +556,12 @@ const PRODUCTS = [
     "image": "https://cdn.shopify.com/s/files/1/0573/2463/4249/files/self_cleaning_sliker_brush_detail.png?v=1693189057",
     "emoji": "🐈",
     "description": "Grooming brush with an easy-release design for loose pet hair.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/pet-needle-comb-hair-remover-brush-dog-and-cat-pet-comb-self-cleaning-massage-brushes-grooming-supplies-p-2407110256221627600.html",
+    "supplierSku": "CJYD208071305EV",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 1.19
   },
   {
     "id": 39,
@@ -461,7 +571,15 @@ const PRODUCTS = [
     "image": "https://assets.petco.com/petco/image/upload/c_pad%2Cdpr_1.0%2Cf_auto%2Cq_auto%2Ch_636%2Cw_636/c_pad%2Ch_636%2Cw_636/3350102-center-1",
     "emoji": "🚗",
     "description": "Adjustable restraint strap for safer car journeys with pets.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/adjustable-pet-cat-dog-car-seat-belt-pet-seat-vehicle-dog-harness-lead-clip-safety-lever-traction-dog-collars-dogs-accessoires-pets-products-p-1383313727658528768.html",
+    "supplierSku": "CJQC108431101AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      0.52,
+      0.54
+    ]
   },
   {
     "id": 40,
@@ -471,7 +589,9 @@ const PRODUCTS = [
     "image": "https://www.vour.gr/product_application/catalogmanager/assets/images/20220628143618_0.jpg",
     "emoji": "🐾",
     "description": "Portable paw cleaner with soft flexible cleaning bristles.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ confirms the paw-cleaner-cup product type, but no checkout-safe CJ variant SKU was found."
   },
   {
     "id": 41,
@@ -481,7 +601,16 @@ const PRODUCTS = [
     "image": "https://www.tiendanimal.es/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwa326554b/images/large/f17ddac57b0e4d0d8e2f5a954788ee76.jpg?q=85&sh=780&sm=fit&sw=780",
     "emoji": "🦴",
     "description": "Hands-free pouch for treats, waste bags and small training accessories.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/dog-training-leash-waist-bag-hands-free-outdoor-pet-running-walking-leash-portable-dog-food-water-cup-storage-bags-p-1392067844971302912.html",
+    "supplierSku": "CJGY112387101AZ",
+    "supplierMatchStatus": "candidate-variant-review",
+    "supplierCostUSDRange": [
+      3.32,
+      16.75
+    ],
+    "sourcingNote": "The product family includes the treat/storage pouch function, but variant selection changes what the customer receives."
   },
   {
     "id": 42,
@@ -491,7 +620,15 @@ const PRODUCTS = [
     "image": "https://igadgitz.com/cdn/shop/files/b7bb33e7-b339-475d-9bfd-1a75390ff00f_1800x1800.jpg?v=1738923558",
     "emoji": "💄",
     "description": "Multi-compartment makeup bag for holidays and everyday storage.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/travel-cosmetic-bag-large-capacity-multifunction-travel-cosmetic-bag-women-toiletries-organizer-female-storage-make-up-case-tool-p-1546430072087916544.html",
+    "supplierSku": "CJNS152304201AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      1.46,
+      1.58
+    ]
   },
   {
     "id": 43,
@@ -501,7 +638,9 @@ const PRODUCTS = [
     "image": "https://silvercloudbeauty.com/cdn/shop/files/Caramel_Heatess_Curlers_1.jpg?v=1762172441&width=1200",
     "emoji": "🎀",
     "description": "Soft overnight styling set for heat-free curls and waves.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ confirms heatless curling sets as a current product type, but no direct checkout-safe CJ variant SKU was found."
   },
   {
     "id": 44,
@@ -511,7 +650,9 @@ const PRODUCTS = [
     "image": "https://i5.walmartimages.com/asr/dfd91dcc-0d94-4b20-aa2f-d4b46afa13c8.a82d36d0679bdd7b2db95f8606a4f439.jpeg",
     "emoji": "🖌️",
     "description": "Textured silicone pad for cleaning makeup brushes and cosmetic tools.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ confirms silicone makeup-brush cleaning mats as a current product type, but no direct product SKU was found."
   },
   {
     "id": 45,
@@ -521,7 +662,13 @@ const PRODUCTS = [
     "image": "https://satinluxuryline.com/cdn/shop/files/16ASleepmask_recht_van_voren_roze_528d7372-6c08-483f-8d58-5f9b5076919b.jpg?v=1716319412&width=535",
     "emoji": "😴",
     "description": "Soft sleep mask for travel, naps and bedtime routines.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/eye-patch-imitated-silk-eye-patch-shading-sleeping-eye-mask-travel-relax-covers-eye-shade-health-sleeping-shield-eye-care-tools-p-1692297554018447360.html",
+    "supplierSku": "CJYD182485601AZ",
+    "supplierMatchStatus": "candidate-material-title-review",
+    "supplierCostUSD": 0.68,
+    "sourcingNote": "CJ describes this as imitation silk/rayon. Rename the store item to Silky Sleep Mask unless a true satin variant is sourced."
   },
   {
     "id": 46,
@@ -531,7 +678,9 @@ const PRODUCTS = [
     "image": "https://www.valeriemadison.com/cdn/shop/files/WBcleaningpen.jpg?v=1720635615",
     "emoji": "✨",
     "description": "Compact cleaning pen for quick jewellery touch-ups.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "No clean CJ match found for a jewellery-cleaning pen."
   },
   {
     "id": 47,
@@ -541,7 +690,15 @@ const PRODUCTS = [
     "image": "https://5thave-img-cdn.beyondstyle.us/pf/bdacec14-10df-3aa2-955e-4bbebf6416b7.jpg?x-oss-process=style%2Fs1",
     "emoji": "💆",
     "description": "Soft silicone scalp brush for shampooing and massage.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/silicone-shampoo-head-brush-p-EC1FAEF4-5F97-462F-A67C-CDECF93BC026.html",
+    "supplierSku": "CJJJJTJT51194-Pink",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      0.26,
+      8.15
+    ]
   },
   {
     "id": 48,
@@ -551,7 +708,12 @@ const PRODUCTS = [
     "image": "https://images.fyndiq.se/images/f_auto/t_600x600/prod/fdf2e18e548941b2/30bd544ac87b/5-pack-traningsband-gummiband-motstandsband-traningsband-multicolor-multifarg-0bc8718cbb254c57",
     "emoji": "🏋️",
     "description": "Portable resistance bands for home workouts and stretching.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/resistance-loop-exercise-bands-resistance-bands-exercise-bands-for-home-fitness-stretching-strength-training-physical-therapyelastic-workout-bands-for-women-men-kids-set-of-5-p-1809772680481492992.html",
+    "supplierSku": "CJJM207746801AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 10.98
   },
   {
     "id": 49,
@@ -561,7 +723,12 @@ const PRODUCTS = [
     "image": "https://arrowmax.in/cdn/shop/files/4_9da76538-9cfe-4d8e-ad36-bd57cc14dd5f.jpg?v=1758272516",
     "emoji": "🧘",
     "description": "Simple stretching strap for yoga, mobility and flexibility work.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/rehabilitation-lajin-band-yoga-stretch-band-auxiliary-ligament-p-1441219130710691840.html",
+    "supplierSku": "CJJT129735301AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 1.48
   },
   {
     "id": 50,
@@ -571,7 +738,16 @@ const PRODUCTS = [
     "image": "https://m.media-amazon.com/images/I/61kzUOq0L5L._AC_SL1500_.jpg",
     "emoji": "💪",
     "description": "Compact hand and forearm grip trainer with adjustable resistance.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/hand-grip-strengthener-grip-strength-trainer-and-finger-exerciser-silicone-adjustable-hand-grip-20-80lb-gripping-ring-finger-forearm-trainer-carpal-expander-muscle-workout-exercise-p-1659909774420889600.html",
+    "supplierSku": "CJJM1761950-Atrovirens",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      6.6,
+      18.6
+    ],
+    "sourcingNote": "Choose the exact resistance/colour variant before launch because CJ pricing varies widely."
   },
   {
     "id": 51,
@@ -581,7 +757,12 @@ const PRODUCTS = [
     "image": "https://fitletic.com/cdn/shop/products/0003_Blitz-Sports-and-Travel-Belt-Reflective-Black_600x.webp?v=1690219277",
     "emoji": "🏃",
     "description": "Slim waist belt for carrying phones, keys and cards while running.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/ultra-thin-running-waterproof-portable-close-fitting-reflective-sports-phone-waist-bag-p-2407010655361627900.html",
+    "supplierSku": "CJYD207289401AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 2.11
   },
   {
     "id": 52,
@@ -591,7 +772,15 @@ const PRODUCTS = [
     "image": "https://upandgr8.com/cdn/shop/files/9_b2d47f24-0e7c-4fd3-80d8-19040ccbba85.jpg?v=1715168268",
     "emoji": "🧳",
     "description": "Lightweight packing organisers for keeping luggage tidy.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/8-piece-set-luggage-divider-bag-travel-storage-clothes-underwear-shoes-organizer-packing-cube-bag-p-1386852733046362112.html",
+    "supplierSku": "CJNS110086901AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      2.27,
+      4.62
+    ]
   },
   {
     "id": 53,
@@ -601,7 +790,9 @@ const PRODUCTS = [
     "image": "https://www.riemot.com/cdn/shop/products/1_93a0022e-3eac-49c5-b5f2-32ad15613dbf_1080x.jpg?v=1638172601",
     "emoji": "🥤",
     "description": "Strap-on luggage organiser for drinks, phones and small travel items.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ has luggage with built-in cup holders and generic cup holders, but no clean match for the strap-on luggage cup holder listing."
   },
   {
     "id": 54,
@@ -611,7 +802,12 @@ const PRODUCTS = [
     "image": "https://sc3.locondo.jp/contents/commodity_image/RE/RE4112DW06149_1_l.jpg",
     "emoji": "🛂",
     "description": "Compact travel wallet for passports, cards and documents.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/rfid-antimagnetic-passport-holder-leather-id-case-p-1BA30466-381C-44A5-8A86-8A2DFDF29A4C.html",
+    "supplierSku": "CJBHNSNS10068-Black",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 3.35
   },
   {
     "id": 55,
@@ -621,7 +817,15 @@ const PRODUCTS = [
     "image": "https://trunkistore.com/cdn/shop/files/20260105_2039_CarSeatGapFiller_remix_01ke6vsd59e74aymz7xhcd5bhj.png?v=1767609816&width=1024",
     "emoji": "🚙",
     "description": "Slim organiser for phones, keys and small items beside the car seat.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/car-seat-gap-filler-organizer-car-seat-console-organizer-for-keys-phones-and-sunglasses-p-1803978693954916352.html",
+    "supplierSku": "CJQC206507501AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSDRange": [
+      4.34,
+      8.46
+    ]
   },
   {
     "id": 56,
@@ -631,7 +835,9 @@ const PRODUCTS = [
     "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/860f17d68f0744289891ffcd3338ff85~tplv-fhlh96nyum-crop-webp%3A1500%3A1500.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=e1be8f53&shp=8dbd94bf&t=555f072d",
     "emoji": "🧽",
     "description": "Reusable cleaning gel for vents, cup holders and awkward interior gaps.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierMatchStatus": "needs-sourcing-match",
+    "sourcingNote": "CJ confirms car/keyboard cleaning gel as a product type, but no exact checkout-safe gel SKU was found."
   },
   {
     "id": 57,
@@ -641,7 +847,12 @@ const PRODUCTS = [
     "image": "https://zybux.co.uk/cdn/shop/files/7_7398c628-7f62-403b-952b-9cc323d7b562_1445x.png?v=1684848608",
     "emoji": "🗑️",
     "description": "Compact car bin for wrappers, tissues and everyday rubbish.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/car-door-container-trash-can-p-2505210708001621800.html",
+    "supplierSku": "CJYD238181101AZ",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "supplierCostUSD": 2.28
   },
   {
     "id": 58,
@@ -651,8 +862,17 @@ const PRODUCTS = [
     "image": "https://knockaround.com/cdn/shop/products/KA_Hard_Shell_Black_Front.jpg?v=1761056420&width=1024",
     "emoji": "🕶️",
     "description": "Protective glasses case with a compact hard-shell design.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/litchi-sunglasses-case-p-D2520D4F-0058-4148-AF2B-DF7E157539F3.html",
+    "supplierSku": "CJNSFSYJ00303-Black a",
+    "supplierMatchStatus": "candidate-material-title-review",
+    "supplierCostUSDRange": [
+      0.54,
+      6.2
+    ],
+    "sourcingNote": "This is a protective leather sunglasses case, not explicitly a hard-shell case. Rename or source a confirmed hard-shell model."
   }
 ];
 
-// Products marked fulfillmentReady:false remain unavailable for checkout until live UK shipping and supplier validation pass.
+// fulfillmentReady remains false until exact variant, live UK shipping and supplier validation pass.
