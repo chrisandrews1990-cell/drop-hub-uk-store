@@ -2,6 +2,25 @@ import { CATALOG } from "./catalog.mjs";
 import { paypalRequest } from "./paypal.mjs";
 import { resolveCJVariant, getCheapestLogistics, createAndPayCJOrder } from "./cj.mjs";
 
+
+function buildConfirmation(payment, approvedOrder) {
+  const unit = payment.purchase_units?.[0] || approvedOrder.purchase_units?.[0] || {};
+  const items = unit.items || approvedOrder.purchase_units?.[0]?.items || [];
+  const capture = unit.payments?.captures?.[0];
+  const amount = capture?.amount || unit.amount || approvedOrder.purchase_units?.[0]?.amount || null;
+  return {
+    orderId: payment.id || approvedOrder.id || "",
+    items: items.map(item => ({
+      name: item.name || item.sku || "Item",
+      quantity: Number(item.quantity) || 1,
+      unitAmount: item.unit_amount?.value || null,
+      currency: item.unit_amount?.currency_code || amount?.currency_code || "GBP"
+    })),
+    total: amount?.value || null,
+    currency: amount?.currency_code || "GBP"
+  };
+}
+
 function countryName(code) {
   try {
     const names = new Intl.DisplayNames(["en"], { type: "region" });
@@ -117,7 +136,8 @@ export default async (request) => {
       status: "COMPLETED",
       fulfillment: "CJ_SUBMITTED",
       cjOrder,
-      shippingMethod: logistics.logisticName
+      shippingMethod: logistics.logisticName,
+      confirmation: buildConfirmation(payment, approvedOrder)
     });
   } catch (error) {
     console.error("Payment completed but CJ fulfilment requires review", error);
@@ -125,7 +145,8 @@ export default async (request) => {
       id: payment.id,
       status: "COMPLETED",
       fulfillment: "MANUAL_REQUIRED",
-      message: "Payment completed successfully. Supplier fulfilment requires review."
+      message: "Payment completed successfully. Supplier fulfilment requires review.",
+      confirmation: buildConfirmation(payment, approvedOrder)
     });
   }
 };
