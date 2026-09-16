@@ -12,7 +12,8 @@ const PRODUCTS = [
     "supplierSku": "CJYD227014202BY",
     "fulfillmentReady": false,
     "supplierCostUSD": 9.85,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 2,
@@ -25,7 +26,9 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://www.cjdropshipping.com/product/portable-rechargeable-juice-blender-compact-handheld-electric-smoothie-maker-for-travel-office-home-p-2603100340021608800.html",
     "supplierSku": "CJYD278208001AZ",
-    "fulfillmentReady": true
+    "fulfillmentReady": true,
+    "supplierCostUSD": 5.47,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 3,
@@ -38,7 +41,9 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/travel-easy-to-carry-dustproof-portable-jewelry-box-p-2501290753441625000.html",
     "supplierSku": "CJYD228090802BY",
-    "fulfillmentReady": true
+    "fulfillmentReady": true,
+    "supplierCostUSD": 6.8,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 4,
@@ -51,7 +56,12 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/lint-remover-for-clothing-portable-electric-fuzz-pellet-remover-led-display-rechargeable-for-clothes-fabric-shaver-fluff-remover-p-1737785083941105664.html",
     "supplierSku": "CJYD192666301AZ",
-    "fulfillmentReady": true
+    "fulfillmentReady": true,
+    "supplierCostUSDRange": [
+      3.35,
+      4.31
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 5,
@@ -64,7 +74,9 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/cable-organizer-bag-travel-electronic-accessories-carrying-case-for-digital-camera-usb-charger-power-bank-storage-bag-box-p-1380028552015122432.html",
     "supplierSku": "CJJT107047201AZ",
-    "fulfillmentReady": true
+    "fulfillmentReady": true,
+    "supplierCostUSD": 3.95,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 6,
@@ -77,7 +89,12 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://www.cjdropshipping.com/product/rechargeable-usb-pet-automatic-dog-nail-grinder-animal-clipper-p-C0175213-1A1D-4688-BC1D-179F5D5B1702.html",
     "supplierSku": "CJJJCWGY03580-Black set-USB",
-    "fulfillmentReady": true
+    "fulfillmentReady": true,
+    "supplierCostUSDRange": [
+      0.74,
+      10.42
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 7,
@@ -90,7 +107,12 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/foldable-clothes-storage-bag-large-capacity-organizer-with-handle-and-double-zipper-for-bedding-moving-travel-under-bed-storage-p-2505160457141629100.html",
     "supplierSku": "CJYD237778201AZ",
-    "fulfillmentReady": true
+    "fulfillmentReady": true,
+    "supplierCostUSDRange": [
+      0.98,
+      5.65
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 8,
@@ -103,7 +125,12 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/portable-washable-hair-remover-with-adhesive-roller-p-1653949161269637120.html",
     "supplierSku": "CJJT174982701AZ",
-    "fulfillmentReady": true
+    "fulfillmentReady": true,
+    "supplierCostUSDRange": [
+      2.63,
+      4.75
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 9,
@@ -118,7 +145,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/robot-fan-usb-rechargeable-desk-fan-mini-digital-display-table-fan-with-suction-cup-portable-cooling-office-car-travel-p-2605210317481625600.html",
     "supplierSku": "CJJT289858001AZ",
     "supplierCostUSD": 4.7,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 10,
@@ -136,7 +164,8 @@ const PRODUCTS = [
       3.19,
       3.86
     ],
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 11,
@@ -151,7 +180,8 @@ const PRODUCTS = [
     "supplierUrl": "https://www.cjdropshipping.com/product/waterproof-bluetooth-speaker-p-5EA5109E-F6FB-45A3-8556-8B67D9EBA96C.html",
     "supplierSku": "CJXFJTYP00114-Grey",
     "supplierCostUSD": 7.39,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 12,
@@ -166,7 +196,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/portable-11-in-1-multifunctional-cleaning-kit-computer-keyboard-cleaner-phone-screen-clean-tools-earphone-clean-brush-with-storage-box-p-2503061121491606900.html",
     "supplierSku": "CJYD231771001AZ",
     "supplierCostUSD": 1.45,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 13,
@@ -181,7 +212,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/common-for-data-cable-protection-wire-wrapping-p-1577242830689546240.html",
     "supplierSku": "CJSJ157935901AZ",
     "supplierCostUSD": 0.36,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 14,
@@ -196,7 +228,8 @@ const PRODUCTS = [
     "supplierUrl": "https://www.cjdropshipping.com/product/led-sensor-light-body-infrared-sensor-light-led-cabinet-light-p-F91CA00A-6403-435D-8E5A-5555B4D78FFA.html",
     "supplierSku": "CJJZSNSN00255-Recharge 10LED-1pcs",
     "supplierCostUSDFrom": 2.69,
-    "supplierMatchStatus": "matched-awaiting-exact-variant-cost-and-uk-shipping"
+    "supplierMatchStatus": "matched-awaiting-exact-variant-cost-and-uk-shipping",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 15,
@@ -211,7 +244,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/cross-border-hit-digital-bedroom-student-led-electronic-simple-mini-car-plug-in-clock-small-alarm-clock-p-1954842383395475457.html",
     "supplierSku": "CJJT245323701AZ",
     "supplierCostUSD": 4.53,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 16,
@@ -226,7 +260,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/new-laptop-stand-multifunctional-folding-lift-portable-laptop-stand-monitor-increase-rack-aluminum-alloy-base-p-DCB495CC-80F8-4ED9-B5BD-26E39B751776.html",
     "supplierSku": "CJJSBGBG00898-Black-280x280x25.5mm",
     "supplierCostUSD": 11.82,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 17,
@@ -241,7 +276,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/usb-mini-humidifier-large-fog-volume-small-air-hydrating-humidifier-p-1495774597293936640.html",
     "supplierSku": "CJJT142131101AZ",
     "supplierCostUSD": 2.45,
-    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 18,
@@ -253,7 +289,8 @@ const PRODUCTS = [
     "description": "Reusable ties for organising charging cables and desk wires.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean CJ listing found for reusable hook-and-loop cable ties."
+    "sourcingNote": "No clean CJ listing found for reusable hook-and-loop cable ties.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 19,
@@ -271,7 +308,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       3.93,
       5.43
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 20,
@@ -289,7 +327,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       3.01,
       5.66
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 21,
@@ -301,7 +340,8 @@ const PRODUCTS = [
     "description": "Space-saving spice containers with magnetic backing.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ has magnetic seasoning racks and spice jars, but no clean match for the current Magnetic Spice Jars listing."
+    "sourcingNote": "CJ has magnetic seasoning racks and spice jars, but no clean match for the current Magnetic Spice Jars listing.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 22,
@@ -319,7 +359,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       0.52,
       2.72
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 23,
@@ -337,7 +378,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       1.3,
       8.35
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 24,
@@ -352,7 +394,8 @@ const PRODUCTS = [
     "supplierUrl": "https://www.cjdropshipping.com/product/modern-minimalist-handheld-electric-milk-powder-stirrer-p-2408020406281627600.html",
     "supplierSku": "CJYD209951701AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 1.24
+    "supplierCostUSD": 1.24,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 25,
@@ -367,7 +410,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/kitchen-hand-operated-multi-functional-vegetable-cutter-rust-resistant-practical-manual-vegetable-slicer-for-home-p-1630393947791044608.html",
     "supplierSku": "CJJT169443501AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 6.09
+    "supplierCostUSD": 6.09,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 26,
@@ -385,7 +429,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       0.5,
       1.65
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 27,
@@ -399,7 +444,8 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierSku": "CJYD2589002",
     "supplierMatchStatus": "candidate-needs-exact-variant-sku",
-    "sourcingNote": "CJ identifies a multifunctional microwave splatter cover under this product code, but the public page did not expose a checkout-safe variant SKU."
+    "sourcingNote": "CJ identifies a multifunctional microwave splatter cover under this product code, but the public page did not expose a checkout-safe variant SKU.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 28,
@@ -411,7 +457,8 @@ const PRODUCTS = [
     "description": "Compact clip-on strainer for pasta, vegetables and cooked foods.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean CJ listing found for the current clip-on pot strainer style."
+    "sourcingNote": "No clean CJ listing found for the current clip-on pot strainer style.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 29,
@@ -423,7 +470,8 @@ const PRODUCTS = [
     "description": "Multi-pocket organiser for remotes, phones, magazines and accessories.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ trend results show couch-arm trays, but not a clean match for the current soft sofa armrest organiser."
+    "sourcingNote": "CJ trend results show couch-arm trays, but not a clean match for the current soft sofa armrest organiser.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 30,
@@ -442,7 +490,8 @@ const PRODUCTS = [
       0.98,
       5.65
     ],
-    "sourcingNote": "Good product match, but this is the same CJ family already used by product 7. Decide whether to keep both listings."
+    "sourcingNote": "Good product match, but this is the same CJ family already used by product 7. Decide whether to keep both listings.",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 31,
@@ -454,7 +503,8 @@ const PRODUCTS = [
     "description": "Expandable dividers for keeping drawers neat and organised.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms adjustable drawer dividers as a product type, but no checkout-safe variant SKU was found."
+    "sourcingNote": "CJ confirms adjustable drawer dividers as a product type, but no checkout-safe variant SKU was found.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 32,
@@ -470,7 +520,8 @@ const PRODUCTS = [
     "supplierSku": "CJYS227337901AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
     "supplierCostUSD": 5.8,
-    "sourcingNote": "CJ page also shows an $8.80 free-shipping price; live UK checkout must decide the real landed cost."
+    "sourcingNote": "CJ page also shows an $8.80 free-shipping price; live UK checkout must decide the real landed cost.",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 33,
@@ -482,7 +533,8 @@ const PRODUCTS = [
     "description": "Lightweight travel bags for keeping shoes separate inside luggage.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean standalone travel shoe-storage-bag match found without duplicating the packing-cube set."
+    "sourcingNote": "No clean standalone travel shoe-storage-bag match found without duplicating the packing-cube set.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 34,
@@ -498,7 +550,8 @@ const PRODUCTS = [
     "supplierSku": "CJGJ106277501AZ",
     "supplierMatchStatus": "candidate-title-use-review",
     "supplierCostUSD": 2.79,
-    "sourcingNote": "Hanging storage bag is close to a bedside pocket organiser, but the supplier describes it as a wall/door hanging organiser."
+    "sourcingNote": "Hanging storage bag is close to a bedside pocket organiser, but the supplier describes it as a wall/door hanging organiser.",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 35,
@@ -510,7 +563,8 @@ const PRODUCTS = [
     "description": "Soft microfibre slippers designed for light floor dusting while walking.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ trend content confirms microfiber cleaning slippers, but no checkout-safe product SKU was found."
+    "sourcingNote": "CJ trend content confirms microfiber cleaning slippers, but no checkout-safe product SKU was found.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 36,
@@ -528,7 +582,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       2.21,
       2.77
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 37,
@@ -546,7 +601,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       1.29,
       2.11
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 38,
@@ -561,7 +617,8 @@ const PRODUCTS = [
     "supplierUrl": "https://www.cjdropshipping.com/product/pet-needle-comb-hair-remover-brush-dog-and-cat-pet-comb-self-cleaning-massage-brushes-grooming-supplies-p-2407110256221627600.html",
     "supplierSku": "CJYD208071305EV",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 1.19
+    "supplierCostUSD": 1.19,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 39,
@@ -579,7 +636,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       0.52,
       0.54
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 40,
@@ -591,7 +649,8 @@ const PRODUCTS = [
     "description": "Portable paw cleaner with soft flexible cleaning bristles.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms the paw-cleaner-cup product type, but no checkout-safe CJ variant SKU was found."
+    "sourcingNote": "CJ confirms the paw-cleaner-cup product type, but no checkout-safe CJ variant SKU was found.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 41,
@@ -610,7 +669,8 @@ const PRODUCTS = [
       3.32,
       16.75
     ],
-    "sourcingNote": "The product family includes the treat/storage pouch function, but variant selection changes what the customer receives."
+    "sourcingNote": "The product family includes the treat/storage pouch function, but variant selection changes what the customer receives.",
+    "pricingAuditStatus": "review-variant-before-launch"
   },
   {
     "id": 42,
@@ -628,7 +688,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       1.46,
       1.58
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 43,
@@ -640,7 +701,8 @@ const PRODUCTS = [
     "description": "Soft overnight styling set for heat-free curls and waves.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms heatless curling sets as a current product type, but no direct checkout-safe CJ variant SKU was found."
+    "sourcingNote": "CJ confirms heatless curling sets as a current product type, but no direct checkout-safe CJ variant SKU was found.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 44,
@@ -652,7 +714,8 @@ const PRODUCTS = [
     "description": "Textured silicone pad for cleaning makeup brushes and cosmetic tools.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms silicone makeup-brush cleaning mats as a current product type, but no direct product SKU was found."
+    "sourcingNote": "CJ confirms silicone makeup-brush cleaning mats as a current product type, but no direct product SKU was found.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 45,
@@ -668,7 +731,8 @@ const PRODUCTS = [
     "supplierSku": "CJYD182485601AZ",
     "supplierMatchStatus": "candidate-material-title-review",
     "supplierCostUSD": 0.68,
-    "sourcingNote": "CJ describes this as imitation silk/rayon. Rename the store item to Silky Sleep Mask unless a true satin variant is sourced."
+    "sourcingNote": "CJ describes this as imitation silk/rayon. Rename the store item to Silky Sleep Mask unless a true satin variant is sourced.",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 46,
@@ -680,7 +744,8 @@ const PRODUCTS = [
     "description": "Compact cleaning pen for quick jewellery touch-ups.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean CJ match found for a jewellery-cleaning pen."
+    "sourcingNote": "No clean CJ match found for a jewellery-cleaning pen.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 47,
@@ -698,7 +763,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       0.26,
       8.15
-    ]
+    ],
+    "pricingAuditStatus": "review-variant-before-launch"
   },
   {
     "id": 48,
@@ -713,7 +779,8 @@ const PRODUCTS = [
     "supplierUrl": "https://www.cjdropshipping.com/product/resistance-loop-exercise-bands-resistance-bands-exercise-bands-for-home-fitness-stretching-strength-training-physical-therapyelastic-workout-bands-for-women-men-kids-set-of-5-p-1809772680481492992.html",
     "supplierSku": "CJJM207746801AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 10.98
+    "supplierCostUSD": 10.98,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 49,
@@ -728,7 +795,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/rehabilitation-lajin-band-yoga-stretch-band-auxiliary-ligament-p-1441219130710691840.html",
     "supplierSku": "CJJT129735301AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 1.48
+    "supplierCostUSD": 1.48,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 50,
@@ -747,7 +815,8 @@ const PRODUCTS = [
       6.6,
       18.6
     ],
-    "sourcingNote": "Choose the exact resistance/colour variant before launch because CJ pricing varies widely."
+    "sourcingNote": "Choose the exact resistance/colour variant before launch because CJ pricing varies widely.",
+    "pricingAuditStatus": "loss-risk-select-cheaper-variant"
   },
   {
     "id": 51,
@@ -762,7 +831,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/ultra-thin-running-waterproof-portable-close-fitting-reflective-sports-phone-waist-bag-p-2407010655361627900.html",
     "supplierSku": "CJYD207289401AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 2.11
+    "supplierCostUSD": 2.11,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 52,
@@ -780,7 +850,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       2.27,
       4.62
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 53,
@@ -792,7 +863,8 @@ const PRODUCTS = [
     "description": "Strap-on luggage organiser for drinks, phones and small travel items.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ has luggage with built-in cup holders and generic cup holders, but no clean match for the strap-on luggage cup holder listing."
+    "sourcingNote": "CJ has luggage with built-in cup holders and generic cup holders, but no clean match for the strap-on luggage cup holder listing.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 54,
@@ -807,7 +879,8 @@ const PRODUCTS = [
     "supplierUrl": "https://www.cjdropshipping.com/product/rfid-antimagnetic-passport-holder-leather-id-case-p-1BA30466-381C-44A5-8A86-8A2DFDF29A4C.html",
     "supplierSku": "CJBHNSNS10068-Black",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 3.35
+    "supplierCostUSD": 3.35,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 55,
@@ -825,7 +898,8 @@ const PRODUCTS = [
     "supplierCostUSDRange": [
       4.34,
       8.46
-    ]
+    ],
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 56,
@@ -837,7 +911,8 @@ const PRODUCTS = [
     "description": "Reusable cleaning gel for vents, cup holders and awkward interior gaps.",
     "fulfillmentReady": false,
     "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms car/keyboard cleaning gel as a product type, but no exact checkout-safe gel SKU was found."
+    "sourcingNote": "CJ confirms car/keyboard cleaning gel as a product type, but no exact checkout-safe gel SKU was found.",
+    "pricingAuditStatus": "awaiting-supplier-cost"
   },
   {
     "id": 57,
@@ -852,7 +927,8 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/car-door-container-trash-can-p-2505210708001621800.html",
     "supplierSku": "CJYD238181101AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSD": 2.28
+    "supplierCostUSD": 2.28,
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   },
   {
     "id": 58,
@@ -871,8 +947,9 @@ const PRODUCTS = [
       0.54,
       6.2
     ],
-    "sourcingNote": "This is a protective leather sunglasses case, not explicitly a hard-shell case. Rename or source a confirmed hard-shell model."
+    "sourcingNote": "This is a protective leather sunglasses case, not explicitly a hard-shell case. Rename or source a confirmed hard-shell model.",
+    "pricingAuditStatus": "pricing-healthy-before-fees"
   }
 ];
 
-// fulfillmentReady remains false until exact variant, live UK shipping and supplier validation pass.
+// Pricing audit uses product cost only. Live UK shipping is calculated separately at checkout; PayPal fees, tax, refunds and marketing are not included.
