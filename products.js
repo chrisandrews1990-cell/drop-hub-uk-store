@@ -288,9 +288,17 @@ const PRODUCTS = [
     "emoji": "🧷",
     "description": "Reusable ties for organising charging cables and desk wires.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean CJ listing found for reusable hook-and-loop cable ties.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Magnetic Cable Clip Set before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "review-variant-before-launch",
+    "plannedReplacementName": "Magnetic Cable Clip Set",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/magnetic-cable-clip-under-desk-cable-management-adjustable-cord-holder-wire-organizer-and-cable-management-wire-keeper-p-1763402968205897728.html",
+    "supplierSku": "CJYD197888501AZ",
+    "supplierCostUSDRange": [
+      0.05,
+      8.45
+    ]
   },
   {
     "id": 19,
@@ -339,9 +347,17 @@ const PRODUCTS = [
     "emoji": "🧂",
     "description": "Space-saving spice containers with magnetic backing.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ has magnetic seasoning racks and spice jars, but no clean match for the current Magnetic Spice Jars listing.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Magnetic Kitchen Seasoning Rack before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Magnetic Kitchen Seasoning Rack",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/wall-mounted-storage-rack-household-kitchen-seasoning-product-seasoning-p-2406160346461601500.html",
+    "supplierSku": "CJYD206141801AZ",
+    "supplierCostUSDRange": [
+      1.76,
+      7.89
+    ]
   },
   {
     "id": 22,
@@ -442,10 +458,16 @@ const PRODUCTS = [
     "description": "Ventilated food cover to help keep microwaves cleaner.",
     "fulfillmentReady": false,
     "supplier": "CJdropshipping",
-    "supplierSku": "CJYD2589002",
-    "supplierMatchStatus": "candidate-needs-exact-variant-sku",
-    "sourcingNote": "CJ identifies a multifunctional microwave splatter cover under this product code, but the public page did not expose a checkout-safe variant SKU.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierSku": "CJCF1723695-1Set",
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Reusable Silicone Stretch Lids before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "review-variant-before-launch",
+    "plannedReplacementName": "Reusable Silicone Stretch Lids",
+    "supplierUrl": "https://cjdropshipping.com/product/6pcs-food-silicone-cover-fresh-keeping-dish-stretchy-lid-cap-reusable-wrap-organization-storage-tool-kitchen-accessories-6pcs-silicone-stretch-lids-p-1642738075405537280.html",
+    "supplierCostUSDRange": [
+      6.42,
+      9.18
+    ]
   },
   {
     "id": 28,
@@ -456,9 +478,17 @@ const PRODUCTS = [
     "emoji": "🍝",
     "description": "Compact clip-on strainer for pasta, vegetables and cooked foods.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean CJ listing found for the current clip-on pot strainer style.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Silicone Pot Utensil Clip before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Silicone Pot Utensil Clip",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/multifunctional-spatula-holder-silicone-anti-overflow-spoon-holder-cooking-pot-anti-scalding-clip-kitchen-gadgets-p-1767745182079913984.html",
+    "supplierSku": "CJYD198735501AZ",
+    "supplierCostUSDRange": [
+      0.13,
+      0.39
+    ]
   },
   {
     "id": 29,
@@ -469,9 +499,17 @@ const PRODUCTS = [
     "emoji": "🛋️",
     "description": "Multi-pocket organiser for remotes, phones, magazines and accessories.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ trend results show couch-arm trays, but not a clean match for the current soft sofa armrest organiser.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Leather Remote Control Organiser before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Leather Remote Control Organiser",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/household-supplies-remote-control-storage-box-of-leather-p-2407080721531609400.html",
+    "supplierSku": "CJJT207840701AZ",
+    "supplierCostUSDRange": [
+      3.44,
+      5.95
+    ]
   },
   {
     "id": 30,
@@ -502,9 +540,17 @@ const PRODUCTS = [
     "emoji": "🗄️",
     "description": "Expandable dividers for keeping drawers neat and organised.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms adjustable drawer dividers as a product type, but no checkout-safe variant SKU was found.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Desktop Storage Box before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Desktop Storage Box",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/desktop-storage-box-office-accessories-makeup-plastic-storage-container-bathroom-storage-stackable-organizer-drawer-p-1386883997170274304.html",
+    "supplierSku": "CJJT110132001AZ",
+    "supplierCostUSDRange": [
+      1.92,
+      5.58
+    ]
   },
   {
     "id": 32,
@@ -532,9 +578,14 @@ const PRODUCTS = [
     "emoji": "👟",
     "description": "Lightweight travel bags for keeping shoes separate inside luggage.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean standalone travel shoe-storage-bag match found without duplicating the packing-cube set.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Short-Distance Travel Bag before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Short-Distance Travel Bag",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/fashion-short-distance-travel-bag-fitness-and-lightweight-p-2406080934471622000.html",
+    "supplierSku": "CJYD205630901AZ",
+    "supplierCostUSD": 5.97
   },
   {
     "id": 34,
@@ -562,9 +613,17 @@ const PRODUCTS = [
     "emoji": "🥿",
     "description": "Soft microfibre slippers designed for light floor dusting while walking.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ trend content confirms microfiber cleaning slippers, but no checkout-safe product SKU was found.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Microfibre Cleaning Cloth Set before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Microfibre Cleaning Cloth Set",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/screen-microfiber-screen-cleaning-cloth-p-18234200-0771-414B-B9F7-2048AC7E2E25.html",
+    "supplierSku": "CJJJYSFZ00162-White-6x8cm-Q20pcs",
+    "supplierCostUSDRange": [
+      1.3,
+      1.84
+    ]
   },
   {
     "id": 36,
@@ -648,9 +707,14 @@ const PRODUCTS = [
     "emoji": "🐾",
     "description": "Portable paw cleaner with soft flexible cleaning bristles.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms the paw-cleaner-cup product type, but no checkout-safe CJ variant SKU was found.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Pet Grooming Glove before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Pet Grooming Glove",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/pet-comb-hair-bath-massage-gloves-p-2411040327401621100.html",
+    "supplierSku": "CJYD218075601AZ",
+    "supplierCostUSD": 1.47
   },
   {
     "id": 41,
@@ -700,9 +764,14 @@ const PRODUCTS = [
     "emoji": "🎀",
     "description": "Soft overnight styling set for heat-free curls and waves.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms heatless curling sets as a current product type, but no direct checkout-safe CJ variant SKU was found.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Spiral Hair Curler & Comb Set before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Spiral Hair Curler & Comb Set",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/spiral-curler-comb-set-does-not-hurt-hair-titanium-alloy-splint-p-1369623902988406784.html",
+    "supplierSku": "CJJT103762901AZ",
+    "supplierCostUSD": 6.07
   },
   {
     "id": 44,
@@ -713,9 +782,14 @@ const PRODUCTS = [
     "emoji": "🖌️",
     "description": "Textured silicone pad for cleaning makeup brushes and cosmetic tools.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms silicone makeup-brush cleaning mats as a current product type, but no direct product SKU was found.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Electric Makeup Brush Cleaner before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Electric Makeup Brush Cleaner",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/electric-makeup-brush-cleaner-machine-portable-automatic-usb-cosmetic-brush-cleaner-tools-for-all-size-beauty-makeup-brushes-set-p-1707021717920550912.html",
+    "supplierSku": "CJMJ185778101AZ",
+    "supplierCostUSD": 1.93
   },
   {
     "id": 45,
@@ -743,9 +817,17 @@ const PRODUCTS = [
     "emoji": "✨",
     "description": "Compact cleaning pen for quick jewellery touch-ups.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "No clean CJ match found for a jewellery-cleaning pen.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with PU Leather Jewellery Storage Pouch before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "PU Leather Jewellery Storage Pouch",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/new-leather-pu-leather-button-bag-flip-jewelry-jewelry-storage-bag-p-2508030354021603900.html",
+    "supplierSku": "CJYD244638202BY",
+    "supplierCostUSDRange": [
+      0.36,
+      0.55
+    ]
   },
   {
     "id": 47,
@@ -862,9 +944,14 @@ const PRODUCTS = [
     "emoji": "🥤",
     "description": "Strap-on luggage organiser for drinks, phones and small travel items.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ has luggage with built-in cup holders and generic cup holders, but no clean match for the strap-on luggage cup holder listing.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Travel Bottle Holder Strap before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Travel Bottle Holder Strap",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/outdoor-travel-sports-portable-insulation-cup-strap-cover-p-1503992382675759104.html",
+    "supplierSku": "CJNS143908201AZ",
+    "supplierCostUSD": 0.71
   },
   {
     "id": 54,
@@ -910,9 +997,17 @@ const PRODUCTS = [
     "emoji": "🧽",
     "description": "Reusable cleaning gel for vents, cup holders and awkward interior gaps.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "needs-sourcing-match",
-    "sourcingNote": "CJ confirms car/keyboard cleaning gel as a product type, but no exact checkout-safe gel SKU was found.",
-    "pricingAuditStatus": "awaiting-supplier-cost"
+    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with Car Detail Cleaning Brush before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "plannedReplacementName": "Car Detail Cleaning Brush",
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/car-detail-brush-soft-brush-interior-cleaning-p-1796519066690134016.html",
+    "supplierSku": "CJYD205093001AZ",
+    "supplierCostUSDRange": [
+      0.7,
+      1.5
+    ]
   },
   {
     "id": 57,
@@ -952,4 +1047,4 @@ const PRODUCTS = [
   }
 ];
 
-// Pricing audit uses product cost only. Live UK shipping is calculated separately at checkout; PayPal fees, tax, refunds and marketing are not included.
+// Replacement-matched products remain Coming soon until customer-facing title/image, exact variant and live UK shipping are validated.
