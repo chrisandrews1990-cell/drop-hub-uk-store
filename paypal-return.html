@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Completing your order | DropHub UK</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="legal" style="max-width:720px;text-align:center">
+    <div class="brand" style="justify-content:center;margin-bottom:30px"><span class="brand-mark">D</span><div><strong>DropHub UK</strong><small>Everyday finds, delivered</small></div></div>
+    <h1 id="title" style="font-size:40px">Completing your order…</h1>
+    <p id="message">Please keep this page open while we confirm your PayPal payment and send your order for fulfilment.</p>
+    <p><a id="homeLink" class="primary" href="index.html" style="display:none">Return to DropHub UK</a></p>
+  </main>
+<script>
+(async()=>{
+  const title=document.getElementById('title');
+  const message=document.getElementById('message');
+  const home=document.getElementById('homeLink');
+  const orderID=new URLSearchParams(location.search).get('token');
+
+  if(!orderID){
+    title.textContent='We could not find your PayPal order';
+    message.textContent='No payment was captured from this page. Please return to the shop and try again.';
+    home.style.display='inline-flex';
+    return;
+  }
+
+  try{
+    const response=await fetch('/api/capture-order',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({orderID})
+    });
+    const result=await response.json();
+
+    if(!response.ok||result.status!=='COMPLETED'){
+      title.textContent='Order needs attention';
+      message.textContent=result.error||'We could not complete the payment. Please contact DropHub UK if you need help.';
+      home.style.display='inline-flex';
+      return;
+    }
+
+    localStorage.removeItem('drophub_cart');
+    title.textContent='Thank you — payment complete';
+    message.textContent=result.fulfillment==='CJ_SUBMITTED'
+      ? 'Your order has been received and sent for fulfilment.'
+      : 'Your payment is complete and your order is being reviewed for fulfilment.';
+    home.style.display='inline-flex';
+  }catch(error){
+    title.textContent='Order needs attention';
+    message.textContent='We could not confirm the order on this page. Please contact DropHub UK before trying to pay again.';
+    home.style.display='inline-flex';
+  }
+})();
+</script>
+</body>
+</html>
