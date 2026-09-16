@@ -37,3 +37,27 @@ The website code is already stored in GitHub.
 
 ## Important
 Do not paste PayPal client secrets or CJ API keys into chat, GitHub files, or public pages. Store them only as secure Netlify environment variables.
+
+
+## Customer-facing launch checks completed
+- Homepage wording and catalogue filters polished.
+- Coming-soon prices labelled as planned prices.
+- Product image fallback added.
+- Full supplier sourcing report completed.
+- Full pricing/profit audit completed.
+- All 58 products have a supplier-cost path.
+- 14 former placeholder listings switched to matched CJ replacement products.
+- Returns page includes a printable cancellation form.
+- Terms clarify the payment obligation and saveable order confirmation.
+- Privacy notice explains browser cart storage and third-party checkout/fulfilment services.
+- PayPal return page produces a printable/saveable order confirmation after successful capture.
+
+## Remaining before launch
+- Obtain the exact CJ-hosted image for product 46 (PU Leather Jewellery Storage Pouch).
+- Select exact variants for the wide-cost products flagged in PRICING_AUDIT.md.
+- Restore Netlify deployment when credits return.
+- Add PayPal and CJ credentials as Netlify environment variables.
+- Run live UK freight checks through the CJ API.
+- Keep only products with acceptable landed margin as Ready to order.
+- Complete PayPal sandbox checkout and CJ fulfilment test.
+- Switch PayPal to live credentials and place one low-value live test order.
