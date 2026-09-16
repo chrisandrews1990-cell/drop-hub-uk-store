@@ -3,17 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Completing your order | DropHub UK</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Order confirmation | DropHub UK</title>
+  <link rel="stylesheet" href="styles.css?v=20260916-confirmation">
 </head>
 <body>
-  <main class="legal" style="max-width:720px;text-align:center">
+  <main class="legal order-confirmation" style="max-width:760px">
     <div class="brand" style="justify-content:center;margin-bottom:30px"><span class="brand-mark">D</span><div><strong>DropHub UK</strong><small>Everyday finds, delivered</small></div></div>
-    <h1 id="title" style="font-size:40px">Completing your order…</h1>
-    <p id="message">Please keep this page open while we confirm your PayPal payment and send your order for fulfilment.</p>
-    <p><a id="homeLink" class="primary" href="index.html" style="display:none">Return to DropHub UK</a></p>
+    <div style="text-align:center">
+      <h1 id="title" style="font-size:40px">Completing your order…</h1>
+      <p id="message">Please keep this page open while we confirm your PayPal payment and send your order for fulfilment.</p>
+    </div>
+
+    <section id="confirmation" class="confirmation-card" hidden>
+      <h2>Order confirmation</h2>
+      <p><strong>Order reference:</strong> <span id="orderRef"></span></p>
+      <div id="orderLines"></div>
+      <div class="confirmation-total"><span>Total paid</span><strong id="orderTotal"></strong></div>
+      <p class="confirmation-note">Keep this confirmation for your records. Delivery and fulfilment updates may also be provided through the payment or delivery service.</p>
+      <div class="confirmation-actions">
+        <button class="secondary" type="button" onclick="window.print()">Print / save confirmation</button>
+        <a class="secondary" href="terms.html">Terms</a>
+        <a class="secondary" href="returns.html">Returns & refunds</a>
+      </div>
+    </section>
+
+    <p style="text-align:center"><a id="homeLink" class="primary" href="index.html" style="display:none">Return to DropHub UK</a></p>
   </main>
 <script>
+function money(value,currency='GBP'){
+  if(value===null||value===undefined||value==='') return '';
+  return new Intl.NumberFormat('en-GB',{style:'currency',currency}).format(Number(value));
+}
+function showConfirmation(data){
+  if(!data) return;
+  document.getElementById('confirmation').hidden=false;
+  document.getElementById('orderRef').textContent=data.orderId||'';
+  const lines=document.getElementById('orderLines');
+  lines.textContent='';
+  (data.items||[]).forEach(item=>{
+    const row=document.createElement('div');
+    row.className='confirmation-line';
+    const name=document.createElement('span');
+    name.textContent=(item.quantity||1)+' × '+(item.name||'Item');
+    const amount=document.createElement('strong');
+    amount.textContent=item.unitAmount?money(Number(item.unitAmount)*(Number(item.quantity)||1),item.currency||data.currency||'GBP'):'';
+    row.append(name,amount);
+    lines.appendChild(row);
+  });
+  document.getElementById('orderTotal').textContent=money(data.total,data.currency||'GBP');
+}
 (async()=>{
   const title=document.getElementById('title');
   const message=document.getElementById('message');
@@ -47,7 +85,9 @@
     message.textContent=result.fulfillment==='CJ_SUBMITTED'
       ? 'Your order has been received and sent for fulfilment.'
       : 'Your payment is complete and your order is being reviewed for fulfilment.';
+    showConfirmation(result.confirmation);
     home.style.display='inline-flex';
+    history.replaceState({},'',location.pathname);
   }catch(error){
     title.textContent='Order needs attention';
     message.textContent='We could not confirm the order on this page. Please contact DropHub UK before trying to pay again.';
