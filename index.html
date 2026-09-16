@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DropHub UK | Smart Everyday Finds</title>
-  <meta name="description" content="Shop useful home, tech, travel and pet products at DropHub UK.">
+  <meta name="description" content="Browse practical home, tech, travel, pet, beauty and lifestyle products at DropHub UK.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="announcement-bar">New products added regularly • Smart everyday finds • UK online store</div>
+  <div class="announcement-bar">UK online store • New products added regularly • Secure checkout at launch</div>
   <header class="topbar">
     <div class="brand" onclick="window.scrollTo({top:0,behavior:'smooth'})">
       <span class="brand-mark">D</span>
@@ -30,33 +30,33 @@
       <div class="hero-copy">
         <span class="eyebrow">DISCOVER SOMETHING USEFUL</span>
         <h1>Smart finds for home, tech, travel and everyday life.</h1>
-        <p>Browse a growing collection of useful products sourced through established dropshipping suppliers and delivered directly to you.</p>
+        <p>Browse a growing collection of practical products for home, tech, travel, pets, beauty and everyday life.</p>
         <div class="hero-actions">
-          <a class="primary" href="#shop">Shop best sellers</a>
+          <a class="primary" href="#shop">Browse products</a>
           <a class="secondary" href="#why">Why DropHub?</a>
         </div>
-        <div class="hero-trust"><span>✓ Easy shopping</span><span>✓ Secure PayPal checkout</span><span>✓ Direct delivery</span></div>
+        <div class="hero-trust"><span>✓ UK online store</span><span>✓ PayPal checkout at launch</span><span>✓ Direct supplier fulfilment</span></div>
       </div>
       <div class="hero-card">
-        <span class="mini-badge">TRENDING NOW</span>
+        <span class="mini-badge">LAUNCH COLLECTION</span>
         <h3>Fresh products without the clutter.</h3>
-        <p>We focus on practical, giftable and useful items from dropshipping suppliers, with more products added as the catalogue grows.</p>
+        <p>We focus on practical, giftable and useful everyday products, with more items being checked and added to the launch catalogue.</p>
         <div class="hero-list"><span>Home & lifestyle</span><span>Tech accessories</span><span>Pet products</span><span>Travel essentials</span></div>
       </div>
     </section>
 
     <section class="trust-strip" id="why">
-      <div><strong>Curated products</strong><span>Useful products selected from dropshipping catalogues.</span></div>
-      <div><strong>Direct fulfilment</strong><span>Orders are fulfilled by the relevant product supplier.</span></div>
-      <div><strong>Growing catalogue</strong><span>New products and categories can be added regularly.</span></div>
+      <div><strong>Curated products</strong><span>Practical products selected for a simple, easy-to-browse shop.</span></div>
+      <div><strong>Direct fulfilment</strong><span>Ready-to-order products are dispatched through the matched fulfilment supplier.</span></div>
+      <div><strong>Growing catalogue</strong><span>More products move from Coming soon to Ready to order as supplier checks are completed.</span></div>
     </section>
 
     <section id="shop" class="shop-section">
       <div class="section-head">
-        <div><span class="eyebrow">SHOP THE COLLECTION</span><h2>Popular picks</h2><p>Find practical products across home, tech, pets, travel and accessories.</p></div>
+        <div><span class="eyebrow">SHOP THE COLLECTION</span><h2>Browse the catalogue</h2><p>Find practical products across home, tech, kitchen, pets, travel, beauty, fitness and accessories.</p><p id="catalogueSummary" class="catalogue-summary"></p></div>
         <div class="controls">
           <input id="searchBox" type="search" placeholder="Search products...">
-          <select id="categoryFilter"><option value="all">All categories</option></select>
+          <select id="categoryFilter" aria-label="Filter by category"><option value="all">All categories</option></select><select id="availabilityFilter" aria-label="Filter by availability"><option value="all">All products</option><option value="ready">Ready to order</option><option value="coming">Coming soon</option></select>
         </div>
       </div>
       <div id="productGrid" class="product-grid"></div>
@@ -64,7 +64,7 @@
 
     <section class="info-band">
       <div><span class="eyebrow">SIMPLE SHOPPING</span><h2>Choose it. Order it. We handle the rest.</h2></div>
-      <p>Add any products you like to your basket and pay once through PayPal. Your basket is priced securely on the server before PayPal creates the order.</p>
+      <p>Ready-to-order products can be added to your basket. At launch, UK delivery will be calculated securely before PayPal opens the payment step.</p>
     </section>
 
     <section id="delivery" class="cards-section">
