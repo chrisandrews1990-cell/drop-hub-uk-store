@@ -1,15 +1,19 @@
 import { CATALOG, isFulfillmentReady } from "./catalog.mjs";
 import { paypalRequest } from "./paypal.mjs";
+import { resolveCJVariant, getCheapestLogistics, getCJBalance } from "./cj.mjs";
 
-const STORE_LIVE = false;
+const STORE_LIVE = true;
+const BUFFERED_USD_TO_GBP = 0.80;
+
+function ceilMoney(value) {
+  return Math.ceil(Number(value) * 100) / 100;
+}
 
 export default async (request) => {
   if (request.method !== "POST") return new Response("Method not allowed", { status: 405 });
 
   if (!STORE_LIVE) {
-    return Response.json({
-      error: "Checkout is temporarily paused while final delivery checks are completed."
-    }, { status: 503 });
+    return Response.json({ error: "Checkout is temporarily paused." }, { status: 503 });
   }
 
   try {
@@ -23,18 +27,29 @@ export default async (request) => {
     }
 
     const orderItems = [];
-    let total = 0;
+    const cjLines = [];
+    let itemTotal = 0;
+    let supplierProductCostUsd = 0;
 
     for (const line of items) {
       const product = CATALOG[Number(line.id)];
-      const qty = Math.max(1, Math.min(20, Number(line.qty) || 1));
-      if (!product) return Response.json({ error: "Unknown product in cart." }, { status: 400 });
+      const qty = Math.max(1, Math.min(10, Number(line.qty) || 1));
 
-      if (!isFulfillmentReady(product)) {
+      if (!product) return Response.json({ error: "Unknown product in cart." }, { status: 400 });
+      if (!isFulfillmentReady(product) || product.supplier !== "CJ") {
         return Response.json({ error: `${product.name} is not available for automatic fulfilment yet.` }, { status: 409 });
       }
 
-      total += product.price * qty;
+      const resolved = await resolveCJVariant(product.cjVariantSku);
+      const supplierUnit = Number(resolved.variant.variantSellPrice || 0);
+      if (!resolved.variant.vid || !Number.isFinite(supplierUnit) || supplierUnit <= 0) {
+        throw new Error(`Invalid CJ supplier data for ${product.name}`);
+      }
+
+      cjLines.push({ vid: resolved.variant.vid, quantity: qty });
+      supplierProductCostUsd += supplierUnit * qty;
+      itemTotal += product.price * qty;
+
       orderItems.push({
         name: product.name,
         sku: product.sku,
@@ -43,7 +58,31 @@ export default async (request) => {
       });
     }
 
-    const value = total.toFixed(2);
+    const logistics = await getCheapestLogistics({
+      fromCountryCode: "CN",
+      toCountryCode: "GB",
+      products: cjLines
+    });
+
+    const freightUsd = Number(logistics.totalPostageFee ?? logistics.logisticPrice ?? 0);
+    if (!Number.isFinite(freightUsd) || freightUsd < 0) {
+      throw new Error("CJ returned an invalid delivery price.");
+    }
+
+    const estimatedSupplierUsd = supplierProductCostUsd + freightUsd;
+    const balanceUsd = await getCJBalance();
+
+    if (!Number.isFinite(balanceUsd) || balanceUsd < estimatedSupplierUsd + 1) {
+      return Response.json({
+        error: "Checkout is temporarily unavailable while supplier balance is topped up."
+      }, { status: 503 });
+    }
+
+    const shippingGbp = ceilMoney(freightUsd * BUFFERED_USD_TO_GBP);
+    const itemValue = itemTotal.toFixed(2);
+    const shippingValue = shippingGbp.toFixed(2);
+    const totalValue = (itemTotal + shippingGbp).toFixed(2);
+
     const response = await paypalRequest("/v2/checkout/orders", {
       method: "POST",
       headers: { "PayPal-Request-Id": crypto.randomUUID() },
@@ -52,11 +91,18 @@ export default async (request) => {
         purchase_units: [{
           amount: {
             currency_code: "GBP",
-            value,
-            breakdown: { item_total: { currency_code: "GBP", value } }
+            value: totalValue,
+            breakdown: {
+              item_total: { currency_code: "GBP", value: itemValue },
+              shipping: { currency_code: "GBP", value: shippingValue }
+            }
           },
-          items: orderItems
-        }]
+          items: orderItems,
+          description: `DropHub UK order • UK delivery ${logistics.logisticName}`
+        }],
+        application_context: {
+          shipping_preference: "GET_FROM_FILE"
+        }
       })
     });
 
@@ -66,9 +112,13 @@ export default async (request) => {
       return Response.json({ error: "Unable to create PayPal order." }, { status: 502 });
     }
 
-    return Response.json({ id: data.id });
+    return Response.json({
+      id: data.id,
+      shipping: shippingValue,
+      total: totalValue
+    });
   } catch (error) {
-    console.error(error);
-    return Response.json({ error: "Checkout could not be started." }, { status: 500 });
+    console.error("Create order error", error);
+    return Response.json({ error: "Checkout could not be started. Please try again." }, { status: 500 });
   }
 };
