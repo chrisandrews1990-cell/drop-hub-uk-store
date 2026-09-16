@@ -85,6 +85,11 @@ async function prepareCheckout(){
   checkoutQuote=null;
   paypalContainer.innerHTML='';
 
+  if(location.hostname.endsWith('github.io')){
+    if(cart.length) showCheckoutMessage('Checkout will be enabled on the live shop.');
+    return;
+  }
+
   if(!cart.length){
     showCheckoutMessage('');
     return;
