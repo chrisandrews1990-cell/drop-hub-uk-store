@@ -65,7 +65,7 @@ export default async(request)=>{
               payment_method_preference:"IMMEDIATE_PAYMENT_REQUIRED",
               brand_name:"DropHub UK",
               locale:"en-GB",
-              landing_page:"LOGIN",
+              landing_page:"NO_PREFERENCE",
               shipping_preference:"GET_FROM_FILE",
               user_action:"PAY_NOW",
               return_url:`${siteOrigin}/paypal-return.html`,
