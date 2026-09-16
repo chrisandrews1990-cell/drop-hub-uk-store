@@ -5,7 +5,11 @@ The website code is already stored in GitHub.
 ## Current catalogue
 - 58 visible products
 - 7 products are currently marked Ready to order
-- Remaining products stay Coming soon until supplier details are validated
+- 31 additional products have clean CJ matches and are waiting for live UK shipping validation
+- 1 additional product is matched but still needs exact variant-cost confirmation
+- 6 products have plausible CJ candidates that need a final title/variant review
+- 13 products need a cleaner supplier match or replacement before they can be sold
+- See PRODUCT_SOURCING.md for the product-by-product record
 
 ## When Netlify credits are available
 1. Deploy the latest main branch from GitHub.
