@@ -11,8 +11,3 @@
   from = "/api/capture-order"
   to = "/.netlify/functions/capture-order"
   status = 200
-
-[[redirects]]
-  from = "/api/cj-catalog-check"
-  to = "/.netlify/functions/cj-catalog-check"
-  status = 200
