@@ -9,6 +9,7 @@ const cartItems=document.getElementById('cartItems');
 const cartCount=document.getElementById('cartCount');
 const cartTotal=document.getElementById('cartTotal');
 const checkoutMessage=document.getElementById('checkoutMessage');
+let lastCheckoutError='';
 
 let cart=JSON.parse(localStorage.getItem('drophub_cart')||'[]')
   .filter(item=>PRODUCTS.find(p=>p.id===item.id)?.fulfillmentReady===true);
@@ -119,6 +120,7 @@ if(window.paypal){
   paypal.Buttons({
     style:{layout:'vertical',shape:'rect',label:'paypal'},
     async createOrder(){
+      lastCheckoutError='';
       if(!cart.length){
         showCheckoutMessage('Your cart is empty.',true);
         throw new Error('Cart is empty');
@@ -133,10 +135,9 @@ if(window.paypal){
       const data=await response.json();
       if(!response.ok||!data.id){
         const message=data.error||'Unable to start checkout.';
+        lastCheckoutError=message;
         showCheckoutMessage(message,true);
-        const err=new Error(message);
-        err.checkoutMessageShown=true;
-        throw err;
+        throw new Error(message);
       }
       return data.id;
     },
@@ -165,7 +166,9 @@ if(window.paypal){
     onCancel(){showCheckoutMessage('Checkout was cancelled.');},
     onError(err){
       console.error(err);
-      if(!err?.checkoutMessageShown){
+      if(lastCheckoutError){
+        showCheckoutMessage(lastCheckoutError,true);
+      }else{
         showCheckoutMessage(err?.message||'Checkout could not be started. Please try again shortly.',true);
       }
     }
