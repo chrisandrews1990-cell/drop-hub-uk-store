@@ -4,7 +4,7 @@ const PRODUCTS = [
     "name": "Magnetic Vacuum Phone Holder",
     "category": "Tech",
     "price": 24.99,
-    "image": "",
+    "image": "https://down-my.img.susercontent.com/file/my-11134208-7rasc-m7rfzb9yn3w745",
     "emoji": "📱",
     "description": "Foldable magnetic phone holder for desks and car use.",
     "supplier": "CJdropshipping",
@@ -108,7 +108,7 @@ const PRODUCTS = [
     "name": "USB Desk Fan",
     "category": "Tech",
     "price": 14.99,
-    "image": "",
+    "image": "https://www.gaiatop.com/cdn/shop/files/Z6_02e3e3b7-e450-43e7-a515-2cd2531f2525.jpg?v=1750739033&width=1080",
     "emoji": "🌬️",
     "description": "Compact USB desk fan for workspaces, bedrooms and study areas.",
     "fulfillmentReady": false
@@ -118,7 +118,7 @@ const PRODUCTS = [
     "name": "Wireless Charging Pad",
     "category": "Tech",
     "price": 16.99,
-    "image": "",
+    "image": "https://www.meintrendyhandy.de/images/Universal-Fast-Wireless-Charger-Black-02082019-01-p.webp",
     "emoji": "🔋",
     "description": "Slim wireless charging pad for compatible phones and earbuds.",
     "fulfillmentReady": false
@@ -128,7 +128,7 @@ const PRODUCTS = [
     "name": "Bluetooth Shower Speaker",
     "category": "Tech",
     "price": 19.99,
-    "image": "",
+    "image": "https://img.pccomponentes.com/articles/43/431477/3504-spc-splash-2-altavoz-bluetooth-ducha-azul-mejor-precio.jpg",
     "emoji": "🔊",
     "description": "Compact splash-resistant speaker for bathrooms, travel and outdoor use.",
     "fulfillmentReady": false
@@ -138,7 +138,7 @@ const PRODUCTS = [
     "name": "Mini Keyboard Cleaner",
     "category": "Tech",
     "price": 9.99,
-    "image": "",
+    "image": "https://images.bauerhosting.com/affiliates/sites/8/2023/09/2-2.png?auto=format&q=80&w=1440",
     "emoji": "⌨️",
     "description": "Handy cleaning tool for keyboards, earbuds and small electronics.",
     "fulfillmentReady": false
@@ -148,7 +148,7 @@ const PRODUCTS = [
     "name": "Phone Cable Protector Set",
     "category": "Tech",
     "price": 7.99,
-    "image": "",
+    "image": "https://i5.walmartimages.cl/asr/5159cf35-acef-4385-999f-0ad47d2a8a24.61e7b143850ddcbe2aacee7e6f049d22.jpeg?odnBg=FFFFFF&odnHeight=612&odnWidth=612",
     "emoji": "🔌",
     "description": "Flexible cable protectors designed to reduce everyday wire wear.",
     "fulfillmentReady": false
@@ -158,7 +158,7 @@ const PRODUCTS = [
     "name": "LED Wardrobe Light",
     "category": "Home",
     "price": 14.99,
-    "image": "",
+    "image": "https://www.tecnomat.it/pub/media/catalog/product/c/b/2/f/reglette_per_armadio_con_sensore_di_movimento_w_lumen_k_mm_25035187_picture_01.jpg",
     "emoji": "💡",
     "description": "Compact LED light for wardrobes, cupboards and dark storage areas.",
     "fulfillmentReady": false
@@ -168,7 +168,7 @@ const PRODUCTS = [
     "name": "Digital Alarm Clock",
     "category": "Home",
     "price": 19.99,
-    "image": "",
+    "image": "https://cdn0.woolworths.media/content/wowproductimages/large/1115191827_8.jpg",
     "emoji": "⏰",
     "description": "Simple digital bedside clock with an easy-read display.",
     "fulfillmentReady": false
@@ -178,7 +178,7 @@ const PRODUCTS = [
     "name": "Adjustable Laptop Stand",
     "category": "Tech",
     "price": 24.99,
-    "image": "",
+    "image": "https://www.nillkin.com/cdn/shop/products/ProDeskAdjustableLaptopStand-Sliver.jpg?v=1690029878&width=1000",
     "emoji": "💻",
     "description": "Portable adjustable stand for laptops and tablets.",
     "fulfillmentReady": false
@@ -188,7 +188,7 @@ const PRODUCTS = [
     "name": "Mini Desktop Humidifier",
     "category": "Home",
     "price": 18.99,
-    "image": "",
+    "image": "https://media.adeo.com/mkp/6d2241b63da7bde0e56a77f2a0018501/media.jpg?fit=bounds&format=jpg&height=650&quality=80&width=650",
     "emoji": "💧",
     "description": "Compact desktop humidifier for bedrooms, desks and small spaces.",
     "fulfillmentReady": false
@@ -198,7 +198,7 @@ const PRODUCTS = [
     "name": "Reusable Cable Ties",
     "category": "Tech",
     "price": 6.99,
-    "image": "",
+    "image": "https://i5.walmartimages.com/asr/8df36d1a-fe31-4394-a5f4-d07b7149546f.2f634778be2c797cf25738f5aa01af3f.jpeg?odnBg=FFFFFF&odnHeight=2000&odnWidth=2000",
     "emoji": "🧷",
     "description": "Reusable ties for organising charging cables and desk wires.",
     "fulfillmentReady": false
@@ -208,7 +208,7 @@ const PRODUCTS = [
     "name": "Silicone Air Fryer Liner",
     "category": "Kitchen",
     "price": 11.99,
-    "image": "",
+    "image": "https://img.joomcdn.net/6c89682b8c8e9b6bc4089013d73b8dcafa48a008_original.jpeg",
     "emoji": "🍟",
     "description": "Reusable silicone liner designed to make air fryer cleanup easier.",
     "fulfillmentReady": false
@@ -218,7 +218,7 @@ const PRODUCTS = [
     "name": "Kitchen Oil Spray Bottle",
     "category": "Kitchen",
     "price": 12.99,
-    "image": "",
+    "image": "https://www.jiomart.com/images/product/original/rva3ovhooj/lakheshwar-oil-sprayer-for-cooking-200ml-glass-olive-oil-sprayer-mister-olive-oil-spray-bottle-kitchen-gadgets-accessories-for-air-fryer-canola-oil-spritzer-widely-used-for-salad-making-baking-frying-bbq-oil-sprayer-for-cooking-oil-dispenser-bottl-product-images-orva3ovhooj-p610009710-0-202409231418.jpg?im=Resize%3D%28420%2C420%29",
     "emoji": "🫙",
     "description": "Refillable fine-mist oil bottle for cooking and salads.",
     "fulfillmentReady": false
@@ -228,7 +228,7 @@ const PRODUCTS = [
     "name": "Magnetic Spice Jars",
     "category": "Kitchen",
     "price": 17.99,
-    "image": "",
+    "image": "https://images-cdn.ubuy.co.in/65281e3112071603d93f7f41-homgen-12pcs-stainless-steel-magnetic.jpg",
     "emoji": "🧂",
     "description": "Space-saving spice containers with magnetic backing.",
     "fulfillmentReady": false
@@ -238,7 +238,7 @@ const PRODUCTS = [
     "name": "Silicone Sink Strainer",
     "category": "Kitchen",
     "price": 8.99,
-    "image": "",
+    "image": "https://static.platform.michaels.com/2c-prd/28678877239968.jpeg?fit=inside%7C540%3A540",
     "emoji": "🚰",
     "description": "Flexible sink strainer for catching food scraps and debris.",
     "fulfillmentReady": false
@@ -248,7 +248,7 @@ const PRODUCTS = [
     "name": "Reusable Food Storage Bags",
     "category": "Kitchen",
     "price": 13.99,
-    "image": "",
+    "image": "https://tm-prd-cdn.themarket.co.nz/resizer/view?b=productimages&h=1080&key=740783a859ab1e263eac67d7c6fb8ca6&w=1080",
     "emoji": "🥪",
     "description": "Reusable storage bags for snacks, lunches and food prep.",
     "fulfillmentReady": false
@@ -258,7 +258,7 @@ const PRODUCTS = [
     "name": "Handheld Milk Frother",
     "category": "Kitchen",
     "price": 10.99,
-    "image": "",
+    "image": "https://www.bigw.com.au/medias/sys_master/images/images/h69/hca/120105267691550.jpg",
     "emoji": "☕",
     "description": "Compact handheld frother for coffee, hot chocolate and shakes.",
     "fulfillmentReady": false
@@ -268,7 +268,7 @@ const PRODUCTS = [
     "name": "Manual Vegetable Chopper",
     "category": "Kitchen",
     "price": 18.99,
-    "image": "",
+    "image": "https://i5.walmartimages.com/asr/24f7bd1c-2686-4db8-b38b-e27ac6ef7327.9540be5c952c8a8601cfed3cbc5ab769.jpeg?odnBg=FFFFFF&odnHeight=580&odnWidth=580",
     "emoji": "🥕",
     "description": "Compact kitchen chopper for quick everyday food preparation.",
     "fulfillmentReady": false
@@ -278,7 +278,7 @@ const PRODUCTS = [
     "name": "Easy Release Ice Cube Tray",
     "category": "Kitchen",
     "price": 9.99,
-    "image": "",
+    "image": "https://st.bigc-cs.com/cdn-cgi/image/format%3Dwebp%2Cquality%3D90/public/media/catalog/product/50/20/2000006206350/2000006206350_3-20240528152152-.jpg",
     "emoji": "🧊",
     "description": "Flexible ice tray designed for quick, easy cube release.",
     "fulfillmentReady": false
@@ -288,7 +288,7 @@ const PRODUCTS = [
     "name": "Microwave Splatter Cover",
     "category": "Kitchen",
     "price": 12.99,
-    "image": "",
+    "image": "https://image-cdn.ubuy.com/ram-pro-microwave-cover-for-food/400_400_100/697a66d7bca0ac0b940f1646.jpg",
     "emoji": "🍲",
     "description": "Ventilated food cover to help keep microwaves cleaner.",
     "fulfillmentReady": false
@@ -298,7 +298,7 @@ const PRODUCTS = [
     "name": "Clip-On Pot Strainer",
     "category": "Kitchen",
     "price": 10.99,
-    "image": "",
+    "image": "https://image.made-in-china.com/318f0j00cERGtTuyFVrk/HK-2066-mp4.webp",
     "emoji": "🍝",
     "description": "Compact clip-on strainer for pasta, vegetables and cooked foods.",
     "fulfillmentReady": false
@@ -308,7 +308,7 @@ const PRODUCTS = [
     "name": "Sofa Armrest Organiser",
     "category": "Home",
     "price": 16.99,
-    "image": "",
+    "image": "https://cdn.manomano.com/sofa-organizer-armrest-holder-couch-tray-storage-bag-hanging-storage-armrest-pockets-sofa-organizer-armchair-caddy-for-books-magazine-glasses-tv-remote-control-ipad-dvd-P-41674973-161002332_1.jpg",
     "emoji": "🛋️",
     "description": "Multi-pocket organiser for remotes, phones, magazines and accessories.",
     "fulfillmentReady": false
@@ -318,7 +318,7 @@ const PRODUCTS = [
     "name": "Under-Bed Storage Organiser",
     "category": "Home",
     "price": 19.99,
-    "image": "",
+    "image": "https://img.vevorstatic.com/us/CDCWFBWFBWL309XD1001V0/original_img-v1/under-bed-storage-m100-10.jpg?format=webp&timestamp=1751100891000",
     "emoji": "📦",
     "description": "Low-profile storage organiser for bedding, clothes and seasonal items.",
     "fulfillmentReady": false
@@ -328,7 +328,7 @@ const PRODUCTS = [
     "name": "Adjustable Drawer Divider Set",
     "category": "Home",
     "price": 15.99,
-    "image": "",
+    "image": "https://cdn.shopify.com/s/files/1/0761/5771/4658/files/61g3wVQvECL._AC_SX679_PIbundle-5_TopRight_0_0_SH20.jpg?v=1756561222",
     "emoji": "🗄️",
     "description": "Expandable dividers for keeping drawers neat and organised.",
     "fulfillmentReady": false
@@ -338,7 +338,7 @@ const PRODUCTS = [
     "name": "Bathroom Shower Caddy",
     "category": "Home",
     "price": 17.99,
-    "image": "",
+    "image": "https://www.thursdayliving.com.au/cdn/shop/files/100725-3_07f2c409-a683-4abc-9c1b-a891e6e8be72.jpg?v=1754364230&width=1000",
     "emoji": "🚿",
     "description": "Compact shower organiser for toiletries and bathroom essentials.",
     "fulfillmentReady": false
@@ -348,7 +348,7 @@ const PRODUCTS = [
     "name": "Travel Shoe Storage Bags",
     "category": "Travel",
     "price": 12.99,
-    "image": "",
+    "image": "https://ribbi.nl/cdn/shop/files/1200x818_b169770c-a79b-40e6-8a0f-0818f840a464_800x.jpg?v=1720930831",
     "emoji": "👟",
     "description": "Lightweight travel bags for keeping shoes separate inside luggage.",
     "fulfillmentReady": false
@@ -358,7 +358,7 @@ const PRODUCTS = [
     "name": "Bedside Pocket Organiser",
     "category": "Home",
     "price": 13.99,
-    "image": "",
+    "image": "https://dreamsleepaustralia.com.au/cdn/shop/files/2_9bd47ec8-9693-4714-a674-6bbfbb436d37_1000x.png?v=1746125237",
     "emoji": "🛏️",
     "description": "Hanging bedside organiser for books, remotes, phones and accessories.",
     "fulfillmentReady": false
@@ -368,7 +368,7 @@ const PRODUCTS = [
     "name": "Microfibre Cleaning Slippers",
     "category": "Home",
     "price": 9.99,
-    "image": "",
+    "image": "https://image.made-in-china.com/2f0j00iMBVUDkogTGZ/Houseware-Cleaning-Microfiber-Chenille-Dusting-Slippers.webp",
     "emoji": "🥿",
     "description": "Soft microfibre slippers designed for light floor dusting while walking.",
     "fulfillmentReady": false
@@ -378,7 +378,7 @@ const PRODUCTS = [
     "name": "Portable Pet Water Bottle",
     "category": "Pets",
     "price": 15.99,
-    "image": "",
+    "image": "https://f.fcdn.app/imgs/a0a352/www.atrixuy.com/atriuy/de3f/original/catalogo/TBANI300_BLANCO_1/600x600/bebedero-portatil-mascotas-boton-dispensador-agua-viaje-color-variante-blanco.jpg",
     "emoji": "🐕",
     "description": "Portable water bottle for dogs during walks and travel.",
     "fulfillmentReady": false
@@ -388,7 +388,7 @@ const PRODUCTS = [
     "name": "Slow Feeder Dog Bowl",
     "category": "Pets",
     "price": 14.99,
-    "image": "",
+    "image": "https://tassukauppa.fi/WebRoot/elisa03/Shops/tassukauppa/63F6/711B/93E2/101E/A583/0A28/1012/16D3/Duvo_Slow_Feeder_ahmimisenestokuppi_koiralle_petrooli_S_LG14292.jpg",
     "emoji": "🥣",
     "description": "Patterned feeding bowl designed to encourage slower eating.",
     "fulfillmentReady": false
@@ -398,7 +398,7 @@ const PRODUCTS = [
     "name": "Self-Cleaning Cat Grooming Brush",
     "category": "Pets",
     "price": 13.99,
-    "image": "",
+    "image": "https://cdn.shopify.com/s/files/1/0573/2463/4249/files/self_cleaning_sliker_brush_detail.png?v=1693189057",
     "emoji": "🐈",
     "description": "Grooming brush with an easy-release design for loose pet hair.",
     "fulfillmentReady": false
@@ -408,7 +408,7 @@ const PRODUCTS = [
     "name": "Adjustable Pet Seat Belt",
     "category": "Pets",
     "price": 9.99,
-    "image": "",
+    "image": "https://assets.petco.com/petco/image/upload/c_pad%2Cdpr_1.0%2Cf_auto%2Cq_auto%2Ch_636%2Cw_636/c_pad%2Ch_636%2Cw_636/3350102-center-1",
     "emoji": "🚗",
     "description": "Adjustable restraint strap for safer car journeys with pets.",
     "fulfillmentReady": false
@@ -418,7 +418,7 @@ const PRODUCTS = [
     "name": "Dog Paw Cleaner Cup",
     "category": "Pets",
     "price": 12.99,
-    "image": "",
+    "image": "https://www.vour.gr/product_application/catalogmanager/assets/images/20220628143618_0.jpg",
     "emoji": "🐾",
     "description": "Portable paw cleaner with soft flexible cleaning bristles.",
     "fulfillmentReady": false
@@ -428,7 +428,7 @@ const PRODUCTS = [
     "name": "Pet Treat Training Pouch",
     "category": "Pets",
     "price": 14.99,
-    "image": "",
+    "image": "https://www.tiendanimal.es/dw/image/v2/BDLQ_PRD/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwa326554b/images/large/f17ddac57b0e4d0d8e2f5a954788ee76.jpg?q=85&sh=780&sm=fit&sw=780",
     "emoji": "🦴",
     "description": "Hands-free pouch for treats, waste bags and small training accessories.",
     "fulfillmentReady": false
@@ -438,7 +438,7 @@ const PRODUCTS = [
     "name": "Travel Makeup Organiser",
     "category": "Accessories",
     "price": 18.99,
-    "image": "",
+    "image": "https://igadgitz.com/cdn/shop/files/b7bb33e7-b339-475d-9bfd-1a75390ff00f_1800x1800.jpg?v=1738923558",
     "emoji": "💄",
     "description": "Multi-compartment makeup bag for holidays and everyday storage.",
     "fulfillmentReady": false
@@ -448,7 +448,7 @@ const PRODUCTS = [
     "name": "Heatless Curling Set",
     "category": "Beauty",
     "price": 11.99,
-    "image": "",
+    "image": "https://www.cosmastyle.com/cdn/shop/files/image_499f96ee-f88f-41ed-bef5-4599ded8f819_1280x1273.jpg?v=1683136740",
     "emoji": "🎀",
     "description": "Soft overnight styling set for heat-free curls and waves.",
     "fulfillmentReady": false
@@ -458,7 +458,7 @@ const PRODUCTS = [
     "name": "Makeup Brush Cleaning Pad",
     "category": "Beauty",
     "price": 7.99,
-    "image": "",
+    "image": "https://i5.walmartimages.com/asr/dfd91dcc-0d94-4b20-aa2f-d4b46afa13c8.a82d36d0679bdd7b2db95f8606a4f439.jpeg",
     "emoji": "🖌️",
     "description": "Textured silicone pad for cleaning makeup brushes and cosmetic tools.",
     "fulfillmentReady": false
@@ -468,7 +468,7 @@ const PRODUCTS = [
     "name": "Satin Sleep Mask",
     "category": "Beauty",
     "price": 9.99,
-    "image": "",
+    "image": "https://satinluxuryline.com/cdn/shop/files/16ASleepmask_recht_van_voren_roze_528d7372-6c08-483f-8d58-5f9b5076919b.jpg?v=1716319412&width=535",
     "emoji": "😴",
     "description": "Soft sleep mask for travel, naps and bedtime routines.",
     "fulfillmentReady": false
@@ -478,7 +478,7 @@ const PRODUCTS = [
     "name": "Jewellery Cleaning Pen",
     "category": "Accessories",
     "price": 8.99,
-    "image": "",
+    "image": "https://www.valeriemadison.com/cdn/shop/files/WBcleaningpen.jpg?v=1720635615",
     "emoji": "✨",
     "description": "Compact cleaning pen for quick jewellery touch-ups.",
     "fulfillmentReady": false
@@ -488,7 +488,7 @@ const PRODUCTS = [
     "name": "Silicone Scalp Massager",
     "category": "Beauty",
     "price": 8.99,
-    "image": "",
+    "image": "https://5thave-img-cdn.beyondstyle.us/pf/bdacec14-10df-3aa2-955e-4bbebf6416b7.jpg?x-oss-process=style%2Fs1",
     "emoji": "💆",
     "description": "Soft silicone scalp brush for shampooing and massage.",
     "fulfillmentReady": false
@@ -498,7 +498,7 @@ const PRODUCTS = [
     "name": "Resistance Band Set",
     "category": "Fitness",
     "price": 17.99,
-    "image": "",
+    "image": "https://images.fyndiq.se/images/f_auto/t_600x600/prod/fdf2e18e548941b2/30bd544ac87b/5-pack-traningsband-gummiband-motstandsband-traningsband-multicolor-multifarg-0bc8718cbb254c57",
     "emoji": "🏋️",
     "description": "Portable resistance bands for home workouts and stretching.",
     "fulfillmentReady": false
@@ -508,7 +508,7 @@ const PRODUCTS = [
     "name": "Yoga Stretch Strap",
     "category": "Fitness",
     "price": 9.99,
-    "image": "",
+    "image": "https://arrowmax.in/cdn/shop/files/4_9da76538-9cfe-4d8e-ad36-bd57cc14dd5f.jpg?v=1758272516",
     "emoji": "🧘",
     "description": "Simple stretching strap for yoga, mobility and flexibility work.",
     "fulfillmentReady": false
@@ -518,7 +518,7 @@ const PRODUCTS = [
     "name": "Adjustable Hand Grip Trainer",
     "category": "Fitness",
     "price": 12.99,
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/61kzUOq0L5L._AC_SL1500_.jpg",
     "emoji": "💪",
     "description": "Compact hand and forearm grip trainer with adjustable resistance.",
     "fulfillmentReady": false
@@ -528,7 +528,7 @@ const PRODUCTS = [
     "name": "Running Waist Belt",
     "category": "Fitness",
     "price": 14.99,
-    "image": "",
+    "image": "https://fitletic.com/cdn/shop/products/0003_Blitz-Sports-and-Travel-Belt-Reflective-Black_600x.webp?v=1690219277",
     "emoji": "🏃",
     "description": "Slim waist belt for carrying phones, keys and cards while running.",
     "fulfillmentReady": false
@@ -538,7 +538,7 @@ const PRODUCTS = [
     "name": "Travel Packing Cube Set",
     "category": "Travel",
     "price": 19.99,
-    "image": "",
+    "image": "https://upandgr8.com/cdn/shop/files/9_b2d47f24-0e7c-4fd3-80d8-19040ccbba85.jpg?v=1715168268",
     "emoji": "🧳",
     "description": "Lightweight packing organisers for keeping luggage tidy.",
     "fulfillmentReady": false
@@ -548,7 +548,7 @@ const PRODUCTS = [
     "name": "Luggage Cup Holder",
     "category": "Travel",
     "price": 12.99,
-    "image": "",
+    "image": "https://www.riemot.com/cdn/shop/products/1_93a0022e-3eac-49c5-b5f2-32ad15613dbf_1080x.jpg?v=1638172601",
     "emoji": "🥤",
     "description": "Strap-on luggage organiser for drinks, phones and small travel items.",
     "fulfillmentReady": false
@@ -558,7 +558,7 @@ const PRODUCTS = [
     "name": "RFID Passport Wallet",
     "category": "Travel",
     "price": 14.99,
-    "image": "",
+    "image": "https://sc3.locondo.jp/contents/commodity_image/RE/RE4112DW06149_1_l.jpg",
     "emoji": "🛂",
     "description": "Compact travel wallet for passports, cards and documents.",
     "fulfillmentReady": false
@@ -568,7 +568,7 @@ const PRODUCTS = [
     "name": "Car Seat Gap Organiser",
     "category": "Car",
     "price": 17.99,
-    "image": "",
+    "image": "https://trunkistore.com/cdn/shop/files/20260105_2039_CarSeatGapFiller_remix_01ke6vsd59e74aymz7xhcd5bhj.png?v=1767609816&width=1024",
     "emoji": "🚙",
     "description": "Slim organiser for phones, keys and small items beside the car seat.",
     "fulfillmentReady": false
@@ -578,7 +578,7 @@ const PRODUCTS = [
     "name": "Car Interior Cleaning Gel",
     "category": "Car",
     "price": 8.99,
-    "image": "",
+    "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/860f17d68f0744289891ffcd3338ff85~tplv-fhlh96nyum-crop-webp%3A1500%3A1500.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=e1be8f53&shp=8dbd94bf&t=555f072d",
     "emoji": "🧽",
     "description": "Reusable cleaning gel for vents, cup holders and awkward interior gaps.",
     "fulfillmentReady": false
@@ -588,7 +588,7 @@ const PRODUCTS = [
     "name": "Mini Car Rubbish Bin",
     "category": "Car",
     "price": 13.99,
-    "image": "",
+    "image": "https://zybux.co.uk/cdn/shop/files/7_7398c628-7f62-403b-952b-9cc323d7b562_1445x.png?v=1684848608",
     "emoji": "🗑️",
     "description": "Compact car bin for wrappers, tissues and everyday rubbish.",
     "fulfillmentReady": false
@@ -598,7 +598,7 @@ const PRODUCTS = [
     "name": "Hard Shell Sunglasses Case",
     "category": "Accessories",
     "price": 10.99,
-    "image": "",
+    "image": "https://knockaround.com/cdn/shop/products/KA_Hard_Shell_Black_Front.jpg?v=1761056420&width=1024",
     "emoji": "🕶️",
     "description": "Protective glasses case with a compact hard-shell design.",
     "fulfillmentReady": false
