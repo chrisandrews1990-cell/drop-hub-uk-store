@@ -10,7 +10,9 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/magnetic-phone-holder-with-vacuum-suction-foldable-adjustable-car-mount-magnetic-bracket-suction-nonslip-for-busy-commuters-p-2501140539421621100.html",
     "supplierSku": "CJYD227014202BY",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplierCostUSD": 9.85,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 2,
@@ -111,7 +113,12 @@ const PRODUCTS = [
     "image": "https://www.gaiatop.com/cdn/shop/files/Z6_02e3e3b7-e450-43e7-a515-2cd2531f2525.jpg?v=1750739033&width=1080",
     "emoji": "🌬️",
     "description": "Compact USB desk fan for workspaces, bedrooms and study areas.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/robot-fan-usb-rechargeable-desk-fan-mini-digital-display-table-fan-with-suction-cup-portable-cooling-office-car-travel-p-2605210317481625600.html",
+    "supplierSku": "CJJT289858001AZ",
+    "supplierCostUSD": 4.7,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 10,
@@ -121,7 +128,15 @@ const PRODUCTS = [
     "image": "https://www.meintrendyhandy.de/images/Universal-Fast-Wireless-Charger-Black-02082019-01-p.webp",
     "emoji": "🔋",
     "description": "Slim wireless charging pad for compatible phones and earbuds.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/desktop-phone-ultra-thin-round-wireless-charger-p-2412261234571625200.html",
+    "supplierSku": "CJSJ225461401AZ",
+    "supplierCostUSDRange": [
+      3.19,
+      3.86
+    ],
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 11,
@@ -131,7 +146,12 @@ const PRODUCTS = [
     "image": "https://img.pccomponentes.com/articles/43/431477/3504-spc-splash-2-altavoz-bluetooth-ducha-azul-mejor-precio.jpg",
     "emoji": "🔊",
     "description": "Compact splash-resistant speaker for bathrooms, travel and outdoor use.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/waterproof-bluetooth-speaker-p-5EA5109E-F6FB-45A3-8556-8B67D9EBA96C.html",
+    "supplierSku": "CJXFJTYP00114-Grey",
+    "supplierCostUSD": 7.39,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 12,
@@ -141,7 +161,12 @@ const PRODUCTS = [
     "image": "https://images.bauerhosting.com/affiliates/sites/8/2023/09/2-2.png?auto=format&q=80&w=1440",
     "emoji": "⌨️",
     "description": "Handy cleaning tool for keyboards, earbuds and small electronics.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/portable-11-in-1-multifunctional-cleaning-kit-computer-keyboard-cleaner-phone-screen-clean-tools-earphone-clean-brush-with-storage-box-p-2503061121491606900.html",
+    "supplierSku": "CJYD231771001AZ",
+    "supplierCostUSD": 1.45,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 13,
@@ -151,7 +176,12 @@ const PRODUCTS = [
     "image": "https://i5.walmartimages.cl/asr/5159cf35-acef-4385-999f-0ad47d2a8a24.61e7b143850ddcbe2aacee7e6f049d22.jpeg?odnBg=FFFFFF&odnHeight=612&odnWidth=612",
     "emoji": "🔌",
     "description": "Flexible cable protectors designed to reduce everyday wire wear.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/common-for-data-cable-protection-wire-wrapping-p-1577242830689546240.html",
+    "supplierSku": "CJSJ157935901AZ",
+    "supplierCostUSD": 0.36,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 14,
@@ -161,7 +191,12 @@ const PRODUCTS = [
     "image": "https://www.tecnomat.it/pub/media/catalog/product/c/b/2/f/reglette_per_armadio_con_sensore_di_movimento_w_lumen_k_mm_25035187_picture_01.jpg",
     "emoji": "💡",
     "description": "Compact LED light for wardrobes, cupboards and dark storage areas.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://www.cjdropshipping.com/product/led-sensor-light-body-infrared-sensor-light-led-cabinet-light-p-F91CA00A-6403-435D-8E5A-5555B4D78FFA.html",
+    "supplierSku": "CJJZSNSN00255-Recharge 10LED-1pcs",
+    "supplierCostUSDFrom": 2.69,
+    "supplierMatchStatus": "matched-awaiting-exact-variant-cost-and-uk-shipping"
   },
   {
     "id": 15,
@@ -171,7 +206,12 @@ const PRODUCTS = [
     "image": "https://cdn0.woolworths.media/content/wowproductimages/large/1115191827_8.jpg",
     "emoji": "⏰",
     "description": "Simple digital bedside clock with an easy-read display.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/cross-border-hit-digital-bedroom-student-led-electronic-simple-mini-car-plug-in-clock-small-alarm-clock-p-1954842383395475457.html",
+    "supplierSku": "CJJT245323701AZ",
+    "supplierCostUSD": 4.53,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 16,
@@ -181,7 +221,12 @@ const PRODUCTS = [
     "image": "https://www.nillkin.com/cdn/shop/products/ProDeskAdjustableLaptopStand-Sliver.jpg?v=1690029878&width=1000",
     "emoji": "💻",
     "description": "Portable adjustable stand for laptops and tablets.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/new-laptop-stand-multifunctional-folding-lift-portable-laptop-stand-monitor-increase-rack-aluminum-alloy-base-p-DCB495CC-80F8-4ED9-B5BD-26E39B751776.html",
+    "supplierSku": "CJJSBGBG00898-Black-280x280x25.5mm",
+    "supplierCostUSD": 11.82,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 17,
@@ -191,7 +236,12 @@ const PRODUCTS = [
     "image": "https://media.adeo.com/mkp/6d2241b63da7bde0e56a77f2a0018501/media.jpg?fit=bounds&format=jpg&height=650&quality=80&width=650",
     "emoji": "💧",
     "description": "Compact desktop humidifier for bedrooms, desks and small spaces.",
-    "fulfillmentReady": false
+    "fulfillmentReady": false,
+    "supplier": "CJdropshipping",
+    "supplierUrl": "https://cjdropshipping.com/product/usb-mini-humidifier-large-fog-volume-small-air-hydrating-humidifier-p-1495774597293936640.html",
+    "supplierSku": "CJJT142131101AZ",
+    "supplierCostUSD": 2.45,
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check"
   },
   {
     "id": 18,
@@ -605,4 +655,4 @@ const PRODUCTS = [
   }
 ];
 
-// Products marked fulfillmentReady:false are visible catalogue items but cannot be purchased until supplier validation is complete.
+// Products marked fulfillmentReady:false remain unavailable for checkout until live UK shipping and supplier validation pass.
