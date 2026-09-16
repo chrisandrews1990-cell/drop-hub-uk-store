@@ -132,8 +132,11 @@ if(window.paypal){
 
       const data=await response.json();
       if(!response.ok||!data.id){
-        showCheckoutMessage(data.error||'Unable to start checkout.',true);
-        throw new Error(data.error||'Unable to create PayPal order');
+        const message=data.error||'Unable to start checkout.';
+        showCheckoutMessage(message,true);
+        const err=new Error(message);
+        err.checkoutMessageShown=true;
+        throw err;
       }
       return data.id;
     },
@@ -162,7 +165,9 @@ if(window.paypal){
     onCancel(){showCheckoutMessage('Checkout was cancelled.');},
     onError(err){
       console.error(err);
-      showCheckoutMessage('Checkout could not be started. Check the message above or try again shortly.',true);
+      if(!err?.checkoutMessageShown){
+        showCheckoutMessage(err?.message||'Checkout could not be started. Please try again shortly.',true);
+      }
     }
   }).render('#paypal-button-container');
 }
