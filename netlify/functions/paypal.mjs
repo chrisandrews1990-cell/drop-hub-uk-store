@@ -1,4 +1,5 @@
-const PAYPAL_BASE = process.env.PAYPAL_ENV === "sandbox" ? "https://api-m.sandbox.paypal.com" : "https://api-m.paypal.com";
+export const PAYPAL_ENV = process.env.PAYPAL_ENV === "live" ? "live" : "sandbox";
+const PAYPAL_BASE = PAYPAL_ENV === "live" ? "https://api-m.paypal.com" : "https://api-m.sandbox.paypal.com";
 
 export async function getPayPalAccessToken() {
   const clientId = process.env.PAYPAL_CLIENT_ID;
