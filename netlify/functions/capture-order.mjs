@@ -1,6 +1,10 @@
 import { CATALOG } from "./catalog.mjs";
-import { paypalRequest } from "./paypal.mjs";
+import { paypalRequest, PAYPAL_ENV } from "./paypal.mjs";
 import { resolveCJVariant, getCheapestLogistics, createAndPayCJOrder } from "./cj.mjs";
+
+const BUFFERED_USD_TO_GBP = 0.80;
+const MIN_PRODUCT_PROFIT_GBP = 6;
+const MIN_PRODUCT_MARGIN_RATE = 0.50;
 
 
 function buildConfirmation(payment, approvedOrder) {
@@ -59,6 +63,71 @@ export default async (request) => {
     return Response.json({ error: "Unable to verify delivery address." }, { status: 502 });
   }
 
+  // PayPal now has the customer's approved UK address. Before capturing money,
+  // re-check the exact CJ variants and postcode-specific freight.
+  const approvedUnit = approvedOrder.purchase_units?.[0];
+  const approvedShipping = approvedUnit?.shipping;
+  const approvedAddress = approvedShipping?.address;
+  const approvedItems = approvedUnit?.items || [];
+  const city = approvedAddress?.admin_area_2 || approvedAddress?.admin_area_1;
+  const province = approvedAddress?.admin_area_1 || approvedAddress?.admin_area_2;
+
+  if (!approvedShipping?.name?.full_name || !approvedAddress?.country_code || !approvedAddress?.address_line_1 || !city || !province) {
+    return Response.json({ error: "The approved delivery address is incomplete. No payment has been captured." }, { status: 400 });
+  }
+
+  const cjLines = [];
+  try {
+    for (const item of approvedItems) {
+      const product = Object.values(CATALOG).find(p => p.sku === item.sku);
+      if (!product || product.supplier !== "CJ" || !product.cjVariantSku || !product.fulfillmentReady) {
+        return Response.json({ error: "A product is no longer available. No payment has been captured." }, { status: 409 });
+      }
+
+      const resolved = await resolveCJVariant(product.cjVariantSku);
+      const supplierUnitUsd = Number(resolved.variant.variantSellPrice || 0);
+      if (!Number.isFinite(supplierUnitUsd) || supplierUnitUsd <= 0) {
+        throw new Error("CJ returned invalid product pricing.");
+      }
+
+      const supplierUnitGbp = supplierUnitUsd * BUFFERED_USD_TO_GBP;
+      const unitProfitGbp = product.price - supplierUnitGbp;
+      const unitMargin = unitProfitGbp / product.price;
+      if (unitProfitGbp < MIN_PRODUCT_PROFIT_GBP || unitMargin < MIN_PRODUCT_MARGIN_RATE) {
+        return Response.json({
+          error: `${product.name} changed supplier price and is temporarily unavailable. No payment has been captured.`
+        }, { status: 409 });
+      }
+
+      cjLines.push({ vid: resolved.variant.vid, quantity: Number(item.quantity) || 1 });
+    }
+
+    const postcodeLogistics = await getCheapestLogistics({
+      fromCountryCode: "CN",
+      toCountryCode: "GB",
+      zip: approvedAddress.postal_code,
+      products: cjLines
+    });
+
+    const actualFreightUsd = Number(postcodeLogistics.totalPostageFee ?? postcodeLogistics.logisticPrice ?? 0);
+    const actualFreightGbp = Math.ceil(actualFreightUsd * BUFFERED_USD_TO_GBP * 100) / 100;
+    const approvedShippingGbp = Number(approvedUnit?.amount?.breakdown?.shipping?.value || 0);
+
+    if (!Number.isFinite(actualFreightGbp) || actualFreightGbp < 0) {
+      throw new Error("CJ returned an invalid postcode delivery price.");
+    }
+    if (actualFreightGbp > approvedShippingGbp + 0.01) {
+      return Response.json({
+        error: "The live delivery price changed after your address was confirmed. No payment has been captured. Please return to the shop and try checkout again."
+      }, { status: 409 });
+    }
+
+    approvedOrder.__validatedLogistics = postcodeLogistics;
+  } catch (error) {
+    console.error("Pre-capture CJ validation failed", error);
+    return Response.json({ error: "We could not safely validate fulfilment. No payment has been captured." }, { status: 502 });
+  }
+
   let payment;
   try {
     const response = await paypalRequest(`/v2/checkout/orders/${encodeURIComponent(orderID)}/capture`, {
@@ -81,35 +150,10 @@ export default async (request) => {
   }
 
   try {
-    const unit = payment.purchase_units?.[0] || approvedOrder.purchase_units?.[0];
-    const shipping = unit?.shipping || approvedOrder.purchase_units?.[0]?.shipping;
-    const address = shipping?.address;
-    const items = unit?.items || approvedOrder.purchase_units?.[0]?.items || [];
-
-    const city = address?.admin_area_2 || address?.admin_area_1;
-    const province = address?.admin_area_1 || address?.admin_area_2;
-
-    if (!shipping?.name?.full_name || !address?.country_code || !address?.address_line_1 || !city || !province) {
-      throw new Error("Shipping address was incomplete.");
-    }
-
-    const cjLines = [];
-    for (const item of items) {
-      const product = Object.values(CATALOG).find(p => p.sku === item.sku);
-      if (!product || product.supplier !== "CJ" || !product.cjVariantSku || !product.fulfillmentReady) {
-        throw new Error(`Item is not ready for CJ fulfilment: ${item.sku}`);
-      }
-
-      const resolved = await resolveCJVariant(product.cjVariantSku);
-      cjLines.push({ vid: resolved.variant.vid, quantity: Number(item.quantity) || 1 });
-    }
-
-    const logistics = await getCheapestLogistics({
-      fromCountryCode: "CN",
-      toCountryCode: "GB",
-      zip: address.postal_code,
-      products: cjLines
-    });
+    const unit = payment.purchase_units?.[0] || approvedUnit;
+    const shipping = unit?.shipping || approvedShipping;
+    const address = shipping?.address || approvedAddress;
+    const logistics = approvedOrder.__validatedLogistics;
 
     const cjOrder = await createAndPayCJOrder({
       orderNumber: `PP-${payment.id}`,
@@ -128,6 +172,7 @@ export default async (request) => {
       logisticName: logistics.logisticName,
       fromCountryCode: "CN",
       orderFlow: 1,
+      isSandbox: PAYPAL_ENV === "sandbox" ? 1 : 0,
       products: cjLines
     });
 
