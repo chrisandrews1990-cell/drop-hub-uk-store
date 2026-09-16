@@ -6,7 +6,7 @@ The website code is already stored in GitHub.
 - 58 visible products
 - 7 products are currently marked Ready to order
 - All 58 products now have a supplier-cost path and customer-facing image
-- 14 draft listings have priced CJ replacements saved and remain Coming soon until their public title/image is switched
+- 14 former placeholder listings have already been switched to their matched CJ replacement titles, descriptions and images; they remain Coming soon until live UK shipping is validated
 - Product-cost pricing review is complete; all 58 pass the current conservative product-cost guardrail
 - See PRODUCT_SOURCING.md for the product-by-product sourcing record
 - See PRICING_AUDIT.md for the current price/profit review
