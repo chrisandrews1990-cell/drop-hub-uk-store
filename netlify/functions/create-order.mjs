@@ -2,8 +2,6 @@ import { CATALOG, isFulfillmentReady } from "./catalog.mjs";
 import { paypalRequest } from "./paypal.mjs";
 import { verifyCheckoutQuote } from "./checkout-quote.mjs";
 
-const SITE_ORIGIN = "https://leafy-syrniki-ff3fd2.netlify.app";
-
 function normalizeItems(items){
   return items
     .map(line=>({id:Number(line.id),qty:Math.max(1,Math.min(10,Number(line.qty)||1))}))
@@ -18,6 +16,7 @@ export default async(request)=>{
   if(request.method!=="POST") return new Response("Method not allowed",{status:405});
 
   try{
+    const siteOrigin=new URL(request.url).origin;
     const {items=[],quoteToken}=await request.json();
     if(!Array.isArray(items)||!items.length){
       return Response.json({error:"Cart is empty."},{status:400});
@@ -69,8 +68,8 @@ export default async(request)=>{
               landing_page:"LOGIN",
               shipping_preference:"GET_FROM_FILE",
               user_action:"PAY_NOW",
-              return_url:`${SITE_ORIGIN}/paypal-return.html`,
-              cancel_url:`${SITE_ORIGIN}/?checkout=cancelled`
+              return_url:`${siteOrigin}/paypal-return.html`,
+              cancel_url:`${siteOrigin}/?checkout=cancelled`
             }
           }
         },
