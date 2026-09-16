@@ -131,23 +131,32 @@ function renderProducts(){
     return (c==='all'||p.category===c)&&haystack.includes(q);
   });
 
-  grid.innerHTML=items.map(p=>`<article class="product-card">
-    <div class="product-image">
-      <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:grid;place-items:center;height:100%;font-size:44px&quot;>🛍️</div>';">
-    </div>
-    <div class="product-body">
-      <div class="product-top">
-        <span class="category">${p.category}</span>
-        <span class="source-badge">Ready to order</span>
-      </div>
-      <h3>${p.name}</h3>
-      <p>${p.description}</p>
-      <div class="price-row">
-        <span class="price">${money(p.price)}</span>
-        <button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>
-      </div>
-    </div>
-  </article>`).join('')||'<p>No products found.</p>';
+  grid.innerHTML=items.map(p=>{
+    const visual=p.image
+      ? '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy" onerror="this.style.display=\'none\';this.parentElement.innerHTML=\'<div style=&quot;display:grid;place-items:center;height:100%;font-size:54px;background:linear-gradient(135deg,#f8fafc,#eef2ff)&quot;>'+ (p.emoji||'🛍️') +'</div>\';">'
+      : '<div style="display:grid;place-items:center;height:100%;font-size:54px;background:linear-gradient(135deg,#f8fafc,#eef2ff)">'+(p.emoji||'🛍️')+'</div>';
+
+    const badge=p.fulfillmentReady?'Ready to order':'Coming soon';
+    const button=p.fulfillmentReady
+      ? '<button class="add-btn" onclick="addToCart('+p.id+')">Add to cart</button>'
+      : '<button class="add-btn" disabled style="opacity:.55;cursor:not-allowed">Coming soon</button>';
+
+    return '<article class="product-card">'+
+      '<div class="product-image">'+visual+'</div>'+
+      '<div class="product-body">'+
+        '<div class="product-top">'+
+          '<span class="category">'+p.category+'</span>'+
+          '<span class="source-badge">'+badge+'</span>'+
+        '</div>'+
+        '<h3>'+p.name+'</h3>'+
+        '<p>'+p.description+'</p>'+
+        '<div class="price-row">'+
+          '<span class="price">'+money(p.price)+'</span>'+
+          button+
+        '</div>'+
+      '</div>'+
+    '</article>';
+  }).join('')||'<p>No products found.</p>';
 }
 
 function initCategories(){
