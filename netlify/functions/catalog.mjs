@@ -43,7 +43,7 @@ export const CATALOG = {
   42: { name: "Travel Makeup Organiser", sku: "CJNS152304201AZ", price: 18.99, supplier: "CJ", cjVariantSku: "CJNS152304201AZ", fulfillmentReady: false },
   43: { name: "Heatless Curling Set", sku: "PENDING-43", price: 11.99, supplier: null, fulfillmentReady: false },
   44: { name: "Makeup Brush Cleaning Pad", sku: "PENDING-44", price: 7.99, supplier: null, fulfillmentReady: false },
-  45: { name: "Satin Sleep Mask", sku: "PENDING-45", price: 9.99, supplier: null, fulfillmentReady: false },
+  45: { name: "Silky Sleep Mask", sku: "PENDING-45", price: 9.99, supplier: null, fulfillmentReady: false },
   46: { name: "Jewellery Cleaning Pen", sku: "PENDING-46", price: 8.99, supplier: null, fulfillmentReady: false },
   47: { name: "Silicone Scalp Massager", sku: "CJJJJTJT51194-Pink", price: 8.99, supplier: "CJ", cjVariantSku: "CJJJJTJT51194-Pink", fulfillmentReady: false },
   48: { name: "Resistance Band Set", sku: "CJJM207746801AZ", price: 17.99, supplier: "CJ", cjVariantSku: "CJJM207746801AZ", fulfillmentReady: false },
@@ -56,7 +56,7 @@ export const CATALOG = {
   55: { name: "Car Seat Gap Organiser", sku: "CJQC206507501AZ", price: 17.99, supplier: "CJ", cjVariantSku: "CJQC206507501AZ", fulfillmentReady: false },
   56: { name: "Car Interior Cleaning Gel", sku: "PENDING-56", price: 8.99, supplier: null, fulfillmentReady: false },
   57: { name: "Mini Car Rubbish Bin", sku: "CJYD238181101AZ", price: 13.99, supplier: "CJ", cjVariantSku: "CJYD238181101AZ", fulfillmentReady: false },
-  58: { name: "Hard Shell Sunglasses Case", sku: "PENDING-58", price: 10.99, supplier: null, fulfillmentReady: false }
+  58: { name: "Protective Sunglasses Case", sku: "PENDING-58", price: 10.99, supplier: null, fulfillmentReady: false }
 };
 
 export function isFulfillmentReady(product) {
