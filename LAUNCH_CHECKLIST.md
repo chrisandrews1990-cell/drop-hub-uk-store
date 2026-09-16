@@ -5,9 +5,9 @@ The website code is already stored in GitHub.
 ## Current catalogue
 - 58 visible products
 - 7 products are currently marked Ready to order
-- All 58 products now have a supplier-cost path
+- All 58 products now have a supplier-cost path and customer-facing image
 - 14 draft listings have priced CJ replacements saved and remain Coming soon until their public title/image is switched
-- A small number of wide-cost variants still need the exact cheaper variant selected before launch
+- Product-cost pricing review is complete; all 58 pass the current conservative product-cost guardrail
 - See PRODUCT_SOURCING.md for the product-by-product sourcing record
 - See PRICING_AUDIT.md for the current price/profit review
 
@@ -53,8 +53,6 @@ Do not paste PayPal client secrets or CJ API keys into chat, GitHub files, or pu
 - PayPal return page produces a printable/saveable order confirmation after successful capture.
 
 ## Remaining before launch
-- Obtain the exact CJ-hosted image for product 46 (PU Leather Jewellery Storage Pouch).
-- Select exact variants for the wide-cost products flagged in PRICING_AUDIT.md.
 - Restore Netlify deployment when credits return.
 - Add PayPal and CJ credentials as Netlify environment variables.
 - Run live UK freight checks through the CJ API.
