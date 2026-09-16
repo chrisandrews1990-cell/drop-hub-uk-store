@@ -9,18 +9,132 @@ const cartItems=document.getElementById('cartItems');
 const cartCount=document.getElementById('cartCount');
 const cartTotal=document.getElementById('cartTotal');
 const checkoutMessage=document.getElementById('checkoutMessage');
-let lastCheckoutError='';
+const paypalContainer=document.getElementById('paypal-button-container');
 
 let cart=JSON.parse(localStorage.getItem('drophub_cart')||'[]')
   .filter(item=>PRODUCTS.find(p=>p.id===item.id)?.fulfillmentReady===true);
+
+let checkoutQuote=null;
+let quoteGeneration=0;
+let paypalButtonsInstance=null;
 
 function money(v){
   return new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(v);
 }
 
+function cartForServer(){
+  return cart.map(item=>({id:item.id,qty:item.qty}));
+}
+
+function showCheckoutMessage(message,isError=false){
+  checkoutMessage.textContent=message;
+  checkoutMessage.className='checkout-message '+(isError?'error':'success');
+}
+
+async function clearPayPalButtons(){
+  if(paypalButtonsInstance&&typeof paypalButtonsInstance.close==='function'){
+    try{await paypalButtonsInstance.close();}catch{}
+  }
+  paypalButtonsInstance=null;
+  paypalContainer.innerHTML='';
+}
+
+async function prepareCheckout(){
+  const generation=++quoteGeneration;
+  checkoutQuote=null;
+  await clearPayPalButtons();
+
+  if(!cart.length){
+    showCheckoutMessage('');
+    return;
+  }
+
+  showCheckoutMessage('Preparing secure checkout and live UK delivery…');
+
+  try{
+    const response=await fetch('/api/checkout-quote',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({items:cartForServer()})
+    });
+    const data=await response.json();
+
+    if(generation!==quoteGeneration) return;
+
+    if(!response.ok||!data.token){
+      showCheckoutMessage(data.error||'Unable to prepare checkout.',true);
+      return;
+    }
+
+    checkoutQuote=data;
+    showCheckoutMessage(`UK delivery ${money(Number(data.shipping))} • Order total ${money(Number(data.total))}`);
+
+    if(!window.paypal){
+      showCheckoutMessage('PayPal could not load. Please refresh the page.',true);
+      return;
+    }
+
+    paypalButtonsInstance=paypal.Buttons({
+      style:{layout:'vertical',shape:'rect',label:'paypal'},
+      async createOrder(){
+        const response=await fetch('/api/create-order',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({
+            items:cartForServer(),
+            quoteToken:checkoutQuote?.token
+          })
+        });
+
+        const data=await response.json();
+        if(!response.ok||!data.id){
+          const message=data.error||'Unable to start PayPal checkout.';
+          showCheckoutMessage(message,true);
+          throw new Error(message);
+        }
+        return data.id;
+      },
+      async onApprove(data){
+        showCheckoutMessage('Payment approved. Verifying UK delivery and sending your order for fulfilment…');
+        const response=await fetch('/api/capture-order',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({orderID:data.orderID})
+        });
+
+        const result=await response.json();
+        if(!response.ok||result.status!=='COMPLETED'){
+          showCheckoutMessage(result.error||'Payment could not be completed.',true);
+          return;
+        }
+
+        cart=[];
+        save();
+        if(result.fulfillment==='CJ_SUBMITTED'){
+          showCheckoutMessage('Payment completed and your order has been sent for fulfilment.');
+        }else{
+          showCheckoutMessage('Payment completed successfully. Your order is being reviewed for fulfilment.');
+        }
+      },
+      onCancel(){showCheckoutMessage('Checkout was cancelled.');},
+      onError(err){
+        console.error(err);
+        showCheckoutMessage(err?.message||'PayPal checkout could not be started.',true);
+      }
+    });
+
+    await paypalButtonsInstance.render('#paypal-button-container');
+  }catch(error){
+    if(generation!==quoteGeneration) return;
+    console.error(error);
+    showCheckoutMessage('Unable to prepare checkout. Please try again shortly.',true);
+  }
+}
+
 function save(){
   localStorage.setItem('drophub_cart',JSON.stringify(cart));
   renderCart();
+  prepareCheckout();
 }
 
 function renderProducts(){
@@ -38,15 +152,13 @@ function renderProducts(){
     <div class="product-body">
       <div class="product-top">
         <span class="category">${p.category}</span>
-        <span class="source-badge">${p.fulfillmentReady ? 'Ready to order' : 'Coming soon'}</span>
+        <span class="source-badge">Ready to order</span>
       </div>
       <h3>${p.name}</h3>
       <p>${p.description}</p>
       <div class="price-row">
         <span class="price">${money(p.price)}</span>
-        ${p.fulfillmentReady
-          ? `<button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>`
-          : `<button class="add-btn" disabled style="opacity:.45;cursor:not-allowed">Coming soon</button>`}
+        <button class="add-btn" onclick="addToCart(${p.id})">Add to cart</button>
       </div>
     </div>
   </article>`).join('')||'<p>No products found.</p>';
@@ -55,18 +167,15 @@ function renderProducts(){
 function initCategories(){
   [...new Set(PRODUCTS.map(p=>p.category))].sort().forEach(c=>{
     const o=document.createElement('option');
-    o.value=c;
-    o.textContent=c;
-    filter.appendChild(o);
+    o.value=c;o.textContent=c;filter.appendChild(o);
   });
 }
 
 function addToCart(id){
   const p=PRODUCTS.find(x=>x.id===id);
-  if(!p?.fulfillmentReady) return;
+  if(!p?.fulfillmentReady)return;
   const found=cart.find(x=>x.id===id);
-  if(found) found.qty++;
-  else cart.push({...p,qty:1});
+  if(found)found.qty++;else cart.push({...p,qty:1});
   save();
   openCart();
 }
@@ -85,24 +194,10 @@ function renderCart(){
 }
 
 function openCart(){
-  drawer.classList.add('open');
-  overlay.classList.add('show');
-  drawer.setAttribute('aria-hidden','false');
+  drawer.classList.add('open');overlay.classList.add('show');drawer.setAttribute('aria-hidden','false');
 }
-
 function shutCart(){
-  drawer.classList.remove('open');
-  overlay.classList.remove('show');
-  drawer.setAttribute('aria-hidden','true');
-}
-
-function cartForServer(){
-  return cart.map(item=>({id:item.id,qty:item.qty}));
-}
-
-function showCheckoutMessage(message,isError=false){
-  checkoutMessage.textContent=message;
-  checkoutMessage.className='checkout-message '+(isError?'error':'success');
+  drawer.classList.remove('open');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true');
 }
 
 cartBtn.onclick=openCart;
@@ -112,65 +207,7 @@ search.oninput=renderProducts;
 filter.onchange=renderProducts;
 document.getElementById('year').textContent=new Date().getFullYear();
 
-save();
+renderCart();
 initCategories();
 renderProducts();
-
-if(window.paypal){
-  paypal.Buttons({
-    style:{layout:'vertical',shape:'rect',label:'paypal'},
-    async createOrder(){
-      lastCheckoutError='';
-      if(!cart.length){
-        showCheckoutMessage('Your cart is empty.',true);
-        throw new Error('Cart is empty');
-      }
-
-      const response=await fetch('/api/create-order',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({items:cartForServer()})
-      });
-
-      const data=await response.json();
-      if(!response.ok||!data.id){
-        const message=data.error||'Unable to start checkout.';
-        lastCheckoutError=message;
-        showCheckoutMessage(message,true);
-        throw new Error(message);
-      }
-      return data.id;
-    },
-    async onApprove(data){
-      showCheckoutMessage('Payment approved. Verifying UK delivery and sending your order for fulfilment…');
-      const response=await fetch('/api/capture-order',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({orderID:data.orderID})
-      });
-
-      const result=await response.json();
-      if(!response.ok||result.status!=='COMPLETED'){
-        showCheckoutMessage(result.error||'Payment could not be completed.',true);
-        return;
-      }
-
-      cart=[];
-      save();
-      if(result.fulfillment==='CJ_SUBMITTED'){
-        showCheckoutMessage('Payment completed and your order has been sent for fulfilment.');
-      }else{
-        showCheckoutMessage('Payment completed successfully. Your order is being reviewed for fulfilment.');
-      }
-    },
-    onCancel(){showCheckoutMessage('Checkout was cancelled.');},
-    onError(err){
-      console.error(err);
-      if(lastCheckoutError){
-        showCheckoutMessage(lastCheckoutError,true);
-      }else{
-        showCheckoutMessage(err?.message||'Checkout could not be started. Please try again shortly.',true);
-      }
-    }
-  }).render('#paypal-button-container');
-}
+prepareCheckout();
