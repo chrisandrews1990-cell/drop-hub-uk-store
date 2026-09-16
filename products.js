@@ -218,7 +218,7 @@ const PRODUCTS = [
     "name": "Kitchen Oil Spray Bottle",
     "category": "Kitchen",
     "price": 12.99,
-    "image": "https://www.jiomart.com/images/product/original/rva3ovhooj/lakheshwar-oil-sprayer-for-cooking-200ml-glass-olive-oil-sprayer-mister-olive-oil-spray-bottle-kitchen-gadgets-accessories-for-air-fryer-canola-oil-spritzer-widely-used-for-salad-making-baking-frying-bbq-oil-sprayer-for-cooking-oil-dispenser-bottl-product-images-orva3ovhooj-p610009710-0-202409231418.jpg?im=Resize%3D%28420%2C420%29",
+    "image": "https://kitchenique.co.za/cdn/shop/files/40111.jpg?v=1729540088",
     "emoji": "🫙",
     "description": "Refillable fine-mist oil bottle for cooking and salads.",
     "fulfillmentReady": false
@@ -238,7 +238,7 @@ const PRODUCTS = [
     "name": "Silicone Sink Strainer",
     "category": "Kitchen",
     "price": 8.99,
-    "image": "https://static.platform.michaels.com/2c-prd/28678877239968.jpeg?fit=inside%7C540%3A540",
+    "image": "https://static.platform.michaels.com/2c-prd/28678877239968.jpeg",
     "emoji": "🚰",
     "description": "Flexible sink strainer for catching food scraps and debris.",
     "fulfillmentReady": false
@@ -448,7 +448,7 @@ const PRODUCTS = [
     "name": "Heatless Curling Set",
     "category": "Beauty",
     "price": 11.99,
-    "image": "https://www.cosmastyle.com/cdn/shop/files/image_499f96ee-f88f-41ed-bef5-4599ded8f819_1280x1273.jpg?v=1683136740",
+    "image": "https://cdn.shopify.com/s/files/1/0349/9334/0460/files/3a3d46078a885aae3b4f32f005fd2b0e.jpg?v=1737454751",
     "emoji": "🎀",
     "description": "Soft overnight styling set for heat-free curls and waves.",
     "fulfillmentReady": false
