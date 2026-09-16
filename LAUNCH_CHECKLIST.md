@@ -59,3 +59,13 @@ Do not paste PayPal client secrets or CJ API keys into chat, GitHub files, or pu
 - Keep only products with acceptable landed margin as Ready to order.
 - Complete PayPal sandbox checkout and CJ fulfilment test.
 - Switch PayPal to live credentials and place one low-value live test order.
+
+
+## Checkout safety completed
+- PayPal defaults to sandbox unless PAYPAL_ENV is explicitly set to live.
+- Health check requires PAYPAL_ENV to be explicitly set to sandbox or live.
+- CJ orders use isSandbox=1 whenever PayPal is in sandbox, preventing a sandbox checkout test from creating a real CJ charge or fulfilment.
+- Checkout rechecks the live CJ product price before creating the PayPal payment.
+- After PayPal confirms the customer's UK address, checkout recalculates CJ freight using the postcode before payment capture.
+- If the postcode freight exceeds the delivery amount the customer approved, payment is not captured.
+- If a live supplier price no longer meets the product-margin guardrail, checkout is stopped before payment capture.
