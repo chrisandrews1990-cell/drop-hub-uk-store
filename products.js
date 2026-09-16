@@ -281,24 +281,24 @@ const PRODUCTS = [
   },
   {
     "id": 18,
-    "name": "Reusable Cable Ties",
+    "name": "Magnetic Cable Clip Set",
     "category": "Tech",
     "price": 6.99,
-    "image": "https://i5.walmartimages.com/asr/8df36d1a-fe31-4394-a5f4-d07b7149546f.2f634778be2c797cf25738f5aa01af3f.jpeg?odnBg=FFFFFF&odnHeight=2000&odnWidth=2000",
+    "image": "https://cf.cjdropshipping.com/17174592/2406040438510321900.jpg",
     "emoji": "🧷",
-    "description": "Reusable ties for organising charging cables and desk wires.",
+    "description": "Magnetic cable clips for keeping charging leads and desk wires tidy and within easy reach.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Magnetic Cable Clip Set before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "review-variant-before-launch",
-    "plannedReplacementName": "Magnetic Cable Clip Set",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/magnetic-cable-clip-under-desk-cable-management-adjustable-cord-holder-wire-organizer-and-cable-management-wire-keeper-p-1763402968205897728.html",
     "supplierSku": "CJYD197888501AZ",
     "supplierCostUSDRange": [
       0.05,
       8.45
-    ]
+    ],
+    "replacedFromName": "Reusable Cable Ties"
   },
   {
     "id": 19,
@@ -340,24 +340,24 @@ const PRODUCTS = [
   },
   {
     "id": 21,
-    "name": "Magnetic Spice Jars",
+    "name": "Magnetic Kitchen Seasoning Rack",
     "category": "Kitchen",
     "price": 17.99,
-    "image": "https://images-cdn.ubuy.co.in/65281e3112071603d93f7f41-homgen-12pcs-stainless-steel-magnetic.jpg",
+    "image": "https://cf.cjdropshipping.com/quick/product/1dd0ac8b-78ce-4867-8987-5201522fa425.jpg",
     "emoji": "🧂",
-    "description": "Space-saving spice containers with magnetic backing.",
+    "description": "Space-saving magnetic kitchen rack for seasonings, condiments and small everyday cooking essentials.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Magnetic Kitchen Seasoning Rack before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Magnetic Kitchen Seasoning Rack",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/wall-mounted-storage-rack-household-kitchen-seasoning-product-seasoning-p-2406160346461601500.html",
     "supplierSku": "CJYD206141801AZ",
     "supplierCostUSDRange": [
       1.76,
       7.89
-    ]
+    ],
+    "replacedFromName": "Magnetic Spice Jars"
   },
   {
     "id": 22,
@@ -450,66 +450,66 @@ const PRODUCTS = [
   },
   {
     "id": 27,
-    "name": "Microwave Splatter Cover",
+    "name": "Reusable Silicone Stretch Lids",
     "category": "Kitchen",
     "price": 12.99,
-    "image": "https://image-cdn.ubuy.com/ram-pro-microwave-cover-for-food/400_400_100/697a66d7bca0ac0b940f1646.jpg",
+    "image": "https://cc-west-usa.oss-accelerate.aliyuncs.com/453266a9-0f09-4397-8c13-f127319791f7.jpg",
     "emoji": "🍲",
-    "description": "Ventilated food cover to help keep microwaves cleaner.",
+    "description": "Reusable stretchy silicone food covers for bowls, containers, fruit and everyday fridge storage.",
     "fulfillmentReady": false,
     "supplier": "CJdropshipping",
     "supplierSku": "CJCF1723695-1Set",
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Reusable Silicone Stretch Lids before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "review-variant-before-launch",
-    "plannedReplacementName": "Reusable Silicone Stretch Lids",
     "supplierUrl": "https://cjdropshipping.com/product/6pcs-food-silicone-cover-fresh-keeping-dish-stretchy-lid-cap-reusable-wrap-organization-storage-tool-kitchen-accessories-6pcs-silicone-stretch-lids-p-1642738075405537280.html",
     "supplierCostUSDRange": [
       6.42,
       9.18
-    ]
+    ],
+    "replacedFromName": "Microwave Splatter Cover"
   },
   {
     "id": 28,
-    "name": "Clip-On Pot Strainer",
+    "name": "Silicone Pot Utensil Clip",
     "category": "Kitchen",
     "price": 10.99,
-    "image": "https://image.made-in-china.com/318f0j00cERGtTuyFVrk/HK-2066-mp4.webp",
+    "image": "https://cf.cjdropshipping.com/quick/product/b1a52512-cdcc-49fa-ae4b-572db5fb035b.jpg",
     "emoji": "🍝",
-    "description": "Compact clip-on strainer for pasta, vegetables and cooked foods.",
+    "description": "Heat-resistant silicone clip designed to hold spoons or utensils at the side of a cooking pot.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Silicone Pot Utensil Clip before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Silicone Pot Utensil Clip",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/multifunctional-spatula-holder-silicone-anti-overflow-spoon-holder-cooking-pot-anti-scalding-clip-kitchen-gadgets-p-1767745182079913984.html",
     "supplierSku": "CJYD198735501AZ",
     "supplierCostUSDRange": [
       0.13,
       0.39
-    ]
+    ],
+    "replacedFromName": "Clip-On Pot Strainer"
   },
   {
     "id": 29,
-    "name": "Sofa Armrest Organiser",
+    "name": "Leather Remote Control Organiser",
     "category": "Home",
     "price": 16.99,
-    "image": "https://cdn.manomano.com/sofa-organizer-armrest-holder-couch-tray-storage-bag-hanging-storage-armrest-pockets-sofa-organizer-armchair-caddy-for-books-magazine-glasses-tv-remote-control-ipad-dvd-P-41674973-161002332_1.jpg",
+    "image": "https://cf.cjdropshipping.com/quick/product/86d06f2e-4084-424a-a0fd-2733d60f7bed.jpg",
     "emoji": "🛋️",
-    "description": "Multi-pocket organiser for remotes, phones, magazines and accessories.",
+    "description": "Compact leather-look organiser for remote controls, phones, stationery and small household items.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Leather Remote Control Organiser before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Leather Remote Control Organiser",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/household-supplies-remote-control-storage-box-of-leather-p-2407080721531609400.html",
     "supplierSku": "CJJT207840701AZ",
     "supplierCostUSDRange": [
       3.44,
       5.95
-    ]
+    ],
+    "replacedFromName": "Sofa Armrest Organiser"
   },
   {
     "id": 30,
@@ -533,24 +533,24 @@ const PRODUCTS = [
   },
   {
     "id": 31,
-    "name": "Adjustable Drawer Divider Set",
+    "name": "Desktop Storage Box",
     "category": "Home",
     "price": 15.99,
-    "image": "https://cdn.shopify.com/s/files/1/0761/5771/4658/files/61g3wVQvECL._AC_SX679_PIbundle-5_TopRight_0_0_SH20.jpg?v=1756561222",
+    "image": "https://oss-cf.cjdropshipping.com/product/2024/07/24/02/2d681fb9-91e7-4f45-ac40-1ff900749d44_trans.jpeg",
     "emoji": "🗄️",
-    "description": "Expandable dividers for keeping drawers neat and organised.",
+    "description": "Stackable drawer-style storage box for desks, bathrooms, cosmetics and small household essentials.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Desktop Storage Box before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Desktop Storage Box",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/desktop-storage-box-office-accessories-makeup-plastic-storage-container-bathroom-storage-stackable-organizer-drawer-p-1386883997170274304.html",
     "supplierSku": "CJJT110132001AZ",
     "supplierCostUSDRange": [
       1.92,
       5.58
-    ]
+    ],
+    "replacedFromName": "Adjustable Drawer Divider Set"
   },
   {
     "id": 32,
@@ -571,21 +571,21 @@ const PRODUCTS = [
   },
   {
     "id": 33,
-    "name": "Travel Shoe Storage Bags",
+    "name": "Short-Distance Travel Bag",
     "category": "Travel",
     "price": 12.99,
-    "image": "https://ribbi.nl/cdn/shop/files/1200x818_b169770c-a79b-40e6-8a0f-0818f840a464_800x.jpg?v=1720930831",
+    "image": "https://cf.cjdropshipping.com/quick/product/d78739ac-f265-456a-83bf-95460d91211e.jpg",
     "emoji": "👟",
-    "description": "Lightweight travel bags for keeping shoes separate inside luggage.",
+    "description": "Lightweight Oxford-cloth travel bag with a roomy 20–35L capacity for weekends, fitness and short trips.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
     "sourcingNote": "Replace current draft listing with Short-Distance Travel Bag before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Short-Distance Travel Bag",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/fashion-short-distance-travel-bag-fitness-and-lightweight-p-2406080934471622000.html",
     "supplierSku": "CJYD205630901AZ",
-    "supplierCostUSD": 5.97
+    "supplierCostUSD": 5.97,
+    "replacedFromName": "Travel Shoe Storage Bags"
   },
   {
     "id": 34,
@@ -606,24 +606,24 @@ const PRODUCTS = [
   },
   {
     "id": 35,
-    "name": "Microfibre Cleaning Slippers",
+    "name": "Microfibre Cleaning Cloth Set",
     "category": "Home",
     "price": 9.99,
-    "image": "https://image.made-in-china.com/2f0j00iMBVUDkogTGZ/Houseware-Cleaning-Microfiber-Chenille-Dusting-Slippers.webp",
+    "image": "https://cc-west-usa.oss-accelerate.aliyuncs.com/15097248/3575094129_405944515.400x400.jpg",
     "emoji": "🥿",
-    "description": "Soft microfibre slippers designed for light floor dusting while walking.",
+    "description": "Reusable microfibre cloth set for screens, glasses and light everyday cleaning.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Microfibre Cleaning Cloth Set before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Microfibre Cleaning Cloth Set",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/screen-microfiber-screen-cleaning-cloth-p-18234200-0771-414B-B9F7-2048AC7E2E25.html",
     "supplierSku": "CJJJYSFZ00162-White-6x8cm-Q20pcs",
     "supplierCostUSDRange": [
       1.3,
       1.84
-    ]
+    ],
+    "replacedFromName": "Microfibre Cleaning Slippers"
   },
   {
     "id": 36,
@@ -700,21 +700,21 @@ const PRODUCTS = [
   },
   {
     "id": 40,
-    "name": "Dog Paw Cleaner Cup",
+    "name": "Pet Grooming Glove",
     "category": "Pets",
     "price": 12.99,
-    "image": "https://www.vour.gr/product_application/catalogmanager/assets/images/20220628143618_0.jpg",
+    "image": "https://oss-cf.cjdropshipping.com/product/2024/11/05/09/d84c55d3-fe54-458d-8f8f-f25e5d28881d_trans.jpeg",
     "emoji": "🐾",
-    "description": "Portable paw cleaner with soft flexible cleaning bristles.",
+    "description": "Grooming and massage glove for lifting loose pet hair during brushing or bathing.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
     "sourcingNote": "Replace current draft listing with Pet Grooming Glove before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Pet Grooming Glove",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/pet-comb-hair-bath-massage-gloves-p-2411040327401621100.html",
     "supplierSku": "CJYD218075601AZ",
-    "supplierCostUSD": 1.47
+    "supplierCostUSD": 1.47,
+    "replacedFromName": "Dog Paw Cleaner Cup"
   },
   {
     "id": 41,
@@ -757,39 +757,39 @@ const PRODUCTS = [
   },
   {
     "id": 43,
-    "name": "Heatless Curling Set",
+    "name": "Spiral Hair Curler & Comb Set",
     "category": "Beauty",
     "price": 11.99,
-    "image": "https://silvercloudbeauty.com/cdn/shop/files/Caramel_Heatess_Curlers_1.jpg?v=1762172441&width=1200",
+    "image": "https://cc-west-usa.oss-accelerate.aliyuncs.com/1615378680806.jpg",
     "emoji": "🎀",
-    "description": "Soft overnight styling set for heat-free curls and waves.",
+    "description": "Hair styling set with spiral curling and comb tools for creating curls and waves.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
     "sourcingNote": "Replace current draft listing with Spiral Hair Curler & Comb Set before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Spiral Hair Curler & Comb Set",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/spiral-curler-comb-set-does-not-hurt-hair-titanium-alloy-splint-p-1369623902988406784.html",
     "supplierSku": "CJJT103762901AZ",
-    "supplierCostUSD": 6.07
+    "supplierCostUSD": 6.07,
+    "replacedFromName": "Heatless Curling Set"
   },
   {
     "id": 44,
-    "name": "Makeup Brush Cleaning Pad",
+    "name": "Electric Makeup Brush Cleaner",
     "category": "Beauty",
     "price": 7.99,
-    "image": "https://i5.walmartimages.com/asr/dfd91dcc-0d94-4b20-aa2f-d4b46afa13c8.a82d36d0679bdd7b2db95f8606a4f439.jpeg",
+    "image": "https://cf.cjdropshipping.com/17046720/2401080815100329800.jpg",
     "emoji": "🖌️",
-    "description": "Textured silicone pad for cleaning makeup brushes and cosmetic tools.",
+    "description": "Compact USB-powered makeup brush cleaner designed for quick everyday cosmetic-brush cleaning.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
     "sourcingNote": "Replace current draft listing with Electric Makeup Brush Cleaner before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Electric Makeup Brush Cleaner",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/electric-makeup-brush-cleaner-machine-portable-automatic-usb-cosmetic-brush-cleaner-tools-for-all-size-beauty-makeup-brushes-set-p-1707021717920550912.html",
     "supplierSku": "CJMJ185778101AZ",
-    "supplierCostUSD": 1.93
+    "supplierCostUSD": 1.93,
+    "replacedFromName": "Makeup Brush Cleaning Pad"
   },
   {
     "id": 45,
@@ -810,24 +810,24 @@ const PRODUCTS = [
   },
   {
     "id": 46,
-    "name": "Jewellery Cleaning Pen",
+    "name": "PU Leather Jewellery Storage Pouch",
     "category": "Accessories",
     "price": 8.99,
-    "image": "https://www.valeriemadison.com/cdn/shop/files/WBcleaningpen.jpg?v=1720635615",
+    "image": "",
     "emoji": "✨",
-    "description": "Compact cleaning pen for quick jewellery touch-ups.",
+    "description": "Compact snap-button PU leather pouch for storing rings, earrings and other small jewellery items.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
-    "sourcingNote": "Replace current draft listing with PU Leather Jewellery Storage Pouch before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
+    "supplierMatchStatus": "matched-awaiting-supplier-image-and-uk-shipping",
+    "sourcingNote": "Replace current draft listing with PU Leather Jewellery Storage Pouch before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement. Supplier page currently requires sign-in before exposing the exact product image; keep local fallback until exact supplier image is available.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "PU Leather Jewellery Storage Pouch",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/new-leather-pu-leather-button-bag-flip-jewelry-jewelry-storage-bag-p-2508030354021603900.html",
     "supplierSku": "CJYD244638202BY",
     "supplierCostUSDRange": [
       0.36,
       0.55
-    ]
+    ],
+    "replacedFromName": "Jewellery Cleaning Pen"
   },
   {
     "id": 47,
@@ -937,21 +937,21 @@ const PRODUCTS = [
   },
   {
     "id": 53,
-    "name": "Luggage Cup Holder",
+    "name": "Travel Bottle Holder Strap",
     "category": "Travel",
     "price": 12.99,
-    "image": "https://www.riemot.com/cdn/shop/products/1_93a0022e-3eac-49c5-b5f2-32ad15613dbf_1080x.jpg?v=1638172601",
+    "image": "https://cc-west-usa.oss-accelerate.aliyuncs.com/cfe98f25-8367-48fb-a635-34b0d1c8b68b.jpg",
     "emoji": "🥤",
-    "description": "Strap-on luggage organiser for drinks, phones and small travel items.",
+    "description": "Portable strap-style bottle holder for carrying a drink bottle during travel, walking and outdoor activities.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
     "sourcingNote": "Replace current draft listing with Travel Bottle Holder Strap before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Travel Bottle Holder Strap",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/outdoor-travel-sports-portable-insulation-cup-strap-cover-p-1503992382675759104.html",
     "supplierSku": "CJNS143908201AZ",
-    "supplierCostUSD": 0.71
+    "supplierCostUSD": 0.71,
+    "replacedFromName": "Luggage Cup Holder"
   },
   {
     "id": 54,
@@ -990,24 +990,24 @@ const PRODUCTS = [
   },
   {
     "id": 56,
-    "name": "Car Interior Cleaning Gel",
+    "name": "Car Detail Cleaning Brush",
     "category": "Car",
     "price": 8.99,
-    "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/860f17d68f0744289891ffcd3338ff85~tplv-fhlh96nyum-crop-webp%3A1500%3A1500.webp?dr=12190&from=2378011839&idc=useast5&ps=933b5bde&shcp=e1be8f53&shp=8dbd94bf&t=555f072d",
+    "image": "https://oss-cf.cjdropshipping.com/product/2024/06/02/01/c680b307-6d4f-4fcf-94d5-2d292a7868d6.jpg",
     "emoji": "🧽",
-    "description": "Reusable cleaning gel for vents, cup holders and awkward interior gaps.",
+    "description": "Soft detailing brush for cleaning car vents, trim, seat gaps and other hard-to-reach interior areas.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "replacement-matched-awaiting-image-and-uk-shipping",
+    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
     "sourcingNote": "Replace current draft listing with Car Detail Cleaning Brush before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
-    "plannedReplacementName": "Car Detail Cleaning Brush",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/car-detail-brush-soft-brush-interior-cleaning-p-1796519066690134016.html",
     "supplierSku": "CJYD205093001AZ",
     "supplierCostUSDRange": [
       0.7,
       1.5
-    ]
+    ],
+    "replacedFromName": "Car Interior Cleaning Gel"
   },
   {
     "id": 57,
@@ -1047,4 +1047,4 @@ const PRODUCTS = [
   }
 ];
 
-// Replacement-matched products remain Coming soon until customer-facing title/image, exact variant and live UK shipping are validated.
+// Replacement listings now match their sourced CJ products. fulfillmentReady remains false until exact variant and live UK shipping validation pass.
