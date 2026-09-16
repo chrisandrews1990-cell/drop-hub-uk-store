@@ -218,7 +218,7 @@ const PRODUCTS = [
     "name": "Kitchen Oil Spray Bottle",
     "category": "Kitchen",
     "price": 12.99,
-    "image": "https://kitchenique.co.za/cdn/shop/files/40111.jpg?v=1729540088",
+    "image": "https://image.cdn.shpy.in/371084/SKU-8108_0-1755611834756.jpg?format=webp&width=600",
     "emoji": "🫙",
     "description": "Refillable fine-mist oil bottle for cooking and salads.",
     "fulfillmentReady": false
@@ -238,7 +238,7 @@ const PRODUCTS = [
     "name": "Silicone Sink Strainer",
     "category": "Kitchen",
     "price": 8.99,
-    "image": "https://static.platform.michaels.com/2c-prd/28678877239968.jpeg",
+    "image": "https://i5.walmartimages.com/asr/6d2592c9-8a1e-45a9-9004-146a35a2eba0.fc4f126d074eb5f7cf53b79d044bf6af.jpeg?odnBg=FFFFFF&odnHeight=768&odnWidth=768",
     "emoji": "🚰",
     "description": "Flexible sink strainer for catching food scraps and debris.",
     "fulfillmentReady": false
@@ -448,7 +448,7 @@ const PRODUCTS = [
     "name": "Heatless Curling Set",
     "category": "Beauty",
     "price": 11.99,
-    "image": "https://cdn.shopify.com/s/files/1/0349/9334/0460/files/3a3d46078a885aae3b4f32f005fd2b0e.jpg?v=1737454751",
+    "image": "https://silvercloudbeauty.com/cdn/shop/files/Caramel_Heatess_Curlers_1.jpg?v=1762172441&width=1200",
     "emoji": "🎀",
     "description": "Soft overnight styling set for heat-free curls and waves.",
     "fulfillmentReady": false
