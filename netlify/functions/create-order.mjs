@@ -2,6 +2,8 @@ import { CATALOG, isFulfillmentReady } from "./catalog.mjs";
 import { paypalRequest } from "./paypal.mjs";
 import { verifyCheckoutQuote } from "./checkout-quote.mjs";
 
+const SITE_ORIGIN = "https://leafy-syrniki-ff3fd2.netlify.app";
+
 function normalizeItems(items){
   return items
     .map(line=>({id:Number(line.id),qty:Math.max(1,Math.min(10,Number(line.qty)||1))}))
@@ -23,12 +25,12 @@ export default async(request)=>{
 
     const quote=verifyCheckoutQuote(quoteToken);
     if(!quote){
-      return Response.json({error:"Your delivery quote expired. Please let checkout refresh and try again."},{status:409});
+      return Response.json({error:"Your delivery quote expired. Please refresh checkout and try again."},{status:409});
     }
 
     const normalized=normalizeItems(items);
     if(!sameItems(normalized,quote.items)){
-      return Response.json({error:"Your basket changed. Please let checkout refresh and try again."},{status:409});
+      return Response.json({error:"Your basket changed. Please refresh checkout and try again."},{status:409});
     }
 
     const orderItems=[];
@@ -58,6 +60,20 @@ export default async(request)=>{
       headers:{"PayPal-Request-Id":crypto.randomUUID()},
       body:JSON.stringify({
         intent:"CAPTURE",
+        payment_source:{
+          paypal:{
+            experience_context:{
+              payment_method_preference:"IMMEDIATE_PAYMENT_REQUIRED",
+              brand_name:"DropHub UK",
+              locale:"en-GB",
+              landing_page:"LOGIN",
+              shipping_preference:"GET_FROM_FILE",
+              user_action:"PAY_NOW",
+              return_url:`${SITE_ORIGIN}/paypal-return.html`,
+              cancel_url:`${SITE_ORIGIN}/?checkout=cancelled`
+            }
+          }
+        },
         purchase_units:[{
           amount:{
             currency_code:"GBP",
@@ -79,7 +95,13 @@ export default async(request)=>{
       return Response.json({error:"PayPal could not create the order."},{status:502});
     }
 
-    return Response.json({id:data.id});
+    const approveUrl=(data.links||[]).find(link=>link.rel==="payer-action"||link.rel==="approve")?.href;
+    if(!approveUrl){
+      console.error("PayPal order missing approval link",data);
+      return Response.json({error:"PayPal did not return an approval page."},{status:502});
+    }
+
+    return Response.json({id:data.id,approveUrl});
   }catch(error){
     console.error("Create order error",error);
     return Response.json({error:"Checkout could not be started. Please try again."},{status:500});
