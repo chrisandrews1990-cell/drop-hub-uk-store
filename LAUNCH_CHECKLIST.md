@@ -5,10 +5,9 @@ The website code is already stored in GitHub.
 ## Current catalogue
 - 58 visible products
 - 7 products are currently marked Ready to order
-- 31 additional products have clean CJ matches and are waiting for live UK shipping validation
-- 1 additional product is matched but still needs exact variant-cost confirmation
-- 6 products have plausible CJ candidates that need a final title/variant review
-- 13 products need a cleaner supplier match or replacement before they can be sold
+- All 58 products now have a supplier-cost path
+- 14 draft listings have priced CJ replacements saved and remain Coming soon until their public title/image is switched
+- A small number of wide-cost variants still need the exact cheaper variant selected before launch
 - See PRODUCT_SOURCING.md for the product-by-product sourcing record
 - See PRICING_AUDIT.md for the current price/profit review
 
