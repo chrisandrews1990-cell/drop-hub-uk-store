@@ -9,7 +9,8 @@ The website code is already stored in GitHub.
 - 1 additional product is matched but still needs exact variant-cost confirmation
 - 6 products have plausible CJ candidates that need a final title/variant review
 - 13 products need a cleaner supplier match or replacement before they can be sold
-- See PRODUCT_SOURCING.md for the product-by-product record
+- See PRODUCT_SOURCING.md for the product-by-product sourcing record
+- See PRICING_AUDIT.md for the current price/profit review
 
 ## When Netlify credits are available
 1. Deploy the latest main branch from GitHub.
