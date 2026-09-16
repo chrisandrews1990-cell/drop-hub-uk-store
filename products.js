@@ -281,16 +281,16 @@ const PRODUCTS = [
   },
   {
     "id": 18,
-    "name": "Magnetic Cable Clip Set",
+    "name": "6-Pack Magnetic Cable Clips",
     "category": "Tech",
-    "price": 6.99,
+    "price": 12.99,
     "image": "https://cf.cjdropshipping.com/17174592/2406040438510321900.jpg",
     "emoji": "🧷",
-    "description": "Magnetic cable clips for keeping charging leads and desk wires tidy and within easy reach.",
+    "description": "Six white magnetic cable clips for keeping charging leads and desk wires tidy and within easy reach.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
-    "sourcingNote": "Replace current draft listing with Magnetic Cable Clip Set before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
-    "pricingAuditStatus": "review-variant-before-launch",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "sourcingNote": "Pinned to CJ SKU CJYD197888501AZ (6 Pack White). Planned price raised so the product-level margin remains acceptable even using the top of CJ's public family price range.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/magnetic-cable-clip-under-desk-cable-management-adjustable-cord-holder-wire-organizer-and-cable-management-wire-keeper-p-1763402968205897728.html",
     "supplierSku": "CJYD197888501AZ",
@@ -450,18 +450,18 @@ const PRODUCTS = [
   },
   {
     "id": 27,
-    "name": "Reusable Silicone Stretch Lids",
+    "name": "6-Piece Reusable Silicone Stretch Lid Set",
     "category": "Kitchen",
-    "price": 12.99,
+    "price": 14.99,
     "image": "https://cc-west-usa.oss-accelerate.aliyuncs.com/453266a9-0f09-4397-8c13-f127319791f7.jpg",
     "emoji": "🍲",
-    "description": "Reusable stretchy silicone food covers for bowls, containers, fruit and everyday fridge storage.",
+    "description": "Six reusable stretchy silicone food covers in assorted sizes for bowls, containers, fruit and everyday fridge storage.",
     "fulfillmentReady": false,
     "supplier": "CJdropshipping",
     "supplierSku": "CJCF1723695-1Set",
-    "supplierMatchStatus": "matched-awaiting-variant-and-uk-shipping",
-    "sourcingNote": "Replace current draft listing with Reusable Silicone Stretch Lids before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement.",
-    "pricingAuditStatus": "review-variant-before-launch",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "sourcingNote": "Pinned to CJ SKU CJCF1723695-1Set. CJ's public page shows 1Set selected and a $6.42–$9.18 family range; planned price is safe even at the top of that public range.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
     "supplierUrl": "https://cjdropshipping.com/product/6pcs-food-silicone-cover-fresh-keeping-dish-stretchy-lid-cap-reusable-wrap-organization-storage-tool-kitchen-accessories-6pcs-silicone-stretch-lids-p-1642738075405537280.html",
     "supplierCostUSDRange": [
       6.42,
@@ -728,13 +728,13 @@ const PRODUCTS = [
     "supplier": "CJdropshipping",
     "supplierUrl": "https://cjdropshipping.com/product/dog-training-leash-waist-bag-hands-free-outdoor-pet-running-walking-leash-portable-dog-food-water-cup-storage-bags-p-1392067844971302912.html",
     "supplierSku": "CJGY112387101AZ",
-    "supplierMatchStatus": "candidate-variant-review",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "sourcingNote": "Pinned to CJ SKU CJGY112387101AZ, Grey. Current public CJ page shows a $3.32–$6.42 product range; even the high end leaves a healthy product-level margin at the current planned price.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
     "supplierCostUSDRange": [
       3.32,
-      16.75
-    ],
-    "sourcingNote": "The product family includes the treat/storage pouch function, but variant selection changes what the customer receives.",
-    "pricingAuditStatus": "review-variant-before-launch"
+      6.42
+    ]
   },
   {
     "id": 42,
@@ -810,24 +810,24 @@ const PRODUCTS = [
   },
   {
     "id": 46,
-    "name": "PU Leather Jewellery Storage Pouch",
+    "name": "Velvet Jewellery Storage Pouch",
     "category": "Accessories",
     "price": 8.99,
-    "image": "",
+    "image": "https://oss-cf.cjdropshipping.com/product/2025/08/03/03/79ef6bdf-a172-46ad-ac4a-4ad67f43e3fe_fine.jpeg",
     "emoji": "✨",
-    "description": "Compact snap-button PU leather pouch for storing rings, earrings and other small jewellery items.",
+    "description": "Compact velvet snap-button jewellery pouch for rings, earrings and other small accessories.",
     "fulfillmentReady": false,
-    "supplierMatchStatus": "matched-awaiting-supplier-image-and-uk-shipping",
-    "sourcingNote": "Replace current draft listing with PU Leather Jewellery Storage Pouch before launch. Supplier and product cost are matched; customer-facing title/image still need to be switched to the replacement. Supplier page currently requires sign-in before exposing the exact product image; keep local fallback until exact supplier image is available.",
+    "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
+    "sourcingNote": "Switched to CJ's velvet jewellery pouch so the listing has a confirmed CJ-hosted product image and a narrow public price range.",
     "pricingAuditStatus": "pricing-healthy-before-fees",
     "supplier": "CJdropshipping",
-    "supplierUrl": "https://cjdropshipping.com/product/new-leather-pu-leather-button-bag-flip-jewelry-jewelry-storage-bag-p-2508030354021603900.html",
-    "supplierSku": "CJYD244638202BY",
+    "supplierUrl": "https://www.cjdropshipping.com/product/oval-velvet-cloth-jewelry-storage-button-bag-jewelry-storage-bag-p-2508030355531612100.html",
+    "supplierSku": "CJYD244638001AZ",
+    "replacedFromName": "Jewellery Cleaning Pen",
     "supplierCostUSDRange": [
-      0.36,
-      0.55
-    ],
-    "replacedFromName": "Jewellery Cleaning Pen"
+      0.4,
+      0.5
+    ]
   },
   {
     "id": 47,
@@ -842,11 +842,9 @@ const PRODUCTS = [
     "supplierUrl": "https://cjdropshipping.com/product/silicone-shampoo-head-brush-p-EC1FAEF4-5F97-462F-A67C-CDECF93BC026.html",
     "supplierSku": "CJJJJTJT51194-Pink",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSDRange": [
-      0.26,
-      8.15
-    ],
-    "pricingAuditStatus": "review-variant-before-launch"
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "supplierCostUSD": 1.86,
+    "sourcingNote": "Pinned to CJ SKU CJJJJTJT51194-Pink. CJ's public page shows Pink selected at $1.86."
   },
   {
     "id": 48,
@@ -882,23 +880,20 @@ const PRODUCTS = [
   },
   {
     "id": 50,
-    "name": "Adjustable Hand Grip Trainer",
+    "name": "Silicone Hand Grip Strengthener",
     "category": "Fitness",
     "price": 12.99,
-    "image": "https://m.media-amazon.com/images/I/61kzUOq0L5L._AC_SL1500_.jpg",
+    "image": "https://cf.cjdropshipping.com/17000928/1725002643480383488.jpg",
     "emoji": "💪",
-    "description": "Compact hand and forearm grip trainer with adjustable resistance.",
+    "description": "Compact silicone hand and finger strengthener for grip, forearm and everyday fitness exercises.",
     "fulfillmentReady": false,
     "supplier": "CJdropshipping",
-    "supplierUrl": "https://cjdropshipping.com/product/hand-grip-strengthener-grip-strength-trainer-and-finger-exerciser-silicone-adjustable-hand-grip-20-80lb-gripping-ring-finger-forearm-trainer-carpal-expander-muscle-workout-exercise-p-1659909774420889600.html",
-    "supplierSku": "CJJM1761950-Atrovirens",
+    "supplierUrl": "https://cjdropshipping.com/product/hand-grip-strengthener-hand-finger-exerciser-forearm-rings-hand-exerciser-silicone-squeezer-grippers-for-finger-p-1724813769018183680.html",
+    "supplierSku": "CJYD189795601AZ",
     "supplierMatchStatus": "matched-awaiting-uk-shipping-check",
-    "supplierCostUSDRange": [
-      6.6,
-      18.6
-    ],
-    "sourcingNote": "Choose the exact resistance/colour variant before launch because CJ pricing varies widely.",
-    "pricingAuditStatus": "loss-risk-select-cheaper-variant"
+    "sourcingNote": "Replaced the wide-cost hand-grip family with CJ SKU CJYD189795601AZ (Pink), currently shown at a fixed $1.76 product price.",
+    "pricingAuditStatus": "pricing-healthy-before-fees",
+    "supplierCostUSD": 1.76
   },
   {
     "id": 51,
@@ -1047,4 +1042,4 @@ const PRODUCTS = [
   }
 ];
 
-// Replacement listings now match their sourced CJ products. fulfillmentReady remains false until exact variant and live UK shipping validation pass.
+// Product pricing is audited against the highest known public CJ product price. Live UK shipping and final API validation still happen before launch.
