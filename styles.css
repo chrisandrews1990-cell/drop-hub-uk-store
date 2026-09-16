@@ -15,3 +15,18 @@
   .price-row{align-items:flex-end}
   .price{font-size:22px}
 }
+
+.policy-form,.confirmation-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.policy-form p{line-height:1.7}
+.confirmation-card{margin:28px 0}
+.confirmation-card h2{margin-top:0}
+.confirmation-line,.confirmation-total{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line)}
+.confirmation-total{font-size:20px;border-bottom:0;border-top:2px solid var(--text);margin-top:8px}
+.confirmation-note{color:var(--muted);line-height:1.6}
+.confirmation-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+@media print{
+  .topbar,.announcement-bar,.confirmation-actions,#homeLink{display:none!important}
+  body{background:#fff}
+  .legal{max-width:none!important;padding:0!important}
+  .confirmation-card,.policy-form{box-shadow:none;border:1px solid #bbb}
+}
