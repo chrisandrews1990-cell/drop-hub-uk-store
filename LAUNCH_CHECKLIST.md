@@ -1,43 +1,47 @@
 # DropHub UK Launch Checklist
 
-The website code is already stored in GitHub.
+The website code is stored in GitHub and the production runtime has been migrated from Netlify to Cloudflare Pages + Pages Functions.
 
 ## Current catalogue
 - 58 visible products
 - 7 products are currently marked Ready to order
-- All 58 products now have a supplier-cost path and customer-facing image
-- 14 former placeholder listings have already been switched to their matched CJ replacement titles, descriptions and images; they remain Coming soon until live UK shipping is validated
+- All 58 products have a supplier-cost path and customer-facing image
+- 14 former placeholder listings have already been switched to matched CJ replacement titles, descriptions and images
 - Product-cost pricing review is complete; all 58 pass the current conservative product-cost guardrail
-- See PRODUCT_SOURCING.md for the product-by-product sourcing record
-- See PRICING_AUDIT.md for the current price/profit review
+- See PRODUCT_SOURCING.md for the sourcing record
+- See PRICING_AUDIT.md for the price/profit review
 
-## When Netlify credits are available
-1. Deploy the latest main branch from GitHub.
-2. Add these Netlify environment variables:
-   - PAYPAL_ENV=sandbox
-   - PAYPAL_CLIENT_ID
-   - PAYPAL_CLIENT_SECRET
-   - CJ_API_KEY
-3. Trigger a fresh Netlify deploy.
-4. Open /api/health on the Netlify site.
-   - ok should be true.
-   - catalogue.total should be 58.
-   - catalogue.orderReady should be 7 or more.
-5. Run a sandbox checkout using one Ready to order product.
-6. Confirm:
+## Cloudflare deployment settings
+1. Create a Cloudflare Pages project from the GitHub repository `chrisandrews1990-cell/drop-hub-uk-store`.
+2. Production branch: `main`.
+3. Framework preset: None.
+4. Build command: `npm run build`.
+5. Build output directory: `dist`.
+6. Add these Cloudflare Pages variables/secrets:
+   - `PAYPAL_ENV=sandbox`
+   - `PAYPAL_CLIENT_ID`
+   - `PAYPAL_CLIENT_SECRET`
+   - `CJ_API_KEY`
+7. Deploy the latest `main` branch.
+8. Open `/api/health` on the Cloudflare Pages site.
+   - `ok` should be `true`.
+   - `platform` should be `cloudflare-pages-functions`.
+   - `catalogue.total` should be `58`.
+   - `catalogue.orderReady` should be `7` or more.
+9. Run a sandbox checkout using one Ready to order product.
+10. Confirm:
    - UK shipping quote loads.
    - PayPal approval page opens.
    - Return page captures the sandbox order.
-   - CJ fulfilment either submits successfully or reports MANUAL_REQUIRED for review.
-7. When the sandbox test is successful:
+   - CJ sandbox fulfilment submits successfully or reports `MANUAL_REQUIRED` for review.
+11. When the sandbox test is successful:
    - replace PayPal sandbox credentials with LIVE credentials.
-   - set PAYPAL_ENV=live.
+   - set `PAYPAL_ENV=live`.
    - redeploy.
-8. Place one low-value live test order before advertising the store.
+12. Place one low-value live test order before advertising the store.
 
 ## Important
-Do not paste PayPal client secrets or CJ API keys into chat, GitHub files, or public pages. Store them only as secure Netlify environment variables.
-
+Do not paste PayPal client secrets or CJ API keys into chat, GitHub files, or public pages. Store them only as Cloudflare Pages Secrets / Variables.
 
 ## Customer-facing launch checks completed
 - Homepage wording and catalogue filters polished.
@@ -52,20 +56,21 @@ Do not paste PayPal client secrets or CJ API keys into chat, GitHub files, or pu
 - Privacy notice explains browser cart storage and third-party checkout/fulfilment services.
 - PayPal return page produces a printable/saveable order confirmation after successful capture.
 
-## Remaining before launch
-- Restore Netlify deployment when credits return.
-- Add PayPal and CJ credentials as Netlify environment variables.
+## Cloudflare migration completed in code
+- Same `/api/checkout-quote`, `/api/create-order`, `/api/capture-order` and `/api/health` URLs retained.
+- Runtime environment access converted from Netlify `process.env` to Cloudflare `context.env` bindings.
+- Checkout quote signing converted to Cloudflare Web Crypto.
+- Static shop builds into `dist`.
+- Cloudflare Functions live in the root `functions` directory.
+- Function routing is restricted to `/api/*`, keeping ordinary pages static.
+- PayPal defaults safely to sandbox unless `PAYPAL_ENV=live` is explicitly configured.
+- CJ orders use sandbox mode whenever PayPal is in sandbox.
+- Checkout rechecks live CJ product cost and postcode freight before PayPal capture.
+
+## Remaining before public launch
+- Connect the GitHub repository to the Cloudflare Pages project.
+- Add the four Cloudflare variables/secrets.
+- Complete the sandbox checkout test.
 - Run live UK freight checks through the CJ API.
 - Keep only products with acceptable landed margin as Ready to order.
-- Complete PayPal sandbox checkout and CJ fulfilment test.
 - Switch PayPal to live credentials and place one low-value live test order.
-
-
-## Checkout safety completed
-- PayPal defaults to sandbox unless PAYPAL_ENV is explicitly set to live.
-- Health check requires PAYPAL_ENV to be explicitly set to sandbox or live.
-- CJ orders use isSandbox=1 whenever PayPal is in sandbox, preventing a sandbox checkout test from creating a real CJ charge or fulfilment.
-- Checkout rechecks the live CJ product price before creating the PayPal payment.
-- After PayPal confirms the customer's UK address, checkout recalculates CJ freight using the postcode before payment capture.
-- If the postcode freight exceeds the delivery amount the customer approved, payment is not captured.
-- If a live supplier price no longer meets the product-margin guardrail, checkout is stopped before payment capture.
