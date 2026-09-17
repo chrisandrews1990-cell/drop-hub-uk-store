@@ -1,4 +1,4 @@
-name: Deploy static shop to GitHub Pages
+name: Validate Cloudflare build and deploy preview
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -23,12 +23,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Setup Pages
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check Cloudflare Function syntax
+        run: find functions -name '*.js' -print0 | xargs -0 -n1 node --check
+
+      - name: Build Cloudflare static output
+        run: npm run build
+
+      - name: Setup Pages preview
         uses: actions/configure-pages@v5
-      - name: Upload site
+
+      - name: Upload built site
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "."
-      - name: Deploy to GitHub Pages
+          path: "dist"
+
+      - name: Deploy preview to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
