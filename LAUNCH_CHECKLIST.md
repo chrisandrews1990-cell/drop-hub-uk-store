@@ -66,6 +66,9 @@ Do not paste PayPal client secrets or CJ API keys into chat, GitHub files, or pu
 - PayPal defaults safely to sandbox unless `PAYPAL_ENV=live` is explicitly configured.
 - CJ orders use sandbox mode whenever PayPal is in sandbox.
 - Checkout rechecks live CJ product cost and postcode freight before PayPal capture.
+- Old Netlify config and Netlify Functions have been removed from `main`.
+- GitHub Actions syntax-checks every Cloudflare Function before preview deployment.
+- Cloudflare migration build validation passed successfully on 17 September 2026.
 
 ## Remaining before public launch
 - Connect the GitHub repository to the Cloudflare Pages project.
